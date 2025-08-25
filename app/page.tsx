@@ -1,103 +1,182 @@
+import Link from "next/link";
 import Image from "next/image";
+import { getDictionary } from "./lib/get-dictionary";
 
-export default function Home() {
+import { CodeCopy } from "./components/code-copy";
+import { Comments } from "./components/comments";
+import { FeaturesGrid } from "./components/features-grid";
+import { RightsideMarketing } from "./components/rightside-marketing";
+
+import { AnimatedTooltip } from "./components/animated-tooltip";
+import { BackgroundLines } from "./components/background-lines";
+import { Button } from "./components/button";
+import { ColourfulText } from "./components/colorful-text";
+import * as Icons from "./components/icons";
+
+import type { Locale } from "./config/i18n-config";
+import {VideoScroll} from "./components/video-scroll";
+
+const people = [
+  {
+    id: 1,
+    name: "tianzx",
+    designation: "CEO at Nextify",
+    image: "https://avatars.githubusercontent.com/u/10096899",
+    link: "https://x.com/nextify2024",
+  },
+  {
+    id: 2,
+    name: "jackc3",
+    designation: "Co-founder at Nextify",
+    image: "https://avatars.githubusercontent.com/u/10334353",
+    link: "https://x.com/BingxunYao",
+  },
+  {
+    id: 3,
+    name: "imesong",
+    designation: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/3849293",
+  },
+  {
+    id: 4,
+    name: "ziveen",
+    designation: "Contributor",
+    image: "https://avatars.githubusercontent.com/u/22560152",
+  },
+  {
+    id: 5,
+    name: "Zenuncl",
+    designation: "Independent Software Developer",
+    image: "https://avatars.githubusercontent.com/u/3316062",
+  },
+  {
+    id: 6,
+    name: "Innei",
+    designation: "Indie Developer",
+    image: "https://avatars.githubusercontent.com/u/41265413",
+  },
+];
+
+export default async function IndexPage({
+  params: { lang },
+}: {
+  params: {
+    lang: Locale;
+  };
+}) {
+  const dict = await getDictionary(lang);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <section className="container">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2">
+          <div className="flex flex-col items-start h-full">
+            <BackgroundLines className="h-full">
+              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
+                <div className="mt-20">
+                  <div
+                    className="mb-6 max-w-4xl text-left text-4xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-5xl md:leading-[4rem] xl:leading-[4rem]">
+                    {dict.marketing.title || "Ship your apps to the world easier with "}
+                    <ColourfulText text="Saasfly"/>
+                  </div>
+                </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                <div className="mt-4">
+                  <span className="text-neutral-500 dark:text-neutral-400 sm:text-lg">
+                    {dict.marketing.sub_title || "Your complete All-in-One solution for building SaaS services."}
+                  </span>
+                </div>
+
+                <div
+                  className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
+                  <Link href="https://github.com/saasfly/saasfly" target="_blank">
+                    <Button
+                      className="bg-blue-600 hover:bg-blue-500 text-white rounded-full text-lg px-6 h-12 font-medium">
+                      {dict.marketing.get_started}
+                      <Icons.ArrowRight className="h-5 w-5"/>
+                    </Button>
+                  </Link>
+
+                  <CodeCopy/>
+                </div>
+
+                <div className="flex xl:flex-row flex-col items-center justify-start mt-4 w-full">
+                  <div className="flex">
+                    <AnimatedTooltip items={people}/>
+                  </div>
+                  <div className="flex flex-col items-center justify-start ml-8">
+                    <div className="w-[340px]">
+                      <span className="font-semibold">9 </span>
+                      <span className="text-neutral-500 dark:text-neutral-400">{dict.marketing.contributors.contributors_desc}</span>
+                    </div>
+                    <div className="w-[340px]">
+                      <span
+                        className="text-neutral-500 dark:text-neutral-400">{dict.marketing.contributors.developers_first}</span>
+                      <ColourfulText text="2000"/>
+                      <span
+                        className="text-neutral-500 dark:text-neutral-400">{dict.marketing.contributors.developers_second}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </BackgroundLines>
+          </div>
+
+          <div className="hidden h-full w-full xl:block bg-background">
+            <div className="flex flex-col pt-44">
+              <RightsideMarketing dict={dict.marketing.right_side}/>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="container mt-8 md:mt-[-180px] xl:mt-[-180px]">
+        <FeaturesGrid dict={dict.marketing.features_grid}/>
+      </section>
+
+      <section className="container pt-24">
+        <div className="flex flex-col justify-center items-center pt-10">
+          <div className="text-lg text-neutral-500 dark:text-neutral-400">{dict.marketing.sponsor.title}</div>
+          <div className="mt-4 flex items-center gap-4">
+            <Link href="https://go.clerk.com/uKDp7Au" target="_blank">
+              <Image src="/images/clerk.png" width="48" height="48" alt="twillot"/>
+            </Link>
+            <Link href="https://www.twillot.com/" target="_blank">
+              <Image src="https://www.twillot.com/logo-128.png" width="48" height="48" alt="twillot"/>
+            </Link>
+            <Link href="https://www.setupyourpay.com/" target="_blank">
+              <Image src="https://www.setupyourpay.com/logo.png" width="48" height="48" alt="setupyourpay" />
+            </Link>
+            <Link href="https://opencollective.com/saasfly" target="_blank">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-dashed border-neutral-300 dark:border-neutral-700 hover:bg-accent dark:hover:bg-neutral-800/30">
+                <Icons.Heart className="w-5 h-5 fill-pink-600 text-pink-600 dark:fill-pink-700 dark:text-pink-700" />
+                <span className="text-sm font-medium text-neutral-500 dark:text-neutral-200">{dict.marketing.sponsor.donate || ''}</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="container pt-8">
+        <VideoScroll dict={dict.marketing.video}/>
+      </section>
+
+      <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
+        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
+          <div>
+            <h1 className="mb-6 text-center text-3xl font-bold dark:text-zinc-100 md:text-5xl">
+              {dict.marketing.people_comment.title}
+            </h1>
+          </div>
+          <div className="mb-6 text-lg text-neutral-500 dark:text-neutral-400">
+            {dict.marketing.people_comment.desc}
+          </div>
+
+          <div className="w-full overflow-x-hidden">
+            <Comments/>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
