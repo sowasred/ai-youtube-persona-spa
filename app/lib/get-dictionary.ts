@@ -1,6 +1,6 @@
 import "server-only";
 
-import type { Locale } from "../config/dictionaries/en.json";
+import type { Locale } from "../config/i18n-config";
 
 // We enumerate all dictionaries here for better linting and typescript support
 // We also get the default import for cleaner types

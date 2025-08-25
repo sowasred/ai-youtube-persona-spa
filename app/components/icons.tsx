@@ -1,7 +1,7 @@
 import type { LucideProps } from "lucide-react";
 import * as Lucide from "lucide-react";
 
-export type Icon = (props: LucideProps) => JSX.Element;
+export type Icon = (props: LucideProps) => React.ReactElement;
 
 export const Add = Lucide.Plus;
 export const ArrowRight = Lucide.ArrowRight;
