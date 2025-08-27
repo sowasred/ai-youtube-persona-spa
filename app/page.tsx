@@ -68,7 +68,7 @@ export default async function IndexPage({
 
   return (
     <>
-      <section className="container">
+      <section className="container mx-auto">
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-2">
           <div className="flex flex-col items-start h-full">
             <BackgroundLines className="h-full">
@@ -124,38 +124,20 @@ export default async function IndexPage({
 
           <div className="hidden h-full w-full xl:block bg-background">
             <div className="flex flex-col pt-44">
-              <RightsideMarketing dict={dict.marketing.right_side}/>
+              {/* TODO: Put Iphone mockup video here */}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container mt-8 md:mt-[-180px] xl:mt-[-180px]">
+      <section className="container mt-8 md:mt-[-180px] xl:mt-[-180px] mx-auto">
         <FeaturesGrid dict={dict.marketing.features_grid}/>
       </section>
 
-      <section className="container pt-24">
-        <div className="flex flex-col justify-center items-center pt-10">
-          <div className="text-lg text-neutral-500 dark:text-neutral-400">{dict.marketing.sponsor.title}</div>
-          <div className="mt-4 flex items-center gap-4">
-            <Link href="https://go.clerk.com/uKDp7Au" target="_blank">
-              <Image src="/images/clerk.png" width="48" height="48" alt="twillot"/>
-            </Link>
-            <Link href="https://www.twillot.com/" target="_blank">
-              <Image src="https://www.twillot.com/logo-128.png" width="48" height="48" alt="twillot"/>
-            </Link>
-            <Link href="https://www.setupyourpay.com/" target="_blank">
-              <Image src="https://www.setupyourpay.com/logo.png" width="48" height="48" alt="setupyourpay" />
-            </Link>
-            <Link href="https://opencollective.com/saasfly" target="_blank">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-dashed border-neutral-300 dark:border-neutral-700 hover:bg-accent dark:hover:bg-neutral-800/30">
-                <Icons.Heart className="w-5 h-5 fill-pink-600 text-pink-600 dark:fill-pink-700 dark:text-pink-700" />
-                <span className="text-sm font-medium text-neutral-500 dark:text-neutral-200">{dict.marketing.sponsor.donate || ''}</span>
-              </div>
-            </Link>
-          </div>
-        </div>
+      <section className="container mt-8 flex flex-col pt-44 mx-auto">
+        <RightsideMarketing dict={dict.marketing.right_side}/>
       </section>
+
 
       <section className="container pt-8">
         <VideoScroll dict={dict.marketing.video}/>
