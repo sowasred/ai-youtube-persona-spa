@@ -20,10 +20,10 @@
   },
   "marketing": {
     "introducing": "Introducing Saasfly",
-    "title": "Ship your apps to the world easier with ",
-    "sub_title": "An easy-to-use and enterprise-grade Next.js boilerplate. Your complete All-in-One solution for building SaaS services.",
-    "get_started": "Get Started",
-    "view_on_github": "View on GitHub",
+    "title": "Reach your fans",
+    "sub_title": "Be at the fingertip of your fans. Your Digital twin trained directly on your content handles fan messages.",
+    "get_started": "Launch your twin",
+    "view_on_github": "See Demo",
     "explore_product": "Explore Product",
     "features": "Features",
     "sub_features": "Cloud-native: Simplifying technology and reducing costs for startups.",
@@ -39,9 +39,9 @@
     "signup": "Sign up",
     "": "",
     "contributors": {
-      "contributors_desc": "contributors made Saasfly stronger",
-      "developers_first": "Help more than ",
-      "developers_second": " developers"
+      "contributors_desc": "Fans want to engage with influencers when they need the most.",
+      "developers_first": "to be more than just ",
+      "developers_second": " content creators"
     },
     "right_side": {
       "deploy_on_vercel_title": "Deploy on Vercel",
