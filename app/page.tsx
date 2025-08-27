@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { getDictionary } from "./lib/get-dictionary";
 
 import { Comments } from "./components/comments";
@@ -70,7 +70,7 @@ export default async function IndexPage({
   return (
     <>
       <section className="container mx-auto">
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 mb-48">
           <div className="flex flex-col items-start h-full">
             <BackgroundLines className="h-full">
               <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
@@ -138,8 +138,44 @@ export default async function IndexPage({
           </div>
 
           <div className="hidden h-full w-full xl:block bg-background">
-            <div className="flex flex-col pt-44">
+            <div className="flex flex-col pt-18 ml-56">
               {/* TODO: Put Iphone mockup video here */}
+
+              <Image
+                src="/chat-mockup.svg"
+                width={360}
+                height={740}
+                className="dark:hidden"
+                alt=""
+              />
+              <Image
+                src="/chat-mockup.svg"
+                width={360}
+                height={740}
+                className="hidden dark:block"
+                alt=""
+              />
+
+              {/* <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+                <div className="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                <div className="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                  <Image
+                    src="/screen-here.png"
+                    fill={true}
+                    className="dark:hidden w-[272px] h-[572px]"
+                    alt=""
+                  />
+                  <Image
+                    src="/screen-here.png"
+                    fill={true}
+                    className="hidden dark:block w-[272px] h-[572px]"
+                    alt=""
+                  />
+                </div>
+              </div> */}
             </div>
           </div>
         </div>
