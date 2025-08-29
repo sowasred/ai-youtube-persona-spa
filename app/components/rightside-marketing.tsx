@@ -13,7 +13,7 @@ export function RightsideMarketing({ dict } : { dict: Record<string, string> | u
         area=" lg:[grid-area:1/1/2/5] xl:[grid-area:1/1/2/7]"
         imagePath={"/turns_fans_to_superfans.jpg"}
         width={950}
-        height={228}
+        height={361}
         title={dict?.deploy_on_vercel_title ?? ''}
         description={dict?.deploy_on_vercel_desc ?? ''}
         link="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsaasfly%2Fsaasfly&env=NEXT_PUBLIC_APP_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,STRIPE_API_KEY,STRIPE_WEBHOOK_SECRET,POSTGRES_URL,GITHUB_CLIENT_ID,GITHUB_CLIENT_SECRET,RESEND_API_KEY,RESEND_FROM&install-command=bun%20install&build-command=bun%20run%20build&root-directory=apps%2Fnextjs"
@@ -23,7 +23,7 @@ export function RightsideMarketing({ dict } : { dict: Record<string, string> | u
         area=" lg:[grid-area:2/1/3/5] xl:[grid-area:2/1/3/7]"
         imagePath={"/monetize_your_wisdom_1.jpg"}
         width={950}
-        height={228}
+        height={361}
         title={dict?.ship_on_cloudflare_title ?? ''}
         description={dict?.ship_on_cloudflare_desc ?? ''}
         link="https://oneclick.sh/"
@@ -32,8 +32,8 @@ export function RightsideMarketing({ dict } : { dict: Record<string, string> | u
       <GridItem
         area="lg:[grid-area:1/5/3/12] xl:[grid-area:1/7/3/13]"
         imagePath={"/get_actionable_content_advice.jpg"}
-        width={668}
-        height={513}
+        width={950}
+        height={955}
         title={dict?.showcase_title ?? ''}
         description={dict?.showcase_desc ?? ''}
         link="https://discord.gg/b9uTZjdkrb"
@@ -64,17 +64,17 @@ const GridItem = ({ area, imagePath, width, height, title, description, link }: 
           inactiveZone={0.01}
         />
         <Link href={`${link ? link : ''}`} target="_blank">
-          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6 dark:bg-neutral-900/40">
+          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-4 xl:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6 dark:bg-neutral-900/40">
             <div className="relative flex flex-1 flex-col justify-between">
-              <div className="w-full h-full rounded-lg border border-gray-600 dark:border-neutral-800">
+              <div className="w-full h-full rounded-lg border border-gray-600 dark:border-neutral-800 overflow-hidden">
                 {/* {imagePath} */}
-                <Image src={imagePath} width={width} height={height} alt="photo" className="rounde-xl"></Image>
+                <Image src={imagePath} width={width} height={height} alt="photo" className="object-cover" style={{height:"100%"}}></Image>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-1">
                 <h3 className="pt-2 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl text-balance text-black dark:text-white">
                   {title}
                 </h3>
-                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-xl text-black dark:text-neutral-400">
+                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-lg text-black dark:text-neutral-400">
                   {description}
                 </h2>
               </div>
