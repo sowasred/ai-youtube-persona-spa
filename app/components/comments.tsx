@@ -11,7 +11,7 @@ const reviews = [
   {
     name: "Alex",
     username: "@alex",
-    body: "This tool has revolutionized the way our team works.",
+    body: "This tool has revolutionized the way I make content.",
     img: "https://avatar.vercel.sh/jill",
   },
   {
@@ -21,21 +21,21 @@ const reviews = [
     img: "https://avatar.vercel.sh/john",
   },
   {
-    name: "王伟",
+    name: "Jason",
     username: "@wangwei",
-    body: "这款 SaaS 服务简直是办公利器！我的工作效率提高了很多。",
+    body: "I feel like I have a connection my audience.",
     img: "https://avatar.vercel.sh/jane",
   },
   {
-    name: "김민수",
+    name: "Kristina",
     username: "@kios",
-    body: "저는 이 SaaS 서비스에 매우 만족하고 있습니다.",
+    body: "My followers said it feels like they’re talking directly to me.",
     img: "https://avatar.vercel.sh/jenny",
   },
   {
-    name: "山田太郎",
+    name: "Sky",
     username: "@samtimkun",
-    body: "このSaaSサービスには本当に感謝しています。",
+    body: "The dashboard shows me exactly what topics my audience craves next",
     img: "https://avatar.vercel.sh/james",
   },
 ];
