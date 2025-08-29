@@ -73,9 +73,9 @@ export default async function IndexPage({
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 mb-48">
           <div className="flex flex-col items-start h-full">
             <BackgroundLines className="h-full">
-              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
+              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 mx-auto pl-4">
                 <div className="mt-20">
-                  <div className="mb-6 max-w-4xl text-left text-4xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+                  <div className="mb-6 max-w-4xl text-left text-5xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
                     {dict.marketing.title ||
                       "Ship your apps to the world easier with "}
                     <ColourfulText text=" 24/7" />
@@ -83,7 +83,7 @@ export default async function IndexPage({
                 </div>
 
                 <div className="mt-1">
-                  <span className="text-neutral-500 dark:text-neutral-400 sm:text-lg md:text-xl lg:text-2xl">
+                  <span className="text-neutral-500 dark:text-neutral-400 text-xl lg:text-2xl">
                     {dict.marketing.sub_title ||
                       "Your complete All-in-One solution for building SaaS services."}
                   </span>
@@ -111,25 +111,16 @@ export default async function IndexPage({
                   </Link>
                 </div>
 
-                <div className="flex sm:flex-row flex-col items-center justify-start mt-4 w-full">
+                <div className="flex sm:flex-row flex-col items-center justify-start mt-4 w-fit">
                   <div className="flex">
                     <AnimatedTooltip items={people} />
                   </div>
-                  <div className="flex flex-col items-center justify-start mt-4 ml-8 xl:mt-0">
-                    <div className="w-[300px]">
+                  <div className="flex flex-col items-center justify-start mt-4 sm:ml-8 xl:mt-0">
+                    <div className="w-[400px]">
                       {/* <span className="font-semibold">9 </span> */}
                       <span className="text-neutral-500 dark:text-neutral-400 text-xl">
                         {dict.marketing.contributors.contributors_desc}
                       </span>
-                    </div>
-                    <div className="w-[340px]">
-                      {/* <span className="text-neutral-500 dark:text-neutral-400">
-                        {dict.marketing.contributors.developers_first}
-                      </span>
-                      <ColourfulText text="content creators" /> */}
-                      {/* <span className="text-neutral-500 dark:text-neutral-400">
-                        {dict.marketing.contributors.developers_second}
-                      </span> */}
                     </div>
                   </div>
                 </div>
