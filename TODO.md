@@ -5,6 +5,7 @@
   [ ] Change the names to influencers and clicking them will send them to their youtube
   [ ] Launch your twin to go to sign up flow
   [ ] See demo to go calendly session booking
-[ ] Add iphone mockup on the right side - Search: "TODO: Put Iphone mockup video here"
+[ ] Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
+[ ] Add animation to have sliding comments section
 [ ] Choose A/B Testing solution
 [ ] Integrate A/B Testing

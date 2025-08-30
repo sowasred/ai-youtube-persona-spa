@@ -49,7 +49,11 @@
       "ship_on_cloudflare_title": "Monetize Your Wisdom",
       "ship_on_cloudflare_desc": "Offer premium access to your knowledge you’ve already shared.",
       "showcase_title": "Get Actionable Content Advice",
-      "showcase_desc": "Get AI-powered suggestions for new content, based on what your audience actually wants."
+      "showcase_desc": "Get AI-powered suggestions for new content, based on what your audience actually wants.",
+      "trained_on_title": "Trained on your data",
+      "trained_on_desc": "We use your data to power your engine",
+      "voice_call_title": "Voice call using your own voice",
+      "voice_call_desc": "Fans feel closer to you than ever before."
     },
     "features_grid": {
       "monorepo_title": "Works on Whatsapp & Telegram",

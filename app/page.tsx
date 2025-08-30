@@ -4,7 +4,7 @@ import { getDictionary } from "./lib/get-dictionary";
 
 import { Comments } from "./components/comments";
 import { FeaturesGrid } from "./components/features-grid";
-import { RightsideMarketing } from "./components/rightside-marketing";
+import { MarketingSection } from "./components/marketing-section";
 
 import { AnimatedTooltip } from "./components/animated-tooltip";
 import { BackgroundLines } from "./components/background-lines";
@@ -199,7 +199,7 @@ export default async function IndexPage({
       </section>
 
       <section className="container mt-8 flex flex-col pt-44 mx-auto">
-        <RightsideMarketing dict={dict.marketing.right_side} />
+        <MarketingSection dict={dict.marketing.right_side} />
       </section>
 
       {/* <section className="container pt-8">
