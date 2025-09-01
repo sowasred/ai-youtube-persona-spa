@@ -12,6 +12,8 @@ import { Button } from "./components/button";
 import { ColourfulText } from "./components/colorful-text";
 import * as Icons from "./components/icons";
 
+import HowItWorks from "../public/how_it_works.svg"
+
 // import { WavyBackground } from "./components/wavy-background";
 
 import type { Locale } from "./config/i18n-config";
@@ -198,7 +200,31 @@ export default async function IndexPage({
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
-      <section className="container mt-8 flex flex-col pt-44 mx-auto">
+      <section className="container mt-20 mx-auto ">
+        <div className="mb-6 max-w-4xl text-center mx-auto text-5xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+          How it works
+        </div>
+        <div className="">
+          {/* Light mode image: visible by default, hidden in dark mode */}
+          <Image
+            src="/how_it_works_light.svg"
+            width={1000}
+            height={400}
+            alt="How it works"
+            className="mx-auto block dark:hidden"
+          />
+          {/* Dark mode image: hidden by default, visible in dark mode */}
+          <Image
+            src="/how_it_works_dark.svg"
+            width={1000}
+            height={400}
+            alt="How it works (dark)"
+            className="mx-auto hidden dark:block"
+          />
+        </div>
+      </section>
+
+      <section className="container flex flex-col pt-44 mx-auto">
         <MarketingSection dict={dict.marketing.right_side} />
       </section>
 
