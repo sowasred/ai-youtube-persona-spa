@@ -12,12 +12,7 @@ import { Button } from "./components/button";
 import { ColourfulText } from "./components/colorful-text";
 import * as Icons from "./components/icons";
 
-import HowItWorks from "../public/how_it_works.svg"
-
-// import { WavyBackground } from "./components/wavy-background";
-
 import type { Locale } from "./config/i18n-config";
-import { VideoScroll } from "./components/video-scroll";
 
 const people = [
   {
