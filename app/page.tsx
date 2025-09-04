@@ -67,76 +67,73 @@ export default async function IndexPage({
   return (
     <>
       <section className="container mx-auto">
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 mb-48">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 h-screen mb-8">
           <div className="flex flex-col items-start h-full">
-              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
-                <div className="mt-20">
-                  <div className="mb-6 max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
-                    {dict.marketing.title ||
-                      "Ship your apps to the world easier with "}
-                    <ColourfulText text="24/7" />
-                  </div>
+            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
+              {/* Title */}
+              <div className="mt-20">
+                <div className="mb-6 max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+                  {dict.marketing.title ||
+                    "Ship your apps to the world easier with "}
+                  <ColourfulText text="24/7" />
                 </div>
+              </div>
+              {/* Subtitle */}
+              <div>
+                <span className="text-neutral-500 text-xl lg:text-2xl">
+                  {dict.marketing.sub_title ||
+                    "Your complete All-in-One solution for building SaaS services."}
+                </span>
+              </div>
+              {/* CTA Buttons */}
+              <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
+                <Link
+                  // TODO: Add waitlist link
+                  href="https://calendly.com/replyfanapp/30min"
+                  target="_blank"
+                >
+                  <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-full text-lg px-6 h-12 font-medium">
+                    {dict.marketing.primary_cta}
+                    <Icons.ArrowRight className="h-5 w-5" />
+                  </Button>
+                </Link>
 
-                <div className="mt-1">
-                  <span className="text-neutral-500 text-xl lg:text-2xl">
-                    {dict.marketing.sub_title ||
-                      "Your complete All-in-One solution for building SaaS services."}
-                  </span>
+                <Link
+                  href="https://calendly.com/replyfanapp/30min"
+                  target="_blank"
+                >
+                  <Button className="text-blue-500 border border-blue-600 hover:border-blue-500 bg-white rounded-full text-lg px-6 h-12 font-medium">
+                    {dict.marketing.secondary_cta}
+                  </Button>
+                </Link>
+              </div>
+              {/* Influencers section */}
+              <div className="flex flex-col items-center justify-start mt-4 w-fit">
+                <div className="flex">
+                  <AnimatedTooltip items={people} />
                 </div>
-
-                <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
-                  <Link
-                    // TODO: Add waitlist link
-                    href="https://calendly.com/replyfanapp/30min"
-                    target="_blank"
-                  >
-                    <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-full text-lg px-6 h-12 font-medium">
-                      {dict.marketing.primary_cta}
-                      <Icons.ArrowRight className="h-5 w-5" />
-                    </Button>
-                  </Link>
-
-                  <Link
-                    href="https://calendly.com/replyfanapp/30min"
-                    target="_blank"
-                  >
-                    <Button
-                    className="text-blue-500 border border-blue-600 hover:border-blue-500 bg-white rounded-full text-lg px-6 h-12 font-medium"
-                    >
-                      {dict.marketing.secondary_cta}
-                    </Button>
-                  </Link>
-                </div>
-
-                <div className="flex flex-col items-center justify-start mt-4 w-fit">
-                  <div className="flex">
-                    <AnimatedTooltip items={people} />
-                  </div>
-                  <div className="flex flex-col items-center justify-start mt-4">
-                    <div className="w-[400px]">
-                      <span className="text-neutral-500 text-xl">
-                        {dict.marketing.contributors.contributors_desc}
-                      </span>
-                    </div>
+                <div className="flex flex-col items-center justify-start mt-4">
+                  <div className="w-[400px]">
+                    <span className="text-neutral-500 text-xl">
+                      {dict.marketing.contributors.contributors_desc}
+                    </span>
                   </div>
                 </div>
               </div>
-
+            </div>
           </div>
-          {/* <BackgroundLines className="h-full"> */}
+          {/* Image */}
           <div className="hidden h-full w-full lg:block bg-background">
-            <div className="flex flex-col mb-8 ml-40">
+            <div className="flex flex-col mt-[-160px] mx-auto items-end">
               <Image
                 src="/chat-mockup.svg"
-                width={400}
-                height={879}
+                width={460}
+                height={900}
                 alt=""
                 className="hidden xl:block lg:w-max-[400px]"
               />
             </div>
           </div>
-          {/* </BackgroundLines> */}
         </div>
       </section>
 
