@@ -71,7 +71,7 @@ export default async function IndexPage({
           <div className="flex flex-col items-start h-full">
               <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
                 <div className="mt-20">
-                  <div className="mb-6 max-w-4xl text-left text-5xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+                  <div className="mb-6 max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
                     {dict.marketing.title ||
                       "Ship your apps to the world easier with "}
                     <ColourfulText text="24/7" />
@@ -79,7 +79,7 @@ export default async function IndexPage({
                 </div>
 
                 <div className="mt-1">
-                  <span className="text-neutral-500 dark:text-neutral-400 text-xl lg:text-2xl">
+                  <span className="text-neutral-500 text-xl lg:text-2xl">
                     {dict.marketing.sub_title ||
                       "Your complete All-in-One solution for building SaaS services."}
                   </span>
@@ -102,7 +102,7 @@ export default async function IndexPage({
                     target="_blank"
                   >
                     <Button
-                    className="text-blue-400 border border-blue-600 hover:border-blue-500 rounded-full text-lg px-6 h-12 font-medium"
+                    className="text-blue-500 border border-blue-600 hover:border-blue-500 bg-white rounded-full text-lg px-6 h-12 font-medium"
                     >
                       {dict.marketing.secondary_cta}
                     </Button>
@@ -115,7 +115,7 @@ export default async function IndexPage({
                   </div>
                   <div className="flex flex-col items-center justify-start mt-4">
                     <div className="w-[400px]">
-                      <span className="text-neutral-500 dark:text-neutral-400 text-xl">
+                      <span className="text-neutral-500 text-xl">
                         {dict.marketing.contributors.contributors_desc}
                       </span>
                     </div>
@@ -145,25 +145,16 @@ export default async function IndexPage({
       </section>
 
       <section id="how-it-works" className="container mt-20 mx-auto ">
-        <div className="mb-6 max-w-4xl text-center mx-auto text-5xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+        <div className="mb-6 max-w-4xl text-center mx-auto text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
         <div className="">
-          {/* Light mode image: visible by default, hidden in dark mode */}
           <Image
             src="/how_it_works_light.svg"
             width={1000}
             height={400}
             alt="How it works"
-            className="mx-auto block dark:hidden"
-          />
-          {/* Dark mode image: hidden by default, visible in dark mode */}
-          <Image
-            src="/how_it_works_dark.svg"
-            width={1000}
-            height={400}
-            alt="How it works (dark)"
-            className="mx-auto hidden dark:block"
+            className="mx-auto block"
           />
         </div>
       </section>
@@ -179,11 +170,11 @@ export default async function IndexPage({
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
         <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
           <div>
-            <h1 className="mb-6 text-center text-3xl font-bold dark:text-zinc-100 md:text-5xl">
+            <h1 className="mb-6 text-center text-3xl font-bold md:text-5xl">
               {dict.marketing.people_comment.title}
             </h1>
           </div>
-          <div className="mb-6 text-lg text-neutral-500 dark:text-neutral-400">
+          <div className="mb-6 text-lg text-neutral-500">
             {dict.marketing.people_comment.desc}
           </div>
 

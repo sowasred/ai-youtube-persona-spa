@@ -103,11 +103,9 @@ const Navbar1 = ({
             </a>
             <div className="flex items-center">
               {menu.map((item, i) =>{
-              console.log("hey");
               return (
                 <Link
                   href={item.url}
-                  onClick={() => console.log("annen")}
                   scroll={true}
                   key={i}
                   className="bg-background hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-lg font-semibold transition-colors"
@@ -115,10 +113,6 @@ const Navbar1 = ({
                   {item.title}
                 </Link>
               )})}
-              {/* <NavigationMenu>
-                <NavigationMenuList>
-                </NavigationMenuList>
-              </NavigationMenu> */}
             </div>
           </div>
           {/* Login Sign in button */}
