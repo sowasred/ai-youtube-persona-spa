@@ -1,12 +1,13 @@
 [ ] Design the first version of the website with sections
   [ ] Change the main phone mockup conversation
-  [X] Add go calendly session booking link to See demo and start replying again buttons
-  [X] Fix section navigation
-  [X] Only use light theme
   [ ] Change the names to influencers and clicking them will send them to their youtube
   [ ] Launch your twin to go to sign up flow
   [ ] Add Mobile menu
   [ ] Move Link in navigation into client comp & turn nav comp to server
+  [ ] Put background pattern on hero section
+  [X] Add go calendly session booking link to See demo and start replying again buttons
+  [X] Fix section navigation
+  [X] Only use light theme
   [X] Add navbar with logo
   [X] Come up with logos to be used for benefits section
   [X] Make new mockups for the upcoming features
