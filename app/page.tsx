@@ -163,10 +163,6 @@ export default async function IndexPage({
         <MarketingSection dict={dict.marketing.right_side} />
       </section>
 
-      {/* <section className="container pt-8">
-        <VideoScroll dict={dict.marketing.video} />
-      </section> */}
-
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
         <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
           <div>
