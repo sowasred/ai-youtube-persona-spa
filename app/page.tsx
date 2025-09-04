@@ -72,7 +72,7 @@ export default async function IndexPage({
             <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
               {/* Title */}
               <div className="mt-20">
-                <div className="mb-6 max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+                <div className="mb-4 max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
                   {dict.marketing.title ||
                     "Ship your apps to the world easier with "}
                   <ColourfulText text="24/7" />
@@ -86,7 +86,7 @@ export default async function IndexPage({
                 </span>
               </div>
               {/* CTA Buttons */}
-              <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
+              <div className="mb-4 mt-8 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
                 <Link
                   // TODO: Add waitlist link
                   href="https://calendly.com/replyfanapp/30min"
