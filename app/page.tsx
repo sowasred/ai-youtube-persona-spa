@@ -17,41 +17,41 @@ import type { Locale } from "./config/i18n-config";
 const people = [
   {
     id: 1,
-    name: "tianzx",
-    designation: "CEO at Nextify",
-    image: "https://avatars.githubusercontent.com/u/10096899",
+    name: "Andrew Huberman",
+    designation: "Neuroscientist",
+    image: "/andrew_huberman_pic.jpg",
     link: "https://x.com/nextify2024",
   },
   {
     id: 2,
-    name: "jackc3",
-    designation: "Co-founder at Nextify",
-    image: "https://avatars.githubusercontent.com/u/10334353",
+    name: "Casey Zander",
+    designation: "Dating Coach Youtuber",
+    image: "/casey_zander_pic.jpg",
     link: "https://x.com/BingxunYao",
   },
   {
     id: 3,
-    name: "imesong",
-    designation: "Contributor",
-    image: "https://avatars.githubusercontent.com/u/3849293",
+    name: "Daniel Brada",
+    designation: "Self help influencer",
+    image: "/daniel_brada_pic.webp",
   },
   {
     id: 4,
-    name: "ziveen",
-    designation: "Contributor",
-    image: "https://avatars.githubusercontent.com/u/22560152",
+    name: "Gary Vaynerchuk",
+    designation: "Entreprenuer",
+    image: "/gary_vaynerchuk_pic.jpg",
   },
   {
     id: 5,
-    name: "Zenuncl",
-    designation: "Independent Software Developer",
-    image: "https://avatars.githubusercontent.com/u/3316062",
+    name: "Jordan B. Peterson",
+    designation: "Psychoanalyst",
+    image: "/jordan_peterson_pic.jpg",
   },
   {
     id: 6,
-    name: "Innei",
-    designation: "Indie Developer",
-    image: "https://avatars.githubusercontent.com/u/41265413",
+    name: "Healthy Gamer GG",
+    designation: "Psychologist",
+    image: "/healthygamergg_pic.jpg",
   },
 ];
 
@@ -69,7 +69,7 @@ export default async function IndexPage({
       <section className="container mx-auto">
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 mb-48">
           <div className="flex flex-col items-start h-full">
-              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 mx-auto pl-4">
+              <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
                 <div className="mt-20">
                   <div className="mb-6 max-w-4xl text-left text-5xl font-semibold dark:text-zinc-100 md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
                     {dict.marketing.title ||
@@ -109,13 +109,12 @@ export default async function IndexPage({
                   </Link>
                 </div>
 
-                <div className="flex sm:flex-row flex-col items-center justify-start mt-4 w-fit">
+                <div className="flex flex-col items-center justify-start mt-4 w-fit">
                   <div className="flex">
                     <AnimatedTooltip items={people} />
                   </div>
-                  <div className="flex flex-col items-center justify-start mt-4 sm:ml-8 xl:mt-0">
+                  <div className="flex flex-col items-center justify-start mt-4">
                     <div className="w-[400px]">
-                      {/* <span className="font-semibold">9 </span> */}
                       <span className="text-neutral-500 dark:text-neutral-400 text-xl">
                         {dict.marketing.contributors.contributors_desc}
                       </span>
@@ -125,28 +124,19 @@ export default async function IndexPage({
               </div>
 
           </div>
-          <BackgroundLines className="h-full">
-          <div className="hidden h-full w-full xl:block bg-background">
-            <div className="flex flex-col pt-18 ml-56">
-              {/* TODO: Put Iphone mockup video here */}
-
+          {/* <BackgroundLines className="h-full"> */}
+          <div className="hidden h-full w-full lg:block bg-background">
+            <div className="flex flex-col mb-8 ml-40">
               <Image
                 src="/chat-mockup.svg"
-                width={360}
-                height={740}
-                className="dark:hidden"
+                width={400}
+                height={879}
                 alt=""
-              />
-              <Image
-                src="/chat-mockup.svg"
-                width={360}
-                height={740}
-                className="hidden dark:block"
-                alt=""
+                className="hidden xl:block lg:w-max-[400px]"
               />
             </div>
           </div>
-          </BackgroundLines>
+          {/* </BackgroundLines> */}
         </div>
       </section>
 
@@ -178,7 +168,7 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section className="container flex flex-col pt-44 mx-auto">
+      <section id="features" className="container flex flex-col pt-44 mx-auto">
         <MarketingSection dict={dict.marketing.right_side} />
       </section>
 
