@@ -39,9 +39,9 @@ export const Trash = Lucide.Trash;
 export const Twitter = Lucide.Twitter;
 export const User = Lucide.User;
 export const Warning = Lucide.AlertTriangle;
-export const Lock = Lucide.Lock
-export const Voice = Lucide.AudioWaveform
-export const Message = Lucide.MessageCircle
+export const Lock = Lucide.Lock;
+export const Voice = Lucide.AudioWaveform;
+export const Message = Lucide.MessageCircle;
 
 export const System: Icon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
