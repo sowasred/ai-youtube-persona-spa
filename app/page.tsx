@@ -82,8 +82,7 @@ export default async function IndexPage({
               {/* Subtitle */}
               <div>
                 <span className="text-neutral-500 text-xl lg:text-2xl">
-                  {dict.marketing.sub_title ||
-                    "Your complete All-in-One solution for building SaaS services."}
+                <ColourfulText className="font-medium" text="Personal chatbot"/> powered by your voice, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
                 </span>
               </div>
               {/* CTA Buttons */}
@@ -103,7 +102,7 @@ export default async function IndexPage({
                   href="https://calendly.com/replyfanapp/30min"
                   target="_blank"
                 >
-                  <Button className="text-blue-500 border border-blue-600 hover:border-blue-500 bg-white rounded-full text-lg pl-8 pr-10 h-12 font-medium">
+                  <Button className="text-blue-500 border border-blue-600 bg-white rounded-full text-lg pl-8 pr-10 h-12 font-medium">
                     {dict.marketing.secondary_cta}
                   </Button>
                 </Link>

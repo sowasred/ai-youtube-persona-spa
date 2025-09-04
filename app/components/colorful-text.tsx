@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-export function ColourfulText({ text }: { text: string }) {
+export function ColourfulText({ text,  className}: { text: string, className: string }) {
   const colors = [
     "rgb(131, 179, 32)",
     "rgb(47, 195, 106)",
@@ -72,7 +72,7 @@ export function ColourfulText({ text }: { text: string }) {
         duration: 0.3,
         delay: 0.05,
       }}
-      className="inline-block whitespace-nowrap font-sans tracking-tight"
+      className={`inline-block whitespace-nowrap font-sans tracking-tight ${className}`}
     >
       {text}
     </motion.span>
