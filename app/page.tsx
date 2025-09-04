@@ -93,7 +93,7 @@ export default async function IndexPage({
                 <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0 z-10">
                   <Link
                     // TODO: Add waitlist link
-                    href="https://"
+                    href="https://calendly.com/replyfanapp/30min"
                     target="_blank"
                   >
                     <Button className="bg-blue-600 hover:bg-blue-500 text-white rounded-full text-lg px-6 h-12 font-medium">
@@ -103,10 +103,12 @@ export default async function IndexPage({
                   </Link>
 
                   <Link
-                    href="https://github.com/saasfly/saasfly"
+                    href="https://calendly.com/replyfanapp/30min"
                     target="_blank"
                   >
-                    <Button className="text-blue-400 border border-blue-600 hover:border-blue-500 rounded-full text-lg px-6 h-12 font-medium">
+                    <Button
+                    className="text-blue-400 border border-blue-600 hover:border-blue-500 rounded-full text-lg px-6 h-12 font-medium"
+                    >
                       {dict.marketing.secondary_cta}
                     </Button>
                   </Link>
