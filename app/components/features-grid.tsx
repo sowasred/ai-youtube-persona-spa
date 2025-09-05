@@ -34,7 +34,7 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
         </div>
       </Card>
 
-      <Card className="p-3 w-full rounded-3xl dark:border-neutral-800 dark:bg-neutral-900/40">
+      <Card className="p-3 w-full rounded-3xl">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
