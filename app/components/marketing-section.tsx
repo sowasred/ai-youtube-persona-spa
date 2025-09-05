@@ -89,7 +89,7 @@ const GridItem = ({
 }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
-      <div className="relative h-full rounded-2.5xl border dark:border-neutral-800 p-2 md:rounded-3xl md:p-3">
+      <div className="relative h-full rounded-2.5xl border p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -98,9 +98,9 @@ const GridItem = ({
           inactiveZone={0.01}
         />
         <Link href={`${link ? link : ""}`} target="_blank">
-          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-4 xl:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6 dark:bg-neutral-900/40">
+          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-4 xl:p-6 md:p-6">
             <div className="relative flex flex-1 flex-col justify-between">
-              <div className="w-full h-full rounded-lg border border-gray-600 dark:border-neutral-800 overflow-hidden">
+              <div className="w-full h-full rounded-lg border border-gray-600 overflow-hidden">
                 {/* {imagePath} */}
                 <Image
                   src={imagePath}
@@ -112,10 +112,10 @@ const GridItem = ({
                 ></Image>
               </div>
               <div className="space-y-1">
-                <h3 className="pt-2 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl text-balance text-black dark:text-white">
+                <h3 className="pt-2 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl text-balance text-black">
                   {title}
                 </h3>
-                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-lg text-black dark:text-neutral-400">
+                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-lg text-black">
                   {description}
                 </h2>
               </div>

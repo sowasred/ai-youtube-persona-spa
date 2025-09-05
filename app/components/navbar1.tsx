@@ -88,7 +88,7 @@ const Navbar1 = ({
   },
 }: Navbar1Props) => {
   return (
-    <section className="pt-10">
+    <section className="pt-10 z-10">
       <div className="container w-full mx-auto">
         {/* Desktop Menu */}
         <nav className="justify-between lg:flex">

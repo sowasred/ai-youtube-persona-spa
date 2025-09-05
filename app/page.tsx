@@ -67,7 +67,7 @@ export default async function IndexPage({
 
   return (
     <>
-    <Image alt="bg2" src={"/magicpattern-god-rays.png"} className="w-screen h-screen" fill={true} objectFit="cover"></Image>
+    <Image alt="bg2" src={"/magicpattern-god-rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
       <section className="container mx-auto">
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 h-screen mb-22">
@@ -144,7 +144,7 @@ export default async function IndexPage({
           </div>
           {/* Image */}
           <div className="hidden h-full w-full lg:block z-10">
-            <div className="flex flex-col mt-[-160px] mx-auto items-end">
+            <div className="flex flex-col mt-[-160px] mx-auto items-center ml-12">
               <Image
                 src="/chat-mockup.svg"
                 width={460}
@@ -161,22 +161,25 @@ export default async function IndexPage({
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
-      <section id="how-it-works" className="container mt-20 mx-auto ">
-        <div className="mb-6 max-w-4xl text-center mx-auto text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+      <section id="how-it-works" className="container my-40 mx-auto ">
+        <div className="mb-12 max-w-4xl text-center mx-auto text-3xl font-semibold md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
-        <div className="">
+        <div className="mt-20">
           <Image
-            src="/how_it_works_light.svg"
-            width={1000}
-            height={400}
+            src="/how_it_works.svg"
+            width={1400}
+            height={800}
             alt="How it works"
             className="mx-auto block"
           />
         </div>
       </section>
 
-      <section id="features" className="container flex flex-col pt-44 mx-auto">
+      <section id="features" className="container flex flex-col my-40 mx-auto">
+      <div className="mb-18 max-w-4xl text-center mx-auto text-3xl font-semibold md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
+          Features
+        </div>
         <MarketingSection dict={dict.marketing.right_side} />
       </section>
 
