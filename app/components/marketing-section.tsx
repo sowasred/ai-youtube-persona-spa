@@ -16,24 +16,24 @@ export function MarketingSection({
       <ul className="grid grid-cols-1 grid-rows-none gap-4 lg:grid-cols-8 lg:gap-4 xl:max-h-[60rem] xl:grid-cols-12 mb-8">
         <GridItem
           area="lg:[grid-area:1/1/2/5] xl:[grid-area:1/1/2/7]"
-          imagePath={"/trained_on_your_data.jpg"}
-          width={950}
-          height={955}
-          title={dict?.trained_on_title ?? ""}
-          description={dict?.trained_on_desc ?? ""}
-          link="https://discord.gg/b9uTZjdkrb"
-        />
-        <GridItem
-          area=" lg:[grid-area:1/5/2/12] xl:[grid-area:1/7/2/13]"
-          imagePath={"/voice_call_feature.jpg"}
+          imagePath={"/turns_fans_to_superfans.jpg"}
           width={950}
           height={361}
-          title={dict?.voice_call_title ?? ""}
-          description={dict?.voice_call_desc ?? ""}
-          link="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsaasfly%2Fsaasfly&env=NEXT_PUBLIC_APP_URL,NEXTAUTH_URL,NEXTAUTH_SECRET,STRIPE_API_KEY,STRIPE_WEBHOOK_SECRET,POSTGRES_URL,GITHUB_CLIENT_ID,GITHUB_CLIENT_SECRET,RESEND_API_KEY,RESEND_FROM&install-command=bun%20install&build-command=bun%20run%20build&root-directory=apps%2Fnextjs"
+          title={dict?.deploy_on_vercel_title ?? ""}
+          description={dict?.deploy_on_vercel_desc ?? ""}
+          link=""
+        />
+        <GridItem
+          area="lg:[grid-area:1/5/2/12] xl:[grid-area:1/7/2/13]"
+          imagePath={"/monetize_your_wisdom_1.jpg"}
+          width={950}
+          height={361}
+          title={dict?.ship_on_cloudflare_title ?? ""}
+          description={dict?.ship_on_cloudflare_desc ?? ""}
+          link=""
         />
       </ul>
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 lg:grid-cols-8 lg:gap-4 xl:max-h-[60rem] xl:grid-cols-12 xl:grid-rows-2">
+      {/* <ul className="grid grid-cols-1 grid-rows-none gap-4 lg:grid-cols-8 lg:gap-4 xl:max-h-[60rem] xl:grid-cols-12 xl:grid-rows-2">
         <GridItem
           area=" lg:[grid-area:1/1/2/5] xl:[grid-area:1/1/2/7]"
           imagePath={"/turns_fans_to_superfans.jpg"}
@@ -63,7 +63,7 @@ export function MarketingSection({
           description={dict?.showcase_desc ?? ""}
           link="https://discord.gg/b9uTZjdkrb"
         />
-      </ul>
+      </ul> */}
     </>
   );
 }
@@ -89,7 +89,7 @@ const GridItem = ({
 }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
-      <div className="relative h-full rounded-2.5xl border p-2 md:rounded-3xl md:p-3">
+      <div className="relative h-full rounded-2.5xl border dark:border-neutral-800 p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           spread={40}
           glow={true}
@@ -98,9 +98,9 @@ const GridItem = ({
           inactiveZone={0.01}
         />
         <Link href={`${link ? link : ""}`} target="_blank">
-          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-4 xl:p-6 md:p-6">
+          <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-0.75 p-4 xl:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D] md:p-6 dark:bg-neutral-900/40">
             <div className="relative flex flex-1 flex-col justify-between">
-              <div className="w-full h-full rounded-lg border border-gray-600 overflow-hidden">
+              <div className="w-full h-full rounded-lg border border-gray-600 dark:border-neutral-800 overflow-hidden">
                 {/* {imagePath} */}
                 <Image
                   src={imagePath}
@@ -112,10 +112,10 @@ const GridItem = ({
                 ></Image>
               </div>
               <div className="space-y-1">
-                <h3 className="pt-2 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl text-balance text-black">
+                <h3 className="pt-2 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl text-balance text-black dark:text-white">
                   {title}
                 </h3>
-                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-lg text-black">
+                <h2 className="[&_b]:md:font-semibold [&_strong]:md:font-semibold font-sans text-sm/[1.125rem] md:text-lg text-black dark:text-neutral-400">
                   {description}
                 </h2>
               </div>

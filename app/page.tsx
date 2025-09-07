@@ -7,11 +7,11 @@ import { FeaturesGrid } from "./components/features-grid";
 import { MarketingSection } from "./components/marketing-section";
 
 import { AnimatedTooltip } from "./components/animated-tooltip";
-import { BackgroundLines } from "./components/background-lines";
 import { Button } from "./components/button";
 import { ColourfulText } from "./components/colorful-text";
 import * as Icons from "./components/icons";
 import { SocialIcon } from "react-social-icons";
+import FeaturesSection from "./components/features-section"
 
 import type { Locale } from "./config/i18n-config";
 
@@ -70,11 +70,11 @@ export default async function IndexPage({
     <Image alt="bg2" src={"/magicpattern-god-rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
       <section className="container mx-auto">
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 h-screen mb-22">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 md:h-screen mb-22">
           <div className="flex flex-col items-start h-full">
-            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 pl-2">
+            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 ml-8 lg:ml-0">
               {/* Title */}
-              <div className="mt-20 mb-4">
+              <div className="mt-20 md:mt-0 lg:mt-20 mb-4">
                 <div className="max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
                   {dict.marketing.title ||
                     "Ship your apps to the world easier with "}
@@ -82,7 +82,7 @@ export default async function IndexPage({
                 </div>
               </div>
               {/* Subtitle */}
-              <div>
+              <div className="max-w-120 lg:max-w-160">
                 <span className="text-neutral-500 text-xl lg:text-2xl">
                 <ColourfulText className="font-medium" text="Personal chatbot"/> powered by your voice, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
                 </span>
@@ -127,7 +127,7 @@ export default async function IndexPage({
                 <span className="font-semibold mx-0.5 align-middle inline-block">Telegram</span>
               </div>
               {/* Influencers section */}
-              <div className="flex flex-col items-center justify-start mt-32 w-fit">
+              <div className="flex flex-col items-center justify-start mt-24 md:mt-32 w-fit">
               <div className="flex flex-col items-center justify-start mb-4">
                   <div className="w-[440px]">
                     <span className="text-neutral-500 text-2xl">
@@ -143,29 +143,29 @@ export default async function IndexPage({
             </div>
           </div>
           {/* Image */}
-          <div className="hidden h-full w-full lg:block z-10">
-            <div className="flex flex-col mt-[-160px] mx-auto items-center ml-12">
+          <div className="hidden h-full w-full md:block z-10">
+            <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] xl:ml-12">
               <Image
                 src="/chat-mockup.svg"
                 width={460}
                 height={900}
-                alt=""
-                className="hidden xl:block lg:w-max-[400px]"
+                alt="Chat mockup"
+                className="hidden lg:block lg:w-[380px] xl:w-[480px] h-auto"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container mt-8 md:mt-[-180px] xl:mt-[-180px] mx-auto">
+      <section className="container xl:mt-[-180px] mx-auto">
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
       <section id="how-it-works" className="container my-40 mx-auto ">
-        <div className="mb-12 max-w-4xl text-center mx-auto text-3xl font-semibold md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
+        <div className="mb-18 max-w-4xl text-center mx-auto text-5xl font-light text-gray-800  md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
-        <div className="mt-20">
+        <div className="my-10">
           <Image
             src="/how_it_works.svg"
             width={1400}
@@ -176,11 +176,11 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section id="features" className="container flex flex-col my-40 mx-auto">
-      <div className="mb-18 max-w-4xl text-center mx-auto text-3xl font-semibold md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
+      <section id="features" className="container flex flex-col my-40 mx-auto max-w-120 md:max-w-240 lg:max-w-680">
+      <div className="mb-18 max-w-105 md:max-w-4xl text-start md:text-center w-full mx-auto text-5xl font-light text-gray-800 md:leading-[4rem] xl:leading-[4rem]">
           Features
         </div>
-        <MarketingSection dict={dict.marketing.right_side} />
+        <FeaturesSection/>
       </section>
 
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
@@ -199,6 +199,12 @@ export default async function IndexPage({
           </div>
         </div>
       </section>
+
+
+      {/* <section id="marketing" className="container flex flex-col my-40 mx-auto">
+        <MarketingSection dict={dict.marketing.right_side} />
+      </section> */}
+
     </>
   );
 }
