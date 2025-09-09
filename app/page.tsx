@@ -21,38 +21,42 @@ const people = [
     name: "Andrew Huberman",
     designation: "Neuroscientist",
     image: "/andrew_huberman_pic.jpg",
-    link: "https://x.com/nextify2024",
+    link: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 2,
     name: "Casey Zander",
     designation: "Dating Coach Youtuber",
     image: "/casey_zander_pic.jpg",
-    link: "https://x.com/BingxunYao",
+    link: "https://www.youtube.com/@CaseyZander",
   },
   {
     id: 3,
     name: "Daniel Brada",
     designation: "Self help influencer",
     image: "/daniel_brada_pic.webp",
+    link: "https://www.youtube.com/@danielbarada",
   },
   {
     id: 4,
     name: "Gary Vaynerchuk",
     designation: "Entreprenuer",
     image: "/gary_vaynerchuk_pic.jpg",
+    link: "https://www.youtube.com/@garyvee",
   },
   {
     id: 5,
     name: "Jordan B. Peterson",
     designation: "Psychoanalyst",
     image: "/jordan_peterson_pic.jpg",
+    link: "https://www.youtube.com/@JordanBPeterson",
   },
   {
     id: 6,
     name: "Healthy Gamer GG",
     designation: "Psychologist",
     image: "/healthygamergg_pic.jpg",
+    link: "https://www.youtube.com/@HealthyGamerGG",
   },
 ];
 
@@ -84,7 +88,7 @@ export default async function IndexPage({
               {/* Subtitle */}
               <div className="max-w-120 lg:max-w-160">
                 <span className="text-neutral-500 text-xl lg:text-2xl">
-                <ColourfulText className="font-medium" text="Personal chatbot"/> powered by your voice, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
+                <ColourfulText className="font-medium" text="Your voice"/> enhanced with technology, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
                 </span>
               </div>
               {/* CTA Buttons */}
@@ -144,7 +148,7 @@ export default async function IndexPage({
           </div>
           {/* Image */}
           <div className="hidden h-full w-full md:block z-10">
-            <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] xl:ml-12">
+            <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] lg:mr-[-42px] xl:mr-0">
               <Image
                 src="/chat-mockup.svg"
                 width={460}
