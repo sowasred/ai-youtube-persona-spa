@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
-import Link from "next/link";
 import {
   AnimatePresence,
   motion,
@@ -10,30 +10,36 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import Modal from "./modal";
+
+type Item = {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  telegramLink: string;
+  whatsappLink: string;
+}
 
 export const AnimatedTooltip = ({
   items,
 }: {
-  items: {
-    id: number;
-    name: string;
-    designation: string;
-    image: string;
-    link?: string;
-  }[];
+  items: Item[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null)
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
   // rotate the tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
-    springConfig,
+    springConfig
   );
   // translate the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig,
+    springConfig
   );
   const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -82,18 +88,12 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          {item.link ? (
-            <Link href={item.link} target="_blank">
-              <Image
-                onMouseMove={handleMouseMove}
-                height={100}
-                width={100}
-                src={item.image}
-                alt={item.name}
-                className="relative !m-0 h-20 w-20 rounded-full border-2 border-white object-cover object-top !p-0 transition  duration-500 group-hover:z-30 group-hover:scale-105"
-              />
-            </Link>
-          ) : (
+          <a
+            onClick={() => {
+              setIsModalOpen(!isModalOpen)
+              setSelectedItem(item)
+            }}
+          >
             <Image
               onMouseMove={handleMouseMove}
               height={100}
@@ -102,7 +102,13 @@ export const AnimatedTooltip = ({
               alt={item.name}
               className="relative !m-0 h-20 w-20 rounded-full border-2 border-white object-cover object-top !p-0 transition  duration-500 group-hover:z-30 group-hover:scale-105"
             />
-          )}
+          </a>
+
+          {isModalOpen &&
+            createPortal(
+              <Modal item={{name: selectedItem?.name || "", whatsappLink: selectedItem?.whatsappLink|| "",telegramLink: selectedItem?.telegramLink || ""} } onClickHandler={() => {setIsModalOpen(!isModalOpen)}} />
+              ,document.body
+            )}
         </div>
       ))}
     </>

@@ -21,42 +21,48 @@ const people = [
     name: "Andrew Huberman",
     designation: "Neuroscientist",
     image: "/andrew_huberman_pic.jpg",
-    link: "https://www.youtube.com/@hubermanlab",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 2,
     name: "Casey Zander",
     designation: "Dating Coach Youtuber",
     image: "/casey_zander_pic.jpg",
-    link: "https://www.youtube.com/@CaseyZander",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 3,
     name: "Daniel Brada",
     designation: "Self help influencer",
     image: "/daniel_brada_pic.webp",
-    link: "https://www.youtube.com/@danielbarada",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 4,
     name: "Gary Vaynerchuk",
     designation: "Entreprenuer",
     image: "/gary_vaynerchuk_pic.jpg",
-    link: "https://www.youtube.com/@garyvee",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 5,
     name: "Jordan B. Peterson",
     designation: "Psychoanalyst",
     image: "/jordan_peterson_pic.jpg",
-    link: "https://www.youtube.com/@JordanBPeterson",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {
     id: 6,
     name: "Healthy Gamer GG",
     designation: "Psychologist",
     image: "/healthygamergg_pic.jpg",
-    link: "https://www.youtube.com/@HealthyGamerGG",
+    telegramLink: "",
+    whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
 ];
 
@@ -147,7 +153,7 @@ export default async function IndexPage({
             </div>
           </div>
           {/* Image */}
-          <div className="hidden h-full w-full md:block z-10">
+          <div className="hidden h-full w-full md:block z-1">
             <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] lg:mr-[-42px] xl:mr-0">
               <Image
                 src="/chat-mockup.svg"
