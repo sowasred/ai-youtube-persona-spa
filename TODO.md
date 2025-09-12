@@ -1,7 +1,7 @@
 [ ] Design the first version of the website with sections
   [ ] Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
   [ ] Add X to feature brain image
-  [ ] Add animation to have sliding comments section
+  [X] Add animation to have sliding comments section
   [ ] Make the text color change animation fast at first and gradually to get slower
   [X] Add Mobile menu
   [X] Change the main phone mockup conversation

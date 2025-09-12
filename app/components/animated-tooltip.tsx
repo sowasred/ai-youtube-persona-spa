@@ -104,13 +104,13 @@ export const AnimatedTooltip = ({
             />
           </a>
 
-          {isModalOpen &&
-            createPortal(
-              <Modal item={{name: selectedItem?.name || "", whatsappLink: selectedItem?.whatsappLink|| "",telegramLink: selectedItem?.telegramLink || ""} } onClickHandler={() => {setIsModalOpen(!isModalOpen)}} />
-              ,document.body
-            )}
         </div>
       ))}
+      {isModalOpen &&
+        createPortal(
+          <Modal item={{name: selectedItem?.name || "", whatsappLink: selectedItem?.whatsappLink|| "",telegramLink: selectedItem?.telegramLink || ""} } onClickHandler={() => {setIsModalOpen(!isModalOpen)}} />
+          ,document.body
+        )}
     </>
   );
 };
