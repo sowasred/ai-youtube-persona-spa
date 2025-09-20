@@ -29,7 +29,7 @@ const people = [
     name: "Casey Zander",
     designation: "Dating Coach Youtuber",
     image: "/casey_zander_pic.jpg",
-    telegramLink: "",
+    telegramLink: "https://t.me/kevin_samuel_bot",
     whatsappLink: "https://www.youtube.com/@hubermanlab",
   },
   {

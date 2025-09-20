@@ -23,7 +23,7 @@ export default function Modal({item, onClickHandler}: ModalProps) {
             Chat on WhatsApp
           </button>
         </a>
-        <a href={item.whatsappLink} target="_blank">
+        <a href={item.telegramLink} target="_blank">
           <button className="px-8 py-4 rounded-full text-lg font-medium bg-blue-500 text-white w-full">
             Chat on Telegram
           </button>
