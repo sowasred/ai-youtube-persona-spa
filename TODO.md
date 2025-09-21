@@ -1,8 +1,9 @@
 [ ] Design the first version of the website with sections
   [ ] Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
+  [ ] Clicking each influencer will go to it's perspective Telegram or Whatsapp
   [ ] Add X to feature brain image
-  [X] Add animation to have sliding comments section
   [ ] Make the text color change animation fast at first and gradually to get slower
+  [X] Add animation to have sliding comments section
   [X] Add Mobile menu
   [X] Change the main phone mockup conversation
   [X] Clicking influencers them will send them to their youtube
