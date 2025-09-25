@@ -77,7 +77,7 @@ export default async function IndexPage({
 
   return (
     <>
-    <Image alt="bg2" src={"/magicpattern-god-rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
+    <Image alt="bg2" src={"/magicpattern_god_rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
       <section className="container mx-auto">
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 md:h-screen mb-22">
@@ -156,7 +156,7 @@ export default async function IndexPage({
           <div className="hidden h-full w-full md:block z-1">
             <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] lg:mr-[-42px] xl:mr-0">
               <Image
-                src="/chat-mockup.svg"
+                src="/chat_mockup.svg"
                 width={460}
                 height={900}
                 alt="Chat mockup"
