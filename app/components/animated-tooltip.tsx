@@ -59,7 +59,7 @@ export const AnimatedTooltip = ({
         >
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
-              <div className="absolute -left-1/2 -top-32 z-50 flex translate-x-1/2 flex-col items-center">
+              <div className="absolute -left-32 -top-26 z-50 flex translate-x-1/2 flex-col items-center">
                 {/* Large invisible hover area to keep tooltip visible when moving to buttons */}
                 <div 
                   className="absolute inset-0 pointer-events-auto"
