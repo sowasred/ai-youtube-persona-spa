@@ -109,15 +109,6 @@ export default async function IndexPage({
                     <Icons.ArrowRight className="h-5 w-5" />
                   </Button>
                 </Link>
-
-                <Link
-                  href="https://calendly.com/replyfanapp/30min"
-                  target="_blank"
-                >
-                  <Button className="text-blue-500 border border-blue-600 bg-white rounded-full text-lg pl-8 pr-10 h-12 font-medium">
-                    {dict.marketing.secondary_cta}
-                  </Button>
-                </Link>
               </div>
               {/* Available Apps Section */}
               <div className="text-lg color-gray-800 flex align-center gap-0.5">
