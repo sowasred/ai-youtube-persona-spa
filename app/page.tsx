@@ -93,7 +93,7 @@ export default async function IndexPage({
               </div>
               {/* Subtitle */}
               <div className="md:max-w-120 lg:max-w-160">
-                <span className="text-neutral-500 text-3xl md:text-xl leading-relaxed">
+                <span className="text-neutral-500 text-3xl md:text-2xl leading-relaxed">
                 <ColourfulText className="font-medium" text="Your voice"/> enhanced with technology, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
                 </span>
               </div>
