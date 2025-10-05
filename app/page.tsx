@@ -79,7 +79,7 @@ export default async function IndexPage({
     <>
     <Image alt="bg2" src={"/magicpattern_god_rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
-      <section className="container w-11/12 mx-auto overflow-x-hidden mb-22 md:mb-0">
+      <section className="container w-11/12 mx-auto md:mb-0">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           <div className="flex flex-col items-start h-full">
             <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
