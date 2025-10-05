@@ -61,7 +61,7 @@ export const AnimatedTooltip = ({
             {hoveredIndex === item.id && (
               <div className="absolute -left-32 -top-26 z-50 flex translate-x-1/2 flex-col items-center">
                 {/* Large invisible hover area to keep tooltip visible when moving to buttons */}
-                <div 
+                <div
                   className="absolute inset-0 pointer-events-auto"
                   style={{
                     width: '250px',
@@ -100,7 +100,7 @@ export const AnimatedTooltip = ({
                   </div>
                   <div className="text-xs text-white">{item.designation}</div>
                 </motion.div>
-                
+
                 {/* Social Media Buttons - Separate from main tooltip */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
@@ -163,7 +163,7 @@ export const AnimatedTooltip = ({
               width={100}
               src={item.image}
               alt={item.name}
-              className="relative !m-0 h-20 w-20 rounded-full border-2 border-white object-cover object-top !p-0 transition  duration-500 group-hover:z-30 group-hover:scale-105"
+              className="relative !m-0 h-32 w-32 md:h-20 md:w-20 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
             />
           </a>
 

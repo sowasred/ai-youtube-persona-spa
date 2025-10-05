@@ -79,32 +79,32 @@ export default async function IndexPage({
     <>
     <Image alt="bg2" src={"/magicpattern_god_rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
-      <section className="container w-11/12 mx-auto md:mb-0">
+      <section className="container w-11/12 mx-auto md:mb-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           <div className="flex flex-col items-start h-full">
-            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
+            <div className="flex flex-col pt-4 md:pt-12">
               {/* Title */}
-              <div className="mt-20 md:mt-0 lg:mt-20 mb-4">
-                <div className="max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
+              <div className="mt-8 md:mt-[-2rem] md:mt-0 lg:mt-20 mb-4">
+                <div className="text-left text-6xl font-semibold leading-[4.5rem] md:leading-[4rem] xl:leading-[4rem]">
                   {dict.marketing.title ||
-                    "Ship your apps to the world easier with "}
+                    "Fans can talk with you "}
                   <ColourfulText className="" text="24/7" />
                 </div>
               </div>
               {/* Subtitle */}
-              <div className="max-w-120 lg:max-w-160">
-                <span className="text-neutral-500 text-xl lg:text-2xl">
+              <div className="md:max-w-120 lg:max-w-160">
+                <span className="text-neutral-500 text-3xl md:text-xl leading-relaxed">
                 <ColourfulText className="font-medium" text="Your voice"/> enhanced with technology, <ColourfulText className="font-medium" text="at your fans’ fingertips"/>
                 </span>
               </div>
               {/* CTA Buttons */}
-              <div className="mb-2 mt-8 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0 z-10">
+              <div className="mb-2 mt-8 w-full space-y-4 sm:space-x-4 sm:space-y-0 z-10">
                 <Link
                   // TODO: Add waitlist link
                   href="https://calendly.com/replyfanapp/30min"
                   target="_blank"
                 >
-                  <Button className="bg-blue-600 hover:bg-blue-500 text-white text-left rounded-full text-lg pr-48 pl-8 h-12 font-medium">
+                  <Button className="pr-48 py-8 pl-8 h-16 w-full max-w-96 text-xl text-left justify-start sm:h-12 md:rounded-full md:text-lg bg-blue-600 hover:bg-blue-500 text-white text-left font-medium">
                     {dict.marketing.primary_cta}
                     <Icons.ArrowRight className="h-5 w-5" />
                   </Button>
@@ -128,30 +128,29 @@ export default async function IndexPage({
                 <span className="font-semibold mx-0.5 align-middle inline-block">Telegram</span>
               </div>
               {/* Influencers section */}
-              <div className="flex flex-col items-center justify-start mt-24 md:mt-32 w-full">
-                <div className="flex flex-col items-start justify-start mb-4 w-full">
+              <div className="flex flex-col items-center justify-start mt-12 md:mt-32 w-full">
+                <div className="flex flex-col items-start justify-start w-full">
                   <div className="w-full md:max-w-[440px]">
                     <span className="text-neutral-500 text-2xl">
                       {dict.marketing.contributors.contributors_desc}
                     </span>
                   </div>
                 </div>
-                <div className="w-full flex ml-0">
+                <div className="w-full flex justify-start mt-4">
                   <AnimatedTooltip items={people} />
                 </div>
-
               </div>
             </div>
           </div>
           {/* Image */}
-          <div className="hidden lg:block z-1">
-            <div className="flex flex-col mx-auto lg:items-end xl:items-center">
+          <div className="flex justify-center mt-16 mb-24 md:mt-[-3rem] md:mb-0 lg:justify-end xl:justify-center z-1">
+            <div className="flex flex-col items-end w-fit">
               <Image
                 src="/chat_mockup.svg"
                 width={460}
                 height={900}
                 alt="Chat mockup"
-                className="hidden lg:block lg:w-[380px] xl:w-[480px] lg:h-[70vh] xl:h-[80vh] object-contain"
+                className="h-[72vh] lg:block lg:h-[85vh] xl:h-[88vh] object-contain"
               />
             </div>
           </div>
@@ -163,7 +162,7 @@ export default async function IndexPage({
       </section>
 
       <section id="how-it-works" className="container my-40 mx-auto overflow-x-hidden">
-        <div className="mb-18 max-w-4xl text-center mx-auto text-5xl font-light text-gray-800  md:leading-[4rem] xl:leading-[4rem]">
+        <div className="mb-18 text-center text-5xl font-light text-gray-800  md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
         <div className="my-10">
@@ -178,7 +177,7 @@ export default async function IndexPage({
       </section>
 
       <section id="features" className="container flex flex-col my-40 mx-auto max-w-120 md:max-w-240 lg:max-w-680 overflow-x-hidden">
-      <div className="mb-18 max-w-105 md:max-w-4xl text-start md:text-center w-full mx-auto text-5xl font-light text-gray-800 md:leading-[4rem] xl:leading-[4rem]">
+      <div className="mb-18 text-start md:text-center w-full mx-auto text-5xl font-light text-gray-800 md:leading-[4rem] xl:leading-[4rem]">
           Features
         </div>
         <FeaturesSection/>

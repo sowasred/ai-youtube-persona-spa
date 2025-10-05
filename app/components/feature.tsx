@@ -30,7 +30,7 @@ export default function Feature({
             <Image src={imgSrc} width={800} height={513} alt={imgAlt} />
           </div>
           <div className={`flex md:flex-1 justify-center items-start flex-col w-full order-1 md:ml-8`}>
-            {isSoon ? <span className="border rounded-full border-blue-500 font-medium text-sm text-capitalized px-4 py-1 mb-2 text-blue-500">Coming Soon</span> : <></>}
+            {/* {isSoon ? <span className="border rounded-full border-blue-500 font-medium text-sm text-capitalized px-4 py-1 mb-2 text-blue-500">Coming Soon</span> : <></>} */}
             <h3 className="text-2xl font-medium text-gray-900 md:text-3xl lg:text-5xl lg:mb-2">{title}</h3>
             <h4 className="text-lg font-medium text-gray-600 md:text-xl lg:text-3xl">{subtitle}</h4>
           </div>

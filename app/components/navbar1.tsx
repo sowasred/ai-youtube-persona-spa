@@ -75,14 +75,6 @@ const Navbar1 = ({
     //     },
     //   ],
     // },
-    {
-      title: "Pricing",
-      url: "#",
-    },
-    {
-      title: "Case Studies",
-      url: "#",
-    },
   ],
   auth = {
     login: { title: "Login", url: "#" },
@@ -96,15 +88,16 @@ const Navbar1 = ({
   };
 
   return (
-    <section className="pt-10 z-10">
+    <section className="pt-6 z-10 md:mb-12">
       <div className="container w-full mx-auto">
         {/* Desktop Menu */}
-        <nav className="w-11/12 mx-auto justify-between lg:flex">
-          <div className="flex items-center justify-between sm:justify-start gap-6">
-            {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="max-h-12" alt={logo.alt} />
-            </a>
+        <nav className="flex gap-8 items-center w-11/12 mx-auto justify-between lg:flex no-wrap">
+          {/* Logo */}
+          <a href={logo.url} className="flex items-center gap-2">
+            <img src={logo.src} className="max-h-14 lg:max-h-12" alt={logo.alt} />
+          </a>
+          <div className="flex items-center justify-between sm:justify-start gap-6 w-full">
+            {/* Desktop menu */}
             <div className="flex items-center hidden sm:block">
               {menu.map((item, i) => {
                 return (
@@ -119,12 +112,16 @@ const Navbar1 = ({
                 );
               })}
             </div>
-            <div
-              className="flex items-end block sm:hidden p-2"
-              onClick={handleMenu}
-            >
-              <Menu size={40}></Menu>
+            {/* Mobile: Button and Hamburger */}
+            <div className="flex items-center sm:hidden gap-2 ml-auto">
+              <div
+                className="flex items-end p-2"
+                onClick={handleMenu}
+              >
+                <Menu size={40}></Menu>
+              </div>
             </div>
+            {/* Mobile menu dropdown */}
             {isOpen ? (
               <div className="flex flex-col items-center w-48 px-2 pt-4 pb-2 bg-white absolute top-22 right-6 border border-gray-100 rounded-md z-10">
                 {menu.map((item, i) => {
@@ -141,19 +138,8 @@ const Navbar1 = ({
                   );
                 })}
               </div>
-            ) : (
-              <></>
-            )}
+            ) : null}
           </div>
-          {/* Login Sign in button */}
-          {/* <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
-          </div> */}
         </nav>
 
         {/* TODO: Mobile Menu */}
