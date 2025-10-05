@@ -96,10 +96,10 @@ const Navbar1 = ({
   };
 
   return (
-    <section className="pt-10 z-10 pl-4">
+    <section className="pt-10 z-10">
       <div className="container w-full mx-auto">
         {/* Desktop Menu */}
-        <nav className="justify-between lg:flex">
+        <nav className="w-11/12 mx-auto justify-between lg:flex">
           <div className="flex items-center justify-between sm:justify-start gap-6">
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
@@ -120,7 +120,7 @@ const Navbar1 = ({
               })}
             </div>
             <div
-              className="flex items-end block sm:hidden mr-4 p-2"
+              className="flex items-end block sm:hidden p-2"
               onClick={handleMenu}
             >
               <Menu size={40}></Menu>

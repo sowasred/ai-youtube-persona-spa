@@ -79,10 +79,10 @@ export default async function IndexPage({
     <>
     <Image alt="bg2" src={"/magicpattern_god_rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
     <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
-      <section className="container mx-auto">
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 md:h-screen mb-22">
+      <section className="container w-11/12 mx-auto overflow-x-hidden mb-22 md:mb-0">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           <div className="flex flex-col items-start h-full">
-            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36 ml-8 lg:ml-0">
+            <div className="flex flex-col pt-4 md:pt-36 lg:pt-36 xl:pt-36">
               {/* Title */}
               <div className="mt-20 md:mt-0 lg:mt-20 mb-4">
                 <div className="max-w-4xl text-left text-5xl font-semibold md:text-5xl xl:text-6xl md:leading-[4rem] xl:leading-[4rem]">
@@ -137,15 +137,15 @@ export default async function IndexPage({
                 <span className="font-semibold mx-0.5 align-middle inline-block">Telegram</span>
               </div>
               {/* Influencers section */}
-              <div className="flex flex-col items-center justify-start mt-24 md:mt-32 w-fit">
-              <div className="flex flex-col items-center justify-start mb-4">
-                  <div className="w-[440px]">
+              <div className="flex flex-col items-center justify-start mt-24 md:mt-32 w-full">
+                <div className="flex flex-col items-start justify-start mb-4 w-full">
+                  <div className="w-full md:max-w-[440px]">
                     <span className="text-neutral-500 text-2xl">
                       {dict.marketing.contributors.contributors_desc}
                     </span>
                   </div>
                 </div>
-                <div className="w-fit flex ml-[-100px]">
+                <div className="w-full flex ml-0">
                   <AnimatedTooltip items={people} />
                 </div>
 
@@ -153,25 +153,25 @@ export default async function IndexPage({
             </div>
           </div>
           {/* Image */}
-          <div className="hidden h-full w-full md:block z-1">
-            <div className="flex flex-col mx-auto lg:items-end lg:mt-[-895px] xl:items-center xl:mt-[-160px] lg:mr-[-42px] xl:mr-0">
+          <div className="hidden lg:block z-1">
+            <div className="flex flex-col mx-auto lg:items-end xl:items-center">
               <Image
                 src="/chat_mockup.svg"
                 width={460}
                 height={900}
                 alt="Chat mockup"
-                className="hidden lg:block lg:w-[380px] xl:w-[480px] h-auto"
+                className="hidden lg:block lg:w-[380px] xl:w-[480px] lg:h-[70vh] xl:h-[80vh] object-contain"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container xl:mt-[-180px] mx-auto">
+      <section className="container mx-auto">
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
-      <section id="how-it-works" className="container my-40 mx-auto ">
+      <section id="how-it-works" className="container my-40 mx-auto overflow-x-hidden">
         <div className="mb-18 max-w-4xl text-center mx-auto text-5xl font-light text-gray-800  md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
@@ -181,19 +181,19 @@ export default async function IndexPage({
             width={1400}
             height={800}
             alt="How it works"
-            className="mx-auto block"
+            className="mx-auto block max-w-full h-auto"
           />
         </div>
       </section>
 
-      <section id="features" className="container flex flex-col my-40 mx-auto max-w-120 md:max-w-240 lg:max-w-680">
+      <section id="features" className="container flex flex-col my-40 mx-auto max-w-120 md:max-w-240 lg:max-w-680 overflow-x-hidden">
       <div className="mb-18 max-w-105 md:max-w-4xl text-start md:text-center w-full mx-auto text-5xl font-light text-gray-800 md:leading-[4rem] xl:leading-[4rem]">
           Features
         </div>
         <FeaturesSection/>
       </section>
 
-      <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24">
+      <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24 overflow-x-hidden">
         <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
           <div>
             <h1 className="mb-6 text-center text-3xl font-bold md:text-5xl">

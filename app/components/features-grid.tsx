@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefined }) {
   return (
-    <div className="flex gap-4 flex-col lg:flex-row">
+    <div className="w-11/12 sm:w-full mx-auto flex gap-4 flex-col lg:flex-row lg:mt-20">
       <Card className="p-3 w-full rounded-3xl">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
