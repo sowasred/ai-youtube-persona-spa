@@ -161,8 +161,8 @@ export default async function IndexPage({
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
-      <section id="how-it-works" className="container my-40 mx-auto overflow-x-hidden">
-        <div className="mb-18 text-center text-5xl font-light text-gray-800  md:leading-[4rem] xl:leading-[4rem]">
+      <section id="how-it-works" className="container w-10/12 lg:w-11/12 my-40 mx-auto overflow-x-hidden">
+        <div className="mb-10 md:mb-18 text-left font-bold text-gray-800 text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
         <div className="my-10">
@@ -176,24 +176,25 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section id="features" className="container flex flex-col my-40 mx-auto max-w-120 md:max-w-240 lg:max-w-680 overflow-x-hidden">
-      <div className="mb-18 text-start md:text-center w-full mx-auto text-5xl font-light text-gray-800 md:leading-[4rem] xl:leading-[4rem]">
+      <section id="features" className="container w-10/12 lg:w-11/12 my-40 mx-auto overflow-x-hidden">
+      <div className="mb-10 md:mb-18 text-left font-bold text-gray-800 text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
           Features
         </div>
         <FeaturesSection/>
       </section>
 
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-24 md:px-0 md:pt-24 xl:px-0 xl:pt-24 overflow-x-hidden">
-        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
-          <div>
-            <h1 className="mb-6 text-center text-3xl font-bold md:text-5xl">
-              {dict.marketing.people_comment.title}
-            </h1>
+        <div className="flex h-full flex-col items-left pb-[100px] pt-10">
+          <div className="container w-full sm:w-10/12 lg:w-11/12 mx-auto">
+            <div>
+              <h1 className="mb-6 text-left font-bold text-4xl md:text-5xl">
+                {dict.marketing.people_comment.title}
+              </h1>
+            </div>
+            <div className="mb-6 text-lg text-neutral-500">
+              {dict.marketing.people_comment.desc}
+            </div>
           </div>
-          <div className="mb-6 text-lg text-neutral-500">
-            {dict.marketing.people_comment.desc}
-          </div>
-
           <div className="w-full overflow-x-hidden">
             <Comments />
           </div>
