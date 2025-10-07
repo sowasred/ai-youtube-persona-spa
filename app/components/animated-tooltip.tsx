@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { createPortal } from "react-dom";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   AnimatePresence,
@@ -10,7 +9,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Modal from "./modal";
 
 type Item = {
   id: number;
@@ -27,8 +25,7 @@ export const AnimatedTooltip = ({
   items: Item[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null)
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
   // rotate the tooltip
@@ -41,11 +38,33 @@ export const AnimatedTooltip = ({
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
+    const updateIsTouch = () => setIsTouchDevice(mediaQuery.matches);
+    updateIsTouch();
+    mediaQuery.addEventListener("change", updateIsTouch);
+    return () => mediaQuery.removeEventListener("change", updateIsTouch);
+  }, []);
   const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const halfWidth = (event.target as HTMLImageElement).offsetWidth / 2;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
+    const { currentTarget, nativeEvent } = event;
+    const halfWidth = currentTarget.offsetWidth / 2;
+    x.set(nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
+  };
+
+  const handleMouseEnter = (id: number) => {
+    if (isTouchDevice) return;
+    setHoveredIndex(id);
+  };
+
+  const handleMouseLeave = () => {
+    if (isTouchDevice) return;
+    setHoveredIndex(null);
+  };
+
+  const handleAvatarTap = (id: number) => {
+    if (!isTouchDevice) return;
+    setHoveredIndex((current) => (current === id ? null : id));
   };
 
   return (
@@ -54,8 +73,8 @@ export const AnimatedTooltip = ({
         <div
           className="group relative -mr-4"
           key={item.name}
-          onMouseEnter={() => setHoveredIndex(item.id)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseEnter={() => handleMouseEnter(item.id)}
+          onMouseLeave={handleMouseLeave}
         >
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
@@ -69,8 +88,9 @@ export const AnimatedTooltip = ({
                     left: '-75px',
                     top: '-20px',
                   }}
-                  onMouseEnter={() => setHoveredIndex(item.id)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={(event) => event.stopPropagation()}
                 />
                 {/* Main tooltip box */}
                 <motion.div
@@ -92,6 +112,7 @@ export const AnimatedTooltip = ({
                     whiteSpace: "nowrap",
                   }}
                   className="flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl"
+                  onClick={(event) => event.stopPropagation()}
                 >
                   <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent " />
                   <div className="absolute -bottom-px left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent " />
@@ -116,8 +137,9 @@ export const AnimatedTooltip = ({
                   }}
                   exit={{ opacity: 0, y: 10 }}
                   className="flex gap-2 mt-3"
-                  onMouseEnter={() => setHoveredIndex(item.id)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={(event) => event.stopPropagation()}
                 >
                   {item.telegramLink && (
                     <a
@@ -151,29 +173,26 @@ export const AnimatedTooltip = ({
               </div>
             )}
           </AnimatePresence>
-          <a
-            onClick={() => {
-              setIsModalOpen(!isModalOpen)
-              setSelectedItem(item)
-            }}
+          <button
+            type="button"
+            className="block focus:outline-none"
+            onClick={() => handleAvatarTap(item.id)}
           >
             <Image
-              onMouseMove={handleMouseMove}
+              onMouseMove={(event) => {
+                if (isTouchDevice) return;
+                handleMouseMove(event);
+              }}
               height={100}
               width={100}
               src={item.image}
               alt={item.name}
               className="relative !m-0 h-32 w-32 md:h-20 md:w-20 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
             />
-          </a>
+          </button>
 
         </div>
       ))}
-      {isModalOpen &&
-        createPortal(
-          <Modal item={{name: selectedItem?.name || "", whatsappLink: selectedItem?.whatsappLink|| "",telegramLink: selectedItem?.telegramLink || ""} } onClickHandler={() => {setIsModalOpen(!isModalOpen)}} />
-          ,document.body
-        )}
     </>
   );
 };
