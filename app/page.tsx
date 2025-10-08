@@ -165,13 +165,41 @@ export default async function IndexPage({
         <div className="mb-10 md:mb-18 text-left font-bold text-gray-800 text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem]">
           How it works
         </div>
-        <div className="my-10">
+        <div className="my-10 flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8 flex-wrap">
           <Image
-            src="/how_it_works.svg"
-            width={1400}
-            height={800}
-            alt="How it works"
-            className="mx-auto block max-w-full h-auto"
+            src="/it_works_1.svg"
+            width={320}
+            height={320}
+            alt="Step 1"
+            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
+          />
+          <Image
+            src="/arrow.svg"
+            width={60}
+            height={60}
+            alt="Arrow"
+            className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rotate-90 lg:rotate-0 transition-transform duration-300"
+          />
+          <Image
+            src="/it_works_2.svg"
+            width={320}
+            height={320}
+            alt="Step 2"
+            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
+          />
+          <Image
+            src="/arrow.svg"
+            width={60}
+            height={60}
+            alt="Arrow"
+            className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rotate-90 lg:rotate-0 transition-transform duration-300"
+          />
+          <Image
+            src="/it_works_3.svg"
+            width={320}
+            height={320}
+            alt="Step 3"
+            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
           />
         </div>
       </section>

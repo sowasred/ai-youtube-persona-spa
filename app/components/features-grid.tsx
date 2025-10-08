@@ -5,7 +5,7 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
   return (
     <div className="w-11/12 sm:w-full mx-auto flex gap-4 flex-col lg:flex-row lg:mt-20">
       {/* WhatsApp & Telegram Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-gray-50">
+      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logos Section */}
           <div className="relative flex items-center justify-center space-x-[-1rem]">
@@ -37,7 +37,7 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
       </Card>
 
       {/* Voice Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-gray-50">
+      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Icon Section */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-18 md:h-18 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
@@ -57,7 +57,7 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
       </Card>
 
       {/* Setup Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-gray-50">
+      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Icon Section */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-18 md:h-18 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
