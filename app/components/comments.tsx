@@ -57,7 +57,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 sm:w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        "relative w-36 xs:w-48 sm:w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
@@ -65,15 +65,15 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <img className="rounded-full w-8 h-8 sm:w-8 sm:h-8" alt="" src={img} />
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="font-medium text-black">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          <p className="text-sm font-medium text-gray-700">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-base md:text-lg">{body}</blockquote>
     </figure>
   );
 };

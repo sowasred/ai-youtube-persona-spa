@@ -4,6 +4,19 @@
 /* @custom-variant dark (&:is(.dark *)); */
 
 @theme inline {
+  /* Breakpoints - Edit these values as needed */
+  --breakpoint-ty: 360px;
+  --breakpoint-xs: 480px;
+  /* Default breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  /* Default breakpoints end */
+  --breakpoint-3xl: 1920px;
+
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
