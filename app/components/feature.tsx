@@ -81,7 +81,6 @@ export default function Feature({
               <DotLottieReact
                 src={lottieSrc}
                 autoplay={false}
-                loop
                 className="w-full h-auto"
                 dotLottieRefCallback={(dotLottie) => {
                   dotLottieRef.current = dotLottie;
