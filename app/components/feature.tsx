@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import type { DotLottie } from "@lottiefiles/dotlottie-react";
 
 import { GlowingEffect } from "./glowing-effect";
-import { LottieAnimation } from "./lottie-animation";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Feature({
   isSoon,
@@ -24,9 +25,7 @@ export default function Feature({
   lottieSrc?: string;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const playerRef = useRef<HTMLElement & { play?: () => void; pause?: () => void } | null>(
-    null
-  );
+  const dotLottieRef = useRef<DotLottie | null>(null);
 
   useEffect(() => {
     if (!lottieSrc) return;
@@ -36,17 +35,13 @@ export default function Feature({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const target = playerRef.current;
-        if (!target) {
-          return;
-        }
+        const player = dotLottieRef.current;
+        if (!player) return;
 
         if (entry.isIntersecting) {
-          target.setAttribute?.("autoplay", "true");
-          target.play?.();
+          player.play();
         } else {
-          target.removeAttribute?.("autoplay");
-          target.pause?.();
+          player.pause();
         }
       },
       { threshold: 0.4 }
@@ -57,7 +52,7 @@ export default function Feature({
     return () => {
       observer.unobserve(node);
       observer.disconnect();
-      playerRef.current?.pause?.();
+      dotLottieRef.current?.pause();
     };
   }, [lottieSrc]);
 
@@ -83,11 +78,14 @@ export default function Feature({
             className={`flex lg:flex-1 lg:max-w-full order-2 ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}
           >
             {lottieSrc ? (
-              <LottieAnimation
-                ref={playerRef}
+              <DotLottieReact
                 src={lottieSrc}
                 autoplay={false}
                 loop
+                className="w-full h-auto"
+                dotLottieRefCallback={(dotLottie) => {
+                  dotLottieRef.current = dotLottie;
+                }}
               />
             ) : (
               <Image src={imgSrc!} width={800} height={513} alt={imgAlt} />
