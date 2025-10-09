@@ -6,6 +6,7 @@ const data = [
     title: "Trained on your data",
     subtitle: "Intelligently trained on the data you produced.",
     imgSrc: "/trained_on_your_data.jpg",
+    lottieSrc: "/conversation_engine.json",
     alt: "brain image"
   },
   {
@@ -31,7 +32,16 @@ export default function FeaturesSection() {
     <div className="flex gap-24 flex-col">
       {data.map((elem, i) => {
         return (
-          <Feature key={i} isSoon={elem.isSoon} isLeft={elem.isLeft} title={elem.title} subtitle={elem.subtitle} imgSrc={elem.imgSrc} imgAlt={elem.alt}/>
+          <Feature
+            key={i}
+            isSoon={elem.isSoon}
+            isLeft={elem.isLeft}
+            title={elem.title}
+            subtitle={elem.subtitle}
+            imgSrc={elem.imgSrc}
+            lottieSrc={elem.lottieSrc}
+            imgAlt={elem.alt}
+          />
         )
       })}
     </div>

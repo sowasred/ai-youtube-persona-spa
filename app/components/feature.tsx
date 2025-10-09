@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+
 import { GlowingEffect } from "./glowing-effect";
+import { LottieAnimation } from "./lottie-animation";
 
 export default function Feature({
   isSoon,
@@ -8,14 +13,54 @@ export default function Feature({
   subtitle,
   imgSrc,
   imgAlt,
+  lottieSrc,
 }: {
   isSoon: boolean;
   isLeft: boolean;
   title: string;
   subtitle: string;
-  imgSrc: string;
+  imgSrc?: string;
   imgAlt: string;
+  lottieSrc?: string;
 }) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const playerRef = useRef<HTMLElement & { play?: () => void; pause?: () => void } | null>(
+    null
+  );
+
+  useEffect(() => {
+    if (!lottieSrc) return;
+
+    const node = containerRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const target = playerRef.current;
+        if (!target) {
+          return;
+        }
+
+        if (entry.isIntersecting) {
+          target.setAttribute?.("autoplay", "true");
+          target.play?.();
+        } else {
+          target.removeAttribute?.("autoplay");
+          target.pause?.();
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.unobserve(node);
+      observer.disconnect();
+      playerRef.current?.pause?.();
+    };
+  }, [lottieSrc]);
+
   return (
     <>
       {/* <GlowingEffect
@@ -33,8 +78,20 @@ export default function Feature({
             <h4 className="text-lg font-medium text-gray-600 md:text-xl lg:text-3xl">{subtitle}</h4>
           </div>
           {/* Image - always second on mobile, positioned based on isLeft on desktop */}
-          <div className={`flex lg:flex-1 lg:max-w-full order-2 ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}>
-            <Image src={imgSrc} width={800} height={513} alt={imgAlt} />
+          <div
+            ref={containerRef}
+            className={`flex lg:flex-1 lg:max-w-full order-2 ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}
+          >
+            {lottieSrc ? (
+              <LottieAnimation
+                ref={playerRef}
+                src={lottieSrc}
+                autoplay={false}
+                loop
+              />
+            ) : (
+              <Image src={imgSrc!} width={800} height={513} alt={imgAlt} />
+            )}
           </div>
           </div>
     </>
