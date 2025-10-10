@@ -104,26 +104,26 @@ export default async function IndexPage({
                   href="https://calendly.com/replyfanapp/30min"
                   target="_blank"
                 >
-                  <Button className="px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-2xl text-center justify-center sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-2">
+                  <Button className="px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-2xl text-center md:text-left justify-center md:justify-start sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-2">
                     {dict.marketing.primary_cta}
                     <Icons.ArrowRight className="h-5 w-5" />
                   </Button>
                 </Link>
               </div>
               {/* Available Apps Section */}
-              <div className="text-sm sm:text-base md:text-lg text-gray-800 flex items-center gap-1 ty:gap-2 flex-wrap">
+              <div className="text-base sm:text-lg md:text-xl text-gray-800 flex items-center gap-1 ty:gap-2 flex-wrap">
                 <span>Available in</span>
                 <SocialIcon
                   network="whatsapp"
                   className="!h-6 !w-6 sm:!h-5 sm:!w-5 md:!h-6 md:!w-6"
                 />
-                <span className="font-semibold text-sm sm:text-base">WhatsApp</span>
+                <span className="font-semibold">WhatsApp</span>
                 <span className="font-semibold">&</span>
                 <SocialIcon
                   network="telegram"
                   className="!h-5 !w-5 sm:!h-5 sm:!w-5 md:!h-6 md:!w-6"
                 />
-                <span className="font-semibold text-sm sm:text-base">Telegram</span>
+                <span className="font-semibold">Telegram</span>
               </div>
               {/* Influencers section */}
               <div className="flex flex-col items-center justify-start mt-12 md:mt-32 w-full">
