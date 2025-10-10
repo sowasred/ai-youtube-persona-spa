@@ -104,9 +104,11 @@ export default async function IndexPage({
                   href="https://calendly.com/replyfanapp/30min"
                   target="_blank"
                 >
-                  <Button className="px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-2xl text-center md:text-left justify-center md:justify-start sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-2">
-                    {dict.marketing.primary_cta}
-                    <Icons.ArrowRight className="h-5 w-5" />
+                  <Button className="cta-button px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-2xl text-left sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-4 justify-between">
+                    <span className="flex-1 text-center md:text-left">
+                      {dict.marketing.primary_cta}
+                    </span>
+                    <Icons.ArrowRight className="!h-8 !w-8 ml-4" />
                   </Button>
                 </Link>
               </div>
