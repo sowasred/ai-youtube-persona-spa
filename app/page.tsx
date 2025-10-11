@@ -12,6 +12,7 @@ import { ColourfulText } from "./components/colorful-text";
 import * as Icons from "./components/icons";
 import { SocialIcon } from "react-social-icons";
 import FeaturesSection from "./components/features-section"
+import { FAQ } from "./components/faq";
 
 import type { Locale } from "./config/i18n-config";
 
@@ -227,6 +228,10 @@ export default async function IndexPage({
             <Comments />
           </div>
         </div>
+      </section>
+
+      <section id="faq" className="max-w-[98rem] w-10/12 lg:w-11/12 my-36 mx-auto">
+        <FAQ />
       </section>
 
 

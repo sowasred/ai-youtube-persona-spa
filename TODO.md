@@ -1,23 +1,13 @@
 [ ] Design the first version of the website with sections
-  [ ] Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
-  [ ] Clicking each influencer will go to it's perspective Telegram or Whatsapp
-  [ ] Add X to feature brain image
-  [ ] Make the text color change animation fast at first and gradually to get slower
-  [X] Add animation to have sliding comments section
-  [X] Add Mobile menu
-  [X] Change the main phone mockup conversation
-  [X] Clicking influencers them will send them to their youtube
-  [X] Use different wording than personal chatbot on subtitle.
-  [X] Put background pattern on hero section
-  [X] Add go calendly session booking link to See demo and start replying again buttons
-  [X] Fix section navigation
-  [X] Only use light theme
-  [X] Add navbar with logo
-  [X] Come up with logos to be used for benefits section
-  [X] Make new mockups for the upcoming features
-[X] Add start chatting as the last step of how it works.
-[ ] Choose A/B Testing solution
-[ ] Integrate A/B Testing
-[ ] Add Google Analytics
-[ ] Move Link in navigation into client comp & turn nav comp to server
-[ ] How to increase the first content paint in next.js or in general
+  [ ] (arda) - Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
+  [ ] (arda) - Make the text color change animation faster 1.5x
+  [ ] (arda) - Add footer section and add the copyright, privacy policy, terms of service, and contact us links
+  [ ] (arda) - Add copyright page
+  [ ] (arda) - Add privacy policy page
+  [ ] (arda) - Add terms of service page
+  [ ] (arda) - Add contact us section at the bottom of the main page just like the other sections with a darker bg
+  [ ] (arda) - Add 404 page
+  [ ] (Chad & Ozan) - Change website copy
+  [X] (chadash) - Add FAQ section
+[ ] (chadash) - Move Link in navigation into client comp & turn nav comp to server
+[ ] (chadash) - How to increase the first content paint in next.js or in general
