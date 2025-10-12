@@ -13,24 +13,29 @@ type FaqItem = {
 
 const defaultFaqs: FaqItem[] = [
   {
-    question: "How quickly can I have my AI persona live?",
+    question: "How quickly can I launch my AI persona?",
     answer:
-      "We set everything up for you. Most creators launch within a few days once onboarding is complete and we have your source material.",
+      "Most creators go live within a week. We handle production, training, and platform setup as soon as you share onboarding materials.",
   },
   {
-    question: "Do I need to record new content?",
+    question: "What content do you need from me?",
     answer:
-      "No extra recording is required. We ingest your existing calls, interviews, long-form videos, and written material to capture your voice.",
+      "Existing podcasts, long-form videos, newsletters, or coaching calls work best. We use that library to learn your tone and talking points—no extra recording required.",
   },
   {
-    question: "Where can fans talk to the persona?",
+    question: "Where will fans interact with the persona?",
     answer:
-      "Fans can reach you directly through WhatsApp and Telegram today. We are rolling out additional channels based on demand.",
+      "Today we support WhatsApp and Telegram with native feeling chats. We’re adding web embeds and additional messaging apps based on creator demand.",
   },
   {
-    question: "Is my data secure?",
+    question: "Will answers stay accurate to my brand?",
     answer:
-      "Yes. Your data stays private, is encrypted in transit and at rest, and we only use it to serve your conversations.",
+      "Yes. Conversations stay within the guardrails you approve. You can review transcripts, flag responses, and update messaging whenever you like.",
+  },
+  {
+    question: "How is my data secured?",
+    answer:
+      "Your raw content remains private, is encrypted at rest and in transit, and is only used to power your persona. You retain ownership and can request deletion any time.",
   },
 ]
 
