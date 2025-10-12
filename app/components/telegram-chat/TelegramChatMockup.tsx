@@ -8,7 +8,7 @@ import { ChatMessage } from "./ChatMessage"
 import type { ChatMessageData } from "./mockData"
 import { mockMessages } from "./mockData"
 import { DeviceFrame } from "./DeviceFrame"
-import { ChevronLeft } from "../icons"
+import { MicIcon, ChevronLeft } from "../icons"
 
 const messageVariants = {
 	initial: { opacity: 0, y: 32, scale: 0.98 },
@@ -120,10 +120,10 @@ export function TelegramChatMockup() {
 								</AnimatePresence>
 							</div>
 
-							<div className={styles.inputBar}>
-								<span className={styles.inputPlaceholder}>Message</span>
-								<span className={styles.micIcon} aria-hidden />
-							</div>
+						<div className={styles.inputBar}>
+							<span className={styles.inputPlaceholder}>Message</span>
+							<MicIcon className={styles.micIcon} aria-hidden />
+						</div>
 						</div>
 					</div>
 				</div>

@@ -5,6 +5,7 @@ export type ChatMessageData = {
 	from: MessageAuthor
 	text: string
 	timestamp: string
+	type?: 'voice'
 }
 
 export const mockMessages: ChatMessageData[] = [
@@ -35,13 +36,15 @@ export const mockMessages: ChatMessageData[] = [
 	{
 		id: 'm5',
 		from: 'me',
-		text: 'Simple and sharp. Thanks for the clarity as always.',
-		timestamp: '9:42',
+		type: 'voice',
+		text: 'voice-note',
+		timestamp: '9:43',
 	},
 	{
 		id: 'm6',
 		from: 'them',
-		text: 'Happy to help. Keep it consistent and check in if anything feels off.',
-		timestamp: '9:42',
+		type: 'voice',
+		text: 'voice-reply',
+		timestamp: '9:44',
 	},
 ]
