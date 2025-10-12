@@ -55,7 +55,7 @@ export function FAQ({
   }
 
   return (
-    <section className="mx-auto flex w-full max-w-4xl flex-col gap-12">
+    <section className="max-w-[98rem] w-10/12 lg:w-11/12 mx-auto flex flex-col gap-12">
       <header className="space-y-4">
         <h2 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
           {title}

@@ -4,7 +4,6 @@ import { getDictionary } from "./lib/get-dictionary";
 
 import { Comments } from "./components/comments";
 import { FeaturesGrid } from "./components/features-grid";
-import { MarketingSection } from "./components/marketing-section";
 
 import { AnimatedTooltip } from "./components/animated-tooltip";
 import { Button } from "./components/button";
