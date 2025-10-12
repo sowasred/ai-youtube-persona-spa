@@ -1,5 +1,4 @@
 [ ] Design the first version of the website with sections
-  [ ] (arda) - Add iphone video mockup on the right side - Search: "TODO: Put Iphone mockup video here"
   [ ] (arda) - Make the text color change animation faster 1.5x
   [ ] (arda) - Add footer section and add the copyright, privacy policy, terms of service, and contact us links
   [ ] (arda) - Add copyright page
@@ -9,5 +8,6 @@
   [ ] (arda) - Add 404 page
   [ ] (Chad & Ozan) - Change website copy
   [X] (chadash) - Add FAQ section
-[ ] (chadash) - Move Link in navigation into client comp & turn nav comp to server
+[X] (chadash) - Move Link in navigation into client comp & turn nav comp to server
 [ ] (chadash) - How to increase the first content paint in next.js or in general
+  [X] (chadash) - Add iphone video mockup on the right side

@@ -1,4 +1,6 @@
 .frameWrapper {
+	display: flex;
+	justify-content: flex-center;
 	width: min(82vw, 420px);
 	margin: 48px auto 56px;
 	transform: translateY(-36px);
@@ -13,8 +15,8 @@
 
 .frameSvg {
 	display: block;
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 100%;
 }
 
 .telegramScreen {

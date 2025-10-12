@@ -144,14 +144,12 @@ export default async function IndexPage({
               </div>
             </div>
           </div>
-          {/* Image */}
-          <div className="flex justify-center mt-8 mb-12 md:mb-0 lg:justify-end xl:justify-center z-1">
-            <TelegramChatMockup />
-          </div>
+          {/* Iphone mockup */}
+          <TelegramChatMockup />
         </div>
       </section>
 
-      <section className="max-w-[98rem] mx-auto">
+      <section className="max-w-[98rem] lg:mt-[-120px] mx-auto">
         <FeaturesGrid dict={dict.marketing.features_grid} />
       </section>
 
