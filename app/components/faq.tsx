@@ -50,42 +50,44 @@ export function FAQ({
   }
 
   return (
-    <section className="mx-auto flex w-full max-w-4xl flex-col gap-10">
-      <header className="space-y-3">
-        <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+    <section className="mx-auto flex w-full max-w-4xl flex-col gap-12">
+      <header className="space-y-4">
+        <h2 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
           {title}
         </h2>
-        <p className="text-base text-neutral-500 sm:max-w-xl">{description}</p>
+        <p className="text-lg text-neutral-600 sm:max-w-2xl">{description}</p>
       </header>
-      <div className="divide-y divide-slate-200 border-y border-slate-200">
+      <div className="flex flex-col gap-4 sm:gap-6">
         {items.map((faq, index) => {
           const isOpen = openIndex === index
 
           return (
             <article
               key={faq.question}
-              className="transition-colors duration-200 hover:bg-slate-50/70"
+              className="transition-colors duration-200"
             >
               <button
                 type="button"
                 onClick={() => toggleItem(index)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-4 py-5 text-left",
-                  isOpen ? "text-slate-900" : "hover:text-slate-900",
+                  "flex w-full items-center justify-between gap-6 py-6 text-left sm:py-7",
+                  isOpen
+                    ? "text-slate-900"
+                    : "text-slate-500 hover:text-slate-900",
                 )}
               >
-                <span className="text-xl font-medium text-slate-900 sm:text-2xl">
+                <span className="text-2xl font-semibold text-slate-900 sm:text-3xl">
                   {faq.question}
                 </span>
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white transition-colors duration-200">
+                <span className="inline-flex h-10 w-10 items-center justify-center text-slate-400 transition-transform duration-200">
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.26, ease: [0.33, 1, 0.68, 1] }}
                   >
                     <ChevronDown
                       className={cn(
-                        "h-5 w-5 transition-colors duration-200",
-                        isOpen ? "text-blue-500" : "text-slate-500",
+                        "h-6 w-6 transition-colors duration-200",
+                        isOpen ? "text-slate-900" : "text-slate-400",
                       )}
                       aria-hidden
                     />
@@ -102,7 +104,7 @@ export function FAQ({
                     transition={{ duration: 0.28, ease: [0.33, 1, 0.68, 1] }}
                     className="overflow-hidden pb-5"
                   >
-                    <div className="pr-8 text-lg leading-relaxed text-neutral-500 sm:text-xl">
+                    <div className="pr-3 text-xl leading-relaxed text-neutral-600 sm:text-2xl">
                       {faq.answer}
                     </div>
                   </motion.div>
