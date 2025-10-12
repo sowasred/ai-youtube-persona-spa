@@ -13,6 +13,7 @@ import * as Icons from "./components/icons";
 import { SocialIcon } from "react-social-icons";
 import FeaturesSection from "./components/features-section"
 import { FAQ } from "./components/faq";
+import { TelegramChatMockup } from "./components/telegram-chat/TelegramChatMockup";
 
 import type { Locale } from "./config/i18n-config";
 
@@ -145,15 +146,7 @@ export default async function IndexPage({
           </div>
           {/* Image */}
           <div className="flex justify-center mt-8 mb-12 md:mb-0 lg:justify-end xl:justify-center z-1">
-            <div className="flex flex-col items-end w-fit">
-              <Image
-                src="/chat_mockup.svg"
-                width={460}
-                height={900}
-                alt="Chat mockup"
-                className="lg:block object-contain"
-              />
-            </div>
+            <TelegramChatMockup />
           </div>
         </div>
       </section>
