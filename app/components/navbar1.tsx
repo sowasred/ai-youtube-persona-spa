@@ -94,7 +94,7 @@ const Navbar1 = ({
         <nav className="flex gap-8 items-center w-11/12 mx-auto justify-between lg:flex no-wrap">
           {/* Logo */}
           <a href={logo.url} className="flex items-center gap-2">
-            <img src={logo.src} className="max-h-14 lg:max-h-12" alt={logo.alt} />
+            <img src={logo.src} className="h-16 w-auto sm:h-14 lg:h-12" alt={logo.alt} />
           </a>
           <div className="flex items-center justify-between sm:justify-start gap-6 w-full">
             {/* Desktop menu */}
