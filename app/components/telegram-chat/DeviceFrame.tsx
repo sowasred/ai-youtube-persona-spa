@@ -92,7 +92,6 @@ export function DeviceFrame({
 					clipPath={`url(#${clipPathId})`}
 				>
 					<div
-						xmlns="http://www.w3.org/1999/xhtml"
 						style={{ width: "100%", height: "100%" }}
 					>
 						{children}
