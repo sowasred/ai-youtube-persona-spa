@@ -85,17 +85,13 @@ export function DeviceFrame({
 
 			{children ? (
 				<foreignObject
-					x={21.25}
-					y={19.25}
-					width={389.5}
-					height={843.5}
+					x={28}
+					y={24}
+					width={376}
+					height={834}
 					clipPath={`url(#${clipPathId})`}
 				>
-					<div
-						style={{ width: "100%", height: "100%" }}
-					>
-						{children}
-					</div>
+					<div style={{ width: "100%", height: "100%" }}>{children}</div>
 				</foreignObject>
 			) : null}
 
@@ -103,14 +99,7 @@ export function DeviceFrame({
 
 			<defs>
 				<clipPath id={clipPathId}>
-					<rect
-						x={21.25}
-						y={19.25}
-						width={389.5}
-						height={843.5}
-						rx={55.75}
-						ry={55.75}
-					/>
+					<rect x={28} y={24} width={376} height={834} rx={55} ry={55} />
 				</clipPath>
 			</defs>
 		</svg>
