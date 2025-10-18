@@ -1,15 +1,14 @@
-[ ] Design the first version of the website with sections
-  [X] (arda) - Make the text color change animation faster 1.5x
-  [X] (arda) - Add footer section and add the copyright, privacy policy, terms of service, and contact us links
-  [X] (arda) - Add privacy policy page
-  [X] (arda) - Add terms of service page
-  [ ] (arda) - Add contact us section at the bottom of the main page just like the other sections with a darker bg
-  [X] (arda) - Add 404 page
-  [X] (arda) - Add Light and dark mode functionality
-  [ ] (Arda) - Implement darkmode styling
-  [ ] (Chad & Arda) - Create darkmode icons
-  [ ] (Chad & Ozan) - Change website copy
-  [X] (chadash) - Add FAQ section
-[X] (chadash) - Move Link in navigation into client comp & turn nav comp to server
+[ ] (arda) - Add contact us section at the bottom of the main page just like the other sections with a darker bg
+[ ] (arda) - sticky navbar, always visible
+[ ] (arda) - how it works nav doesn't work on privacy page.
+[ ] (arda) - hide "what people are saying" section on the homepage.
+[ ] (arda) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
+[ ] (arda) - Fix "children &apos" issue in privacy policy table of contents
+[ ] (arda) - Remove Children's privacy section from privacy policy
+[ ] (arda) - Remove mentions of Aiven cloud from privacy policy
+[ ] (arda) - Remove "Receive AI-powered content advice based on audience interactions" from terms of service
+[ ] (arda) - Remove "Access analytics and insights about audience interactions" from terms of service
+[ ] (arda) - Remove "Be at least 18 years of age (or have parental/guardian consent if under 18)" from terms of service
+[ ] (arda) - Add footer to both privacy and terms of service pages
 [ ] (chadash) - How to increase the first content paint in next.js or in general
-  [X] (chadash) - Add iphone video mockup on the right side
+[ ] (arda) - on mobile screen fix the telegram interface overflowing the iphone mockup boundry.
