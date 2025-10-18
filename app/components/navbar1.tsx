@@ -55,7 +55,7 @@ export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props
             </ul>
 
             <div className="flex items-center gap-4">
-              <DarkModeToggle />
+              {/* <DarkModeToggle /> */}
               <NavbarNavigation menu={menu} />
             </div>
           </div>
