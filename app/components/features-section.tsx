@@ -1,7 +1,6 @@
 import Feature from "./feature"
 const data = [
   {
-    isSoon: false,
     isLeft: true,
     title: "Trained on your data",
     subtitle: "Intelligently trained on the data you produced.",
@@ -10,7 +9,6 @@ const data = [
     alt: "brain image"
   },
   {
-    isSoon: false,
     isLeft: false,
     title: "Get content advice",
     subtitle: "Get AI-powered suggestions based on conversation data.",
@@ -18,7 +16,6 @@ const data = [
     alt: "notification image"
   },
   {
-    isSoon: true,
     isLeft: true,
     title: "Speaking for you",
     subtitle: "Fans can speak with you for real.",
@@ -34,7 +31,6 @@ export default function FeaturesSection() {
         return (
           <Feature
             key={i}
-            isSoon={elem.isSoon}
             isLeft={elem.isLeft}
             title={elem.title}
             subtitle={elem.subtitle}

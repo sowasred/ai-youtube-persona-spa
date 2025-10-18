@@ -9,6 +9,7 @@ import type { ChatMessageData } from "./mockData"
 import { mockMessages } from "./mockData"
 import { DeviceFrame } from "./DeviceFrame"
 import { MicIcon, ChevronLeft } from "../icons"
+import Image from "next/image"
 
 const messageVariants = {
 	initial: { opacity: 0, y: 32, scale: 0.98 },
@@ -92,7 +93,7 @@ export function TelegramChatMockup() {
 							<span className={styles.contactStatus}>online</span>
 						</div>
 						<div className={styles.headerAvatar} aria-hidden>
-							<img src="/andrew_huberman_pic.jpg" alt="Andrew Huberman" className={styles.headerAvatarImage} />
+							<Image src="/andrew_huberman_pic.jpg" alt="Andrew Huberman" width={32} height={32} className={styles.headerAvatarImage} />
 						</div>
 					</header>
 					</div>

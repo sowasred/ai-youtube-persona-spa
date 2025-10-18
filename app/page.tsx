@@ -13,8 +13,8 @@ import { SocialIcon } from "react-social-icons";
 import FeaturesSection from "./components/features-section"
 import { FAQ } from "./components/faq";
 import { TelegramChatMockup } from "./components/telegram-chat/TelegramChatMockup";
+import { Footer } from "./components/footer";
 
-import type { Locale } from "./config/i18n-config";
 
 const people = [
   {
@@ -67,14 +67,8 @@ const people = [
   },
 ];
 
-export default async function IndexPage({
-  params: { lang },
-}: {
-  params: {
-    lang: Locale;
-  };
-}) {
-  const dict = await getDictionary(lang);
+export default async function IndexPage() {
+  const dict = await getDictionary();
 
   return (
     <>
@@ -86,7 +80,7 @@ export default async function IndexPage({
             <div className="flex flex-col pt-4 md:pt-12 w-full">
               {/* Title */}
               <div className="mt-8 md:mt-0 lg:mt-20 mb-4">
-                <div className="text-left text-[70px] md:text-6xl font-semibold leading-tight md:leading-[4rem] xl:leading-[4rem]">
+                <div className="text-left text-[70px] md:text-6xl font-semibold leading-tight md:leading-[4rem] xl:leading-[4rem] text-foreground">
                   {dict.marketing.title ||
                     "Fans can talk with you "}
                   <ColourfulText className="" text="24/7" />
@@ -94,7 +88,7 @@ export default async function IndexPage({
               </div>
               {/* Subtitle */}
               <div className="hidden md:block md:max-w-120 lg:max-w-160">
-                <span className="text-neutral-500 text-3xl md:text-2xl leading-relaxed">
+                <span className="text-muted-foreground text-3xl md:text-2xl leading-relaxed">
                 <ColourfulText className="font-medium" text="Your voice"/> enhanced with technology, <ColourfulText className="font-medium" text="at your fans' fingertips"/>
                 </span>
               </div>
@@ -114,7 +108,7 @@ export default async function IndexPage({
                 </Link>
               </div>
               {/* Available Apps Section */}
-              <div className="text-base sm:text-lg md:text-xl text-gray-800 flex items-center gap-1 ty:gap-2 flex-wrap">
+              <div className="text-base sm:text-lg md:text-xl text-foreground flex items-center gap-1 ty:gap-2 flex-wrap">
                 <span>Available in</span>
                 <SocialIcon
                   network="whatsapp"
@@ -132,7 +126,7 @@ export default async function IndexPage({
               <div className="flex flex-col items-center justify-start mt-12 md:mt-32 w-full">
                 <div className="flex flex-col items-start justify-start w-full">
                   <div className="w-full md:max-w-[440px]">
-                    <span className="text-neutral-500 text-2xl">
+                    <span className="text-muted-foreground text-2xl">
                       {dict.marketing.contributors.contributors_desc}
                     </span>
                   </div>
@@ -144,7 +138,9 @@ export default async function IndexPage({
             </div>
           </div>
           {/* Iphone mockup */}
-          <TelegramChatMockup />
+          <div className="mt-8">
+            <TelegramChatMockup />
+          </div>
         </div>
       </section>
 
@@ -229,6 +225,7 @@ export default async function IndexPage({
         <MarketingSection dict={dict.marketing.right_side} />
       </section> */}
 
+      <Footer />
     </>
   );
 }

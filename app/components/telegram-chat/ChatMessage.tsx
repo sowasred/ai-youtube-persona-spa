@@ -6,7 +6,6 @@ import type { ChatMessageData } from "./mockData"
 import styles from "./styles.module.css"
 
 export function ChatMessage({ text, from, timestamp, type }: ChatMessageData) {
-	const isMe = from === "me"
 
 	return (
 		<div className={clsx(styles.messageRow, from === "me" ? styles.meRow : styles.themRow)}>

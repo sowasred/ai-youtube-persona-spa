@@ -4,11 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import type { DotLottie } from "@lottiefiles/dotlottie-react";
 
-import { GlowingEffect } from "./glowing-effect";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Feature({
-  isSoon,
   isLeft,
   title,
   subtitle,
@@ -16,7 +14,6 @@ export default function Feature({
   imgAlt,
   lottieSrc,
 }: {
-  isSoon: boolean;
   isLeft: boolean;
   title: string;
   subtitle: string;

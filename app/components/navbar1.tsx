@@ -1,4 +1,6 @@
 import { NavbarNavigation } from "./navbar-navigation.client"
+import { DarkModeToggle } from "./dark-mode-toggle"
+import Image from "next/image"
 
 export interface MenuItem {
   title: string
@@ -17,7 +19,7 @@ export interface Navbar1Props {
 }
 
 const defaultLogo = {
-  url: "https://www.replyfan.com",
+  url: "/",
   src: "/reply_fan_logo.svg",
   alt: "logo",
   title: "replyfan.com",
@@ -35,10 +37,10 @@ export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props
       <div className="container w-full mx-auto">
         <nav className="flex items-center w-11/12 mx-auto justify-between gap-8 lg:flex-nowrap">
           <a href={logo.url} className="flex items-center gap-2" aria-label={logo.title}>
-            <img src={logo.src} className="h-16 w-auto sm:h-14 lg:h-12" alt={logo.alt} />
+            <Image src={logo.src} width={64} height={64} className="h-16 w-auto sm:h-14 lg:h-12" alt={logo.alt} />
           </a>
 
-          <div className="flex items-center gap-6 w-full justify-between sm:justify-start">
+          <div className="flex items-center gap-6 w-full justify-end sm:justify-between">
             <ul className="hidden sm:flex items-center gap-4">
               {menu.map((item) => (
                 <li key={item.url}>
@@ -52,7 +54,10 @@ export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props
               ))}
             </ul>
 
-            <NavbarNavigation menu={menu} />
+            <div className="flex items-center gap-4">
+              <DarkModeToggle />
+              <NavbarNavigation menu={menu} />
+            </div>
           </div>
         </nav>
       </div>

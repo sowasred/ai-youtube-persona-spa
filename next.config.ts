@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         hostname: 'cdnv2.ruguoapp.com',
         pathname: '/**'
       },
+      {
+        protocol: 'https',
+        hostname: 'avatar.vercel.sh',
+        pathname: '/**'
+      },
     ],
   },
 };

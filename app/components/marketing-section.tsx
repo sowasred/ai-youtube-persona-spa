@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { GlowingEffect } from "./glowing-effect";
-import * as Icons from "./icons";
 
 export function MarketingSection({
   dict,

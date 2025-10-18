@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 
 export function ColourfulText({ text,  className}: { text: string, className: string }) {
-  const colors = [
+  const colors = React.useMemo(() => [
     "rgb(131, 179, 32)",
     "rgb(47, 195, 106)",
     "rgb(42, 169, 210)",
@@ -15,20 +15,18 @@ export function ColourfulText({ text,  className}: { text: string, className: st
     "rgb(230, 64, 92)",
     "rgb(232, 98, 63)",
     "rgb(249, 129, 47)",
-  ];
+  ], []);
 
   const [currentColors, setCurrentColors] = React.useState(colors);
-  const [count, setCount] = React.useState(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       const shuffled = [...colors].sort(() => Math.random() - 0.5);
       setCurrentColors(shuffled);
-      setCount((prev) => prev + 1);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [colors]);
 
   // return (
   //   text.split("").map((char, index) => (

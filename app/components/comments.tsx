@@ -1,5 +1,6 @@
 import { cn } from "./lib/utils/cn";
 import Marquee from "./marquee";
+import Image from "next/image";
 
 const reviews = [
   {
@@ -65,7 +66,14 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full w-8 h-8 sm:w-8 sm:h-8" alt="" src={img} />
+        <Image 
+          className="rounded-full w-8 h-8 sm:w-8 sm:h-8" 
+          alt={`${name}'s avatar`} 
+          src={img} 
+          width={32} 
+          height={32}
+          unoptimized
+        />
         <div className="flex flex-col">
           <figcaption className="font-medium text-black">
             {name}

@@ -39,7 +39,7 @@ export const AnimatedTooltip = ({
     useTransform(x, [-100, 100], [-50, 50]),
     springConfig
   );
-  const calculateTooltipPosition = (element: HTMLElement, itemId: number) => {
+  const calculateTooltipPosition = (element: HTMLElement) => {
     const rect = element.getBoundingClientRect();
     const tooltipWidth = 250; // Approximate tooltip width
     const viewportWidth = window.innerWidth;
@@ -79,7 +79,7 @@ export const AnimatedTooltip = ({
     setHoveredIndex(id);
     
     if (event?.currentTarget) {
-      const position = calculateTooltipPosition(event.currentTarget, id);
+      const position = calculateTooltipPosition(event.currentTarget);
       setTooltipPosition(prev => ({ ...prev, [id]: position }));
     }
   };
@@ -97,7 +97,7 @@ export const AnimatedTooltip = ({
     if (newHoverState !== null) {
       const avatarElement = event.currentTarget.closest('.group') as HTMLElement;
       if (avatarElement) {
-        const position = calculateTooltipPosition(avatarElement, id);
+        const position = calculateTooltipPosition(avatarElement);
         setTooltipPosition(prev => ({ ...prev, [id]: position }));
       }
     }
