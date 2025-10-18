@@ -1,3 +1,4 @@
+[ ] (chadash) - Update features section (have animation for each feature and improve quality of features and increase quantity of features).
 [ ] (arda) - Add contact us section at the bottom of the main page just like the other sections with a darker bg
 [ ] (arda) - IMPORTANT task: Add interaction so that clicking on the image will change the conversation, image and name on the telegram interface:
   - At first andrew huberman logo will have a blue border around it's image circle and the animation will show his conversations with the fan.
