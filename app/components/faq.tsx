@@ -117,9 +117,9 @@ export function FAQ({
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.28, ease: [0.33, 1, 0.68, 1] }}
-                    className="overflow-hidden pb-5"
+                    className="overflow-hidden"
                   >
-                    <div className="pr-3 text-xl leading-relaxed text-neutral-600 sm:text-2xl">
+                    <div className="pb-5 pr-3 text-xl leading-relaxed text-neutral-600 sm:text-2xl">
                       {faq.answer}
                     </div>
                   </motion.div>
