@@ -15,7 +15,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "How quickly can I launch my AI persona?",
     answer:
-      "Most creators go live within a week. We handle production, training, and platform setup as soon as you share onboarding materials.",
+      "Most creators can go live within a week. We handle production, training, and platform setup as soon as you share onboarding materials.",
   },
   {
     question: "What content do you need from me?",
@@ -30,12 +30,22 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "Will answers stay accurate to my brand?",
     answer:
-      "Yes. Conversations stay within the guardrails you approve. You can review transcripts, flag responses, and update messaging whenever you like.",
+      "Yes. Conversations stay within the guardrails you approve. You can review transcripts, flag responses, and fine tune the messaging tone however you like.",
   },
   {
     question: "How is my data secured?",
     answer:
       "Your raw content remains private, is encrypted at rest and in transit, and is only used to power your persona. You retain ownership and can request deletion any time.",
+  },
+  {
+    question: "What happens if fans ask something off-topic?",
+    answer:
+      "The persona gently redirects or declines to comment, staying true to your brand and personality boundaries.",
+  },
+  {
+    question: "Can I monetize my AI persona?",
+    answer:
+      "Yes! You’re in full control of how you monetize. Each chatbot includes built-in subscribe and cancel-subscription flows, so fans can easily manage payments directly through WhatsApp or Telegram. You can set your own pricing, offer premium access through Reply Fan’s platform.",
   },
 ]
 
