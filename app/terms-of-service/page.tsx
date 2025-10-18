@@ -72,7 +72,7 @@ export default function TermsOfService() {
   return (
     <LegalLayout
       title="Terms of Service"
-      lastUpdated="December 19, 2024"
+      lastUpdated="October 18, 2025"
       tableOfContents={tableOfContents}
     >
       <div className="space-y-8">

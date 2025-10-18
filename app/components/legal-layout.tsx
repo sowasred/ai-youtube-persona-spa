@@ -21,10 +21,10 @@ export function LegalLayout({ children, title, lastUpdated, tableOfContents }: L
       {/* Header */}
       <div className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="lg:hidden mb-4">
             <Link 
               href="/" 
-              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
             >
               ← Back to ReplyFan
             </Link>
@@ -45,6 +45,14 @@ export function LegalLayout({ children, title, lastUpdated, tableOfContents }: L
             <div className="hidden lg:block lg:col-span-1">
               <div className="sticky top-8">
                 <nav className="space-y-2">
+                  <div className="mb-4">
+                    <Link 
+                      href="/" 
+                      className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium text-sm"
+                    >
+                      ← Back to ReplyFan
+                    </Link>
+                  </div>
                   <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
                     Table of Contents
                   </h3>

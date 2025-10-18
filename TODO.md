@@ -6,6 +6,8 @@
   [ ] (arda) - Add contact us section at the bottom of the main page just like the other sections with a darker bg
   [X] (arda) - Add 404 page
   [X] (arda) - Add Light and dark mode functionality
+  [ ] (Arda) - Implement darkmode styling
+  [ ] (Chad & Arda) - Create darkmode icons
   [ ] (Chad & Ozan) - Change website copy
   [X] (chadash) - Add FAQ section
 [X] (chadash) - Move Link in navigation into client comp & turn nav comp to server

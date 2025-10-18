@@ -1,5 +1,5 @@
 import { NavbarNavigation } from "./navbar-navigation.client"
-import { DarkModeToggle } from "./dark-mode-toggle"
+// import { DarkModeToggle } from "./dark-mode-toggle"
 import Image from "next/image"
 
 export interface MenuItem {
