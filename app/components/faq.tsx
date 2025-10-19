@@ -85,7 +85,7 @@ export function FAQ({
                 type="button"
                 onClick={() => toggleItem(index)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-6 py-6 text-left sm:py-7",
+                  "flex w-full items-center justify-between gap-6 py-6 text-left sm:py-7 cursor-pointer",
                   isOpen
                     ? "text-slate-900"
                     : "text-slate-500 hover:text-slate-900",

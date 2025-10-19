@@ -186,7 +186,7 @@ export const AnimatedTooltip = ({
                     },
                   }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="flex gap-2 mt-3"
+                  className="flex gap-2 mt-3 cursor-pointer"
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={handleMouseLeave}
                   onClick={(event) => event.stopPropagation()}
@@ -225,7 +225,7 @@ export const AnimatedTooltip = ({
           </AnimatePresence>
           <button
             type="button"
-            className="block focus:outline-none"
+            className="block focus:outline-none cursor-pointer"
             onClick={(e) => handleAvatarTap(item.id, e)}
           >
             <Image
