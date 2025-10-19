@@ -29,6 +29,7 @@ export default function RootLayout({
       <GoogleAnalytics gaId="G-70H4ZQ311P" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         <Navbar1/>
         {children}
