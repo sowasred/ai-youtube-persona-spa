@@ -302,16 +302,6 @@ export default function PrivacyPolicy() {
                 collect information according to their privacy policy.
               </p>
             </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Aiven Cloud
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We use Aiven Cloud for database hosting. Aiven provides secure 
-                infrastructure services according to their privacy policy.
-              </p>
-            </div>
           </div>
         </section>
 
@@ -324,7 +314,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Encryption of data in transit and at rest</li>
-            <li>Secure database hosting through Aiven Cloud</li>
+            <li>Secure database hosting</li>
             <li>Regular security audits and monitoring</li>
             <li>Access controls and authentication measures</li>
             <li>Regular backups and disaster recovery procedures</li>

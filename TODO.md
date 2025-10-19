@@ -9,7 +9,7 @@
 [x] (ozan) - Hide "what people are saying" section on the homepage.
 [x] (ozan) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
 [x] (ozan) - Fix "children &apos" issue in privacy policy table of contents
-[ ] (ozan) - Remove mentions of Aiven cloud from privacy policy
+[x] (ozan) - Remove mentions of Aiven cloud from privacy policy
 [x] (ozan) - Add footer to both privacy and terms of service pages
 [ ] (chadash) - How to increase the first content paint in next.js or in general
 [ ] (ozan) - Whole content scanning and finessing.
