@@ -92,7 +92,7 @@ export default async function IndexPage() {
                 </span>
               </div>
               {/* CTA Buttons */}
-              <div className="mb-2 md:mt-8 w-full z-10">
+              <div className="mb-2 md:mt-8 w-full z-10 cursor-pointer">
                 <Link
                   // TODO: Add waitlist link
                   href="https://calendly.com/replyfanapp/30min"
