@@ -137,10 +137,10 @@ export default function TermsOfService() {
             Creator Accounts and Access
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            To use Reply Fan as a content creator, you must create an account and provide access to the content that will be used to train your AI persona. This may include podcasts, videos, newsletters, or other media that you own or have permission to use.
+            To use ReplyFan as a content creator, you must create an account and provide access to the content that will be used to train your AI persona. This may include podcasts, videos, newsletters, or other media that you own or have permission to use.
           </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            After your persona is trained, Reply Fan will provide you with dedicated WhatsApp and Telegram chatbot accounts, which you can share publicly with your audience. These chatbots allow fans to interact with your AI persona directly.
+            After your persona is trained, ReplyFan will provide you with dedicated WhatsApp and Telegram chatbot accounts, which you can share publicly with your audience. These chatbots allow fans to interact with your AI persona directly.
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Maintain the accuracy and ownership of the content you provide.</li>
@@ -189,7 +189,7 @@ export default function TermsOfService() {
           Creator Dashboard and Insights
         </h2>
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-          Reply Fan provides each creator with access to a dashboard containing anonymized performance metrics, including:
+          ReplyFan provides each creator with access to a dashboard containing anonymized performance metrics, including:
         </p>
         <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
           <li>Total fan messages and engagement levels</li>
@@ -207,15 +207,11 @@ export default function TermsOfService() {
             Creator Responsibilities
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            As a creator using Reply Fan, you agree to:
+            As a creator using ReplyFan, you agree to:
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Provide accurate and lawful content for AI persona training.</li>
-            <li>Monitor and supervise AI-generated messages shared with your audience.</li>
-            <li>Accept responsibility for the content, tone, and advice your AI persona provides.</li>
-            <li>Comply with all applicable laws and platform rules, including those of WhatsApp and Telegram.</li>
             <li>Respect the intellectual property rights of others and use only content you own or have rights to.</li>
-            <li>Use the service responsibly and avoid any action that may disrupt or misuse our systems.</li>
             <li>Understand that conversations are processed by OpenAI’s API for generating responses, and consent to their data usage practices as part of using our service.</li>
           </ul>
         </section>
@@ -231,7 +227,7 @@ export default function TermsOfService() {
                 Content Ownership
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                You retain full ownership of all content you provide, including any recordings, videos, transcripts, or written materials used to create your AI persona. Reply Fan does not claim ownership of your original work.
+                You retain full ownership of all content you provide, including any recordings, videos, transcripts, or written materials used to create your AI persona. ReplyFan does not claim ownership of your original work.
               </p>
             </div>
 
@@ -240,7 +236,7 @@ export default function TermsOfService() {
                 Permission to Use Content
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                By using our service, you grant Reply Fan permission to:
+                By using our service, you grant ReplyFan permission to:
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
                 <li>Access and process your approved content to train and maintain your AI persona.</li>
@@ -253,7 +249,7 @@ export default function TermsOfService() {
                 Content Usage Restrictions
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Reply Fan will not use your content for any other purpose without your written consent. This includes:
+                ReplyFan will not use your content for any other purpose without your written consent. This includes:
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
                 <li>Training AI personas for other creators.</li>
@@ -270,7 +266,7 @@ export default function TermsOfService() {
             Prohibited Content and Activities
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            You may not use Reply Fan to create, distribute, or promote content that:
+            You may not use ReplyFan to create, distribute, or promote content that:
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Violates any applicable law or regulation.</li>
@@ -299,10 +295,7 @@ export default function TermsOfService() {
                 AI-Generated Content
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                While we strive to provide accurate and helpful AI responses, we cannot 
-                guarantee the accuracy, completeness, or appropriateness of AI-generated 
-                content. You are responsible for monitoring and supervising all AI 
-                interactions with your audience.
+                While we make every effort to ensure AI responses are accurate and appropriate, ReplyFan does not warrant their completeness or reliability. We recommend that creators periodically review their AI persona’s interactions to maintain consistency with their brand voice.
               </p>
             </div>
             
@@ -342,7 +335,7 @@ export default function TermsOfService() {
                 or service interruptions.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                You agree to indemnify and hold Reply Fan harmless from any claims, damages, or losses arising from your use of the service or the actions of your AI persona.
+                You agree to indemnify and hold ReplyFan harmless from any claims, damages, or losses arising from your use of the service or the actions of your AI persona.
               </p>
             </div>
           </div>
@@ -359,7 +352,6 @@ export default function TermsOfService() {
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li>Violation of these Terms of Service</li>
             <li>Engaging in prohibited activities</li>
-            <li>Non-payment of subscription fees</li>
             <li>Fraudulent or illegal use of the service</li>
             <li>At our sole discretion for any reason</li>
           </ul>
@@ -421,7 +413,7 @@ export default function TermsOfService() {
         </section>
       
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          By agreeing to these terms, you grant Reply Fan permission to process and use your provided content exclusively for creating and maintaining your AI persona. You retain full ownership of your original content. Reply Fan will not use your content for other creators or purposes without your explicit consent.
+          By agreeing to these terms, you grant ReplyFan permission to process and use your provided content exclusively for creating and maintaining your AI persona. You retain full ownership of your original content. ReplyFan will not use your content for other creators or purposes without your explicit consent.
         </p>
       </div>
     </LegalLayout>

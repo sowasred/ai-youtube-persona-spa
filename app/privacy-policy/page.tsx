@@ -159,7 +159,7 @@ export default function PrivacyPolicy() {
               Usage Analytics
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            We collect limited analytics data to understand how Reply Fan is performing and to improve the experience.  
+            We collect limited analytics data to understand how ReplyFan is performing and to improve the experience.  
             This may include: 
             </p>
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">

@@ -45,7 +45,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "Can I monetize my AI persona?",
     answer:
-      "Yes! You’re in full control of how you monetize. Each chatbot includes built-in subscribe and cancel-subscription flows, so fans can easily manage payments directly through WhatsApp or Telegram. You can set your own pricing, offer premium access through Reply Fan’s platform.",
+      "Yes! You’re in full control of how you monetize. Each chatbot includes built-in subscribe and cancel-subscription flows, so fans can easily manage payments directly through WhatsApp or Telegram. You can set your own pricing, offer premium access through ReplyFan’s platform.",
   },
 ]
 
