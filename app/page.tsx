@@ -197,8 +197,8 @@ export default async function IndexPage() {
         </div>
         <FeaturesSection/>
       </section>
-
-      <section className="w-full px-8 sm:px-0 sm:pt-24 md:px-0 md:pt-8 xl:px-0 xl:pt-24 overflow-x-hidden">
+      {/* TODO: Hide this section on the homepage until we have some reviews */}
+      {/* <section className="w-full px-8 sm:px-0 sm:pt-24 md:px-0 md:pt-8 xl:px-0 xl:pt-24 overflow-x-hidden">
         <div className="flex h-full flex-col items-left pb-[100px] pt-10">
           <div className="max-w-[98rem] w-full sm:w-10/12 lg:w-11/12 mx-auto">
             <div>
@@ -214,7 +214,7 @@ export default async function IndexPage() {
             <Comments />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="faq" className="max-w-[98rem] w-10/12 lg:w-11/12 my-36 mx-auto">
         <FAQ />
