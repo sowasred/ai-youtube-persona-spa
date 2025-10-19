@@ -7,7 +7,7 @@
 [ ] (arda) - Fix clicking "how it works" or "features" or "FAQ" nav navigation items on privacy page.
 [ ] (chadash) - Update features section (have animation for each feature and improve quality of features and increase quantity of features).
 [x] (ozan) - Hide "what people are saying" section on the homepage.
-[ ] (ozan) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
+[x] (ozan) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
 [x] (ozan) - Fix "children &apos" issue in privacy policy table of contents
 [ ] (ozan) - Remove mentions of Aiven cloud from privacy policy
 [x] (ozan) - Add footer to both privacy and terms of service pages

@@ -229,7 +229,6 @@ export default function PrivacyPolicy() {
                 <li>User messages (text and voice) are sent to OpenAI's servers for processing</li>
                 <li>OpenAI generates responses (text and voice) based on the creator's trained persona</li>
                 <li>Responses are returned to ReplyFan and delivered to users</li>
-                <li>Conversation history is stored locally for context maintenance and content advice generation</li>
               </ol>
             </div>
             
