@@ -21,22 +21,23 @@ const tableOfContents = [
   },
   {
     id: "user-accounts",
-    title: "User Accounts and Registration",
+    title: "Creator Accounts and Access",
   },
   {
     id: "subscription-payment",
     title: "Subscription and Payment",
     subsections: [
-      { id: "free-trial", title: "Free Trial" },
-      { id: "subscription-plans", title: "Subscription Plans" },
       { id: "payment-processing", title: "Payment Processing" },
-      { id: "no-refunds", title: "No Refund Policy" },
-      { id: "cancellation", title: "Cancellation" },
+      { id: "cancellation", title: "Subscription Management" },
     ],
   },
   {
+    id: "creator-dashboard",
+    title: "Creator Dashboard and Insights",
+  },
+  {
     id: "user-responsibilities",
-    title: "User Responsibilities",
+    title: "Creator Responsibilities",
   },
   {
     id: "ai-persona-content",
@@ -100,8 +101,8 @@ export default function TermsOfService() {
             ReplyFan is an AI-powered chatbot service that allows content creators to:
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Create personalized AI personas based on their existing content (podcasts, videos, newsletters, coaching calls)</li>
-            <li>Deploy AI chatbots on WhatsApp and Telegram platforms with voice message support</li>
+            <li>Create personalized AI personas based on their existing content (podcasts, videos, newsletters, coaching calls, etc.)</li>
+            <li>Deploy AI chatbots on WhatsApp and Telegram platforms with your own voice message support</li>
             <li>Engage with their audience 24/7 through automated conversations (text and voice)</li>
             <li>Receive AI-powered content advice based on audience interactions</li>
             <li>Access analytics and insights about audience interactions</li>
@@ -133,110 +134,89 @@ export default function TermsOfService() {
 
         <section id="user-accounts">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            User Accounts and Registration
+            Creator Accounts and Access
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            To use ReplyFan, you must create an account by connecting your WhatsApp or 
-            Telegram account. You are responsible for:
+            To use Reply Fan as a content creator, you must create an account and provide access to the content that will be used to train your AI persona. This may include podcasts, videos, newsletters, or other media that you own or have permission to use.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            After your persona is trained, Reply Fan will provide you with dedicated WhatsApp and Telegram chatbot accounts, which you can share publicly with your audience. These chatbots allow fans to interact with your AI persona directly.
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Maintaining the security of your account credentials</li>
-            <li>All activities that occur under your account</li>
-            <li>Keeping your contact information up to date</li>
-            <li>Notifying us immediately of any unauthorized access</li>
+            <li>Maintain the accuracy and ownership of the content you provide.</li>
+            <li>Ensure your chatbot’s tone and responses align with your intended audience.</li>
           </ul>
-        </section>
+      </section>
 
-        <section id="subscription-payment">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Subscription and Payment
-          </h2>
-          
-          <div id="free-trial" className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              Free Trial
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              New users can access ReplyFan with limited usage through our free trial. 
-              During the trial period, you can:
-            </p>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
-              <li>Test the AI chatbot functionality</li>
-              <li>Send a limited number of messages</li>
-              <li>Experience the core features of the service</li>
-            </ul>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
-              Once you reach the usage limit, you will be prompted to subscribe to 
-              continue using the service.
-            </p>
-          </div>
+      <section id="subscription-payment">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Subscriptions and Revenue Sharing
+        </h2>
 
-          <div id="subscription-plans" className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              Subscription Plans
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              We offer various subscription plans with different features and usage limits. 
-              Pricing and plan details are available on our website and may be updated 
-              from time to time.
-            </p>
-          </div>
+        <div className="mb-6">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            Fans can chat with your AI persona for free with limited daily messages. To continue unlimited access or unlock premium features, fans can subscribe directly through WhatsApp or Telegram using ReplyFan’s seamless in-app payment system.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            As a content creator, you will receive a share of the subscription revenue from premium users interacting with your AI persona. The specific revenue split will be agreed upon between you and ReplyFan prior to your chatbot’s launch.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            ReplyFan covers all development, hosting, and maintenance costs. You will not be charged to create or maintain your AI chatbot unless otherwise agreed in writing.
+          </p>
+        </div>
 
-          <div id="payment-processing" className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              Payment Processing
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              All payments are processed securely through Stripe. By subscribing, you 
-              agree to Stripe's terms of service and privacy policy. We do not store 
-              your payment information directly.
-            </p>
-          </div>
+        <div id="payment-processing" className="mb-6">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+            Payment Processing
+          </h3>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            All payments and subscription renewals are processed securely through Stripe. ReplyFan does not store any sensitive payment information. By subscribing or receiving revenue shares, you agree to comply with Stripe's terms of service and privacy policy.
+          </p>
+        </div>
 
-          <div id="no-refunds" className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              No Refund Policy
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              All subscription fees are non-refundable. This includes partial refunds 
-              for unused portions of your subscription period. By subscribing, you 
-              acknowledge and agree to this no-refund policy.
-            </p>
-          </div>
+        <div id="cancellation" className="mb-6">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+            Subscription Management
+          </h3>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Fans can start, pause, or cancel their subscriptions directly through WhatsApp or Telegram at any time. Cancellation takes effect at the end of the current billing period.
+          </p>
+        </div>
+      </section>
 
-          <div id="cancellation" className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              Cancellation
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              You may cancel your subscription at any time through your account settings 
-              or by contacting us. Cancellation will take effect at the end of your 
-              current billing period, and you will retain access to the service until 
-              that time.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
-              Upon cancellation, your account and all associated data will be deleted 
-              within 30 days, unless you request immediate deletion.
-            </p>
-          </div>
-        </section>
+      <section id="creator-dashboard">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          Creator Dashboard and Insights
+        </h2>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          Reply Fan provides each creator with access to a dashboard containing anonymized performance metrics, including:
+        </p>
+        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Total fan messages and engagement levels</li>
+          <li>Number of free and subscribed users</li>
+          <li>Conversation trends and engagement insights</li>
+          <li>AI-powered content advice based on audience conversations</li>
+        </ul>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+          These analytics are intended to help creators understand fan engagement and develop new content ideas. No private user data or individual conversations are shared.
+        </p>
+      </section>
 
         <section id="user-responsibilities">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            User Responsibilities
+            Creator Responsibilities
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            As a user of ReplyFan, you are responsible for:
+            As a creator using Reply Fan, you agree to:
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Ensuring the accuracy of information provided for AI persona creation</li>
-            <li>Monitoring and supervising AI-generated responses to your audience</li>
-            <li>Taking responsibility for the content and advice given by your AI persona</li>
-            <li>Complying with all applicable laws and regulations in your jurisdiction</li>
-            <li>Respecting the intellectual property rights of others</li>
-            <li>Using the service in a manner that does not harm or abuse our systems</li>
-            <li>Understanding that conversation data is shared with OpenAI for AI processing</li>
-            <li>Consenting to OpenAI's data usage policies when using our service</li>
+            <li>Provide accurate and lawful content for AI persona training.</li>
+            <li>Monitor and supervise AI-generated messages shared with your audience.</li>
+            <li>Accept responsibility for the content, tone, and advice your AI persona provides.</li>
+            <li>Comply with all applicable laws and platform rules, including those of WhatsApp and Telegram.</li>
+            <li>Respect the intellectual property rights of others and use only content you own or have rights to.</li>
+            <li>Use the service responsibly and avoid any action that may disrupt or misuse our systems.</li>
+            <li>Understand that conversations are processed by OpenAI’s API for generating responses, and consent to their data usage practices as part of using our service.</li>
           </ul>
         </section>
 
@@ -244,46 +224,42 @@ export default function TermsOfService() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             AI Persona and Content
           </h2>
-          
+
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Content Ownership
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                You retain full ownership of your original content, including YouTube 
-                videos and transcripts used to create your AI persona. We do not claim 
-                ownership of your content.
+                You retain full ownership of all content you provide, including any recordings, videos, transcripts, or written materials used to create your AI persona. Reply Fan does not claim ownership of your original work.
               </p>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Permission to Use Content
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                By using our service, you grant us permission to:
+                By using our service, you grant Reply Fan permission to:
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
-                <li>Access and process your existing content (podcasts, videos, newsletters, coaching calls)</li>
-                <li>Use this content to train your personalized AI persona</li>
-                <li>Maintain conversation context for better user experience</li>
+                <li>Access and process your approved content to train and maintain your AI persona.</li>
+                <li>Store and reference this content for improving conversation accuracy and continuity.</li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Content Usage Restrictions
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We will not use your content for any other purposes without your explicit 
-                permission. This includes:
+                Reply Fan will not use your content for any other purpose without your written consent. This includes:
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
-                <li>Training AI models for other users</li>
-                <li>Creating marketing materials featuring your content</li>
-                <li>Sharing your content with third parties</li>
-                <li>Using your content for commercial purposes beyond your AI persona</li>
+                <li>Training AI personas for other creators.</li>
+                <li>Using your content for marketing materials or demonstrations.</li>
+                <li>Sharing your content with third parties.</li>
+                <li>Commercial use beyond maintaining your chatbot.</li>
               </ul>
             </div>
           </div>
@@ -294,21 +270,21 @@ export default function TermsOfService() {
             Prohibited Content and Activities
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            You may not use ReplyFan to create, distribute, or facilitate content that:
+            You may not use Reply Fan to create, distribute, or promote content that:
           </p>
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li>Violates any applicable laws or regulations</li>
-            <li>Contains hate speech, harassment, or discrimination</li>
-            <li>Promotes violence, terrorism, or illegal activities</li>
-            <li>Infringes on intellectual property rights</li>
-            <li>Contains sexually explicit or inappropriate content</li>
-            <li>Promotes misinformation or false medical advice</li>
-            <li>Attempts to hack, disrupt, or damage our systems</li>
-            <li>Violates the terms of service of WhatsApp or Telegram</li>
+            <li>Violates any applicable law or regulation.</li>
+            <li>Violates the terms of service of WhatsApp or Telegram.</li>
+            <li>Contains hate speech, harassment, discrimination, or personal attacks.</li>
+            <li>Promotes violence, terrorism, or illegal activities.</li>
+            <li>Infringes on intellectual property or privacy rights.</li>
+            <li>Contains sexually explicit or otherwise inappropriate material.</li>
+            <li>Spreads false, misleading, or harmful information.</li>
+            <li>Attempts to impersonate others or misrepresent identity.</li>
+            <li>Attempts to hack, disrupt, or damage our systems.</li>
           </ul>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-            We reserve the right to suspend or terminate accounts that violate these 
-            prohibitions.
+            We reserve the right to suspend or terminate any account that violates these restrictions.
           </p>
         </section>
 
@@ -364,6 +340,9 @@ export default function TermsOfService() {
                 We strive to maintain high service availability but cannot guarantee 
                 uninterrupted access. We are not liable for any downtime, data loss, 
                 or service interruptions.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                You agree to indemnify and hold Reply Fan harmless from any claims, damages, or losses arising from your use of the service or the actions of your AI persona.
               </p>
             </div>
           </div>
@@ -440,6 +419,10 @@ export default function TermsOfService() {
             </p>
           </div>
         </section>
+      
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+          By agreeing to these terms, you grant Reply Fan permission to process and use your provided content exclusively for creating and maintaining your AI persona. You retain full ownership of your original content. Reply Fan will not use your content for other creators or purposes without your explicit consent.
+        </p>
       </div>
     </LegalLayout>
   );

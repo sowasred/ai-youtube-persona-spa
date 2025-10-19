@@ -19,7 +19,7 @@ const tableOfContents = [
       { id: "usage-data", title: "Usage Data" },
       { id: "content-data", title: "Content Data" },
       { id: "payment-information", title: "Payment Information" },
-      { id: "analytics-data", title: "Analytics Data" },
+      { id: "analytics-data", title: "Usage Analytics" },
     ],
   },
   {
@@ -32,7 +32,7 @@ const tableOfContents = [
   },
   {
     id: "ai-data-processing",
-    title: "AI Data Processing",
+    title: "How AI Uses Your Data",
   },
   {
     id: "third-party-services",
@@ -83,9 +83,9 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             Punica (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) operates ReplyFan, an AI-powered chatbot service 
             that allows content creators to create personalized AI personas trained on their 
-            existing content (podcasts, videos, newsletters, coaching calls) and interact 
+            existing content (podcasts, videos, newsletters, coaching calls, etc.) and interact 
             with their fans through WhatsApp and Telegram. This Privacy Policy explains how 
-            we collect, use, disclose, and safeguard your information when you use our service.
+            we collect, use, disclose, and protect your information when you use our service.
           </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
             By using ReplyFan, you agree to the collection and use of information in 
@@ -107,7 +107,6 @@ export default function PrivacyPolicy() {
               <li>Email address (when provided)</li>
               <li>Username or display name</li>
               <li>WhatsApp or Telegram user identifiers</li>
-              <li>Channel information (WhatsApp/Telegram channel IDs)</li>
               <li>Account creation and last activity timestamps</li>
             </ul>
           </div>
@@ -117,10 +116,9 @@ export default function PrivacyPolicy() {
               Usage Data
             </h3>
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Conversation history between users and AI personas</li>
+              <li>Last 20 messages in the conversation history between users and AI personas</li>
               <li>AI model usage metrics (tokens used, response times)</li>
               <li>Service interaction patterns and frequency</li>
-              <li>Error logs and performance data</li>
               <li>Subscription status and billing information</li>
             </ul>
           </div>
@@ -158,16 +156,17 @@ export default function PrivacyPolicy() {
 
           <div id="analytics-data" className="mb-6">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-              Analytics Data
+              Usage Analytics
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              We use Google Analytics to understand how our service is used:
+            We collect limited analytics data to understand how Reply Fan is performing and to improve the experience.  
+            This may include: 
             </p>
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2">
-              <li>Page views and user interactions</li>
-              <li>Device and browser information</li>
-              <li>Geographic location (country/city level)</li>
-              <li>Session duration and frequency</li>
+              <li>Message delivery and response success rates</li>
+              <li>Feature usage statistics (e.g., voice messages, subscription actions)</li>
+              <li>General device information such as operating system and app version</li>
+              <li>Aggregate engagement metrics (e.g., number of active users per creator)</li>
             </ul>
           </div>
         </section>
@@ -182,7 +181,7 @@ export default function PrivacyPolicy() {
           <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
             <li><strong>Service Provision:</strong> To provide and maintain our AI chatbot service</li>
             <li><strong>AI Persona Creation:</strong> To train personalized AI personas based on creator content</li>
-            <li><strong>Conversation Context:</strong> To maintain context in ongoing conversations and provide voice message support</li>
+            <li><strong>Conversation Context:</strong> To maintain context in ongoing conversations we store the last 20 messages in the conversation history</li>
             <li><strong>Payment Processing:</strong> To process subscriptions and manage billing</li>
             <li><strong>Content Advice:</strong> To provide AI-powered suggestions for new content based on audience interactions</li>
             <li><strong>Service Improvement:</strong> To analyze usage patterns and improve our service</li>
@@ -319,11 +318,6 @@ export default function PrivacyPolicy() {
             <li>Access controls and authentication measures</li>
             <li>Regular backups and disaster recovery procedures</li>
           </ul>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-            However, no method of transmission over the internet or electronic storage 
-            is 100% secure. While we strive to protect your information, we cannot 
-            guarantee absolute security.
-          </p>
         </section>
 
         <section id="data-retention">
@@ -392,9 +386,9 @@ export default function PrivacyPolicy() {
             Children's Privacy
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            ReplyFan is not intended for children under 18 years of age. We do not 
-            knowingly collect personal information from children under 18. However, 
-            we recognize that some content creators may be under 18.
+            ReplyFan is not intended for individuals under 18 years of age. We do not 
+            knowingly collect personal information from anyone under the age of 18. 
+            If you are a parent or guardian and believe your child has used our service, please contact us immediately.
           </p>
           
           <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-4">
@@ -415,8 +409,7 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             We will promptly investigate and, if confirmed, immediately delete all 
             personal information associated with the child's account and terminate 
-            the account. We will also remove any conversation data that may have been 
-            shared with OpenAI.
+            the account.
           </p>
         </section>
 
