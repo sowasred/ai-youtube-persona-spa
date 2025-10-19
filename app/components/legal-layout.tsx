@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { Footer } from "./footer";
 
 interface LegalLayoutProps {
   children: ReactNode;
@@ -109,6 +110,7 @@ export function LegalLayout({ children, title, lastUpdated, tableOfContents }: L
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
