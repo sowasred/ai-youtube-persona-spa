@@ -15,7 +15,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "How quickly can I launch my AI persona?",
     answer:
-      "Most creators can go live within a week. We handle production, training, and platform setup as soon as you share onboarding materials.",
+      "Getting started is quick and effortless — we handle the setup, training, and launch for you.",
   },
   {
     question: "What content do you need from me?",
