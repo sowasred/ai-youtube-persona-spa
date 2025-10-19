@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { getDictionary } from "./lib/get-dictionary";
 
-import { Comments } from "./components/comments";
 import { FeaturesGrid } from "./components/features-grid";
 
 import { AnimatedTooltip } from "./components/animated-tooltip";

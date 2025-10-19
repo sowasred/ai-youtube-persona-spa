@@ -225,8 +225,8 @@ export default function PrivacyPolicy() {
                 When users interact with AI personas, the following occurs:
               </p>
               <ol className="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2 ml-4">
-                <li>User messages (text and voice) are sent to OpenAI's servers for processing</li>
-                <li>OpenAI generates responses (text and voice) based on the creator's trained persona</li>
+                <li>User messages (text and voice) are sent to OpenAI&apos;s servers for processing</li>
+                <li>OpenAI generates responses (text and voice) based on the creator&apos;s trained persona</li>
                 <li>Responses are returned to ReplyFan and delivered to users</li>
               </ol>
             </div>
@@ -237,8 +237,8 @@ export default function PrivacyPolicy() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 OpenAI may retain conversation data according to their policies. We have 
-                no control over OpenAI's data retention practices. Users should review 
-                OpenAI's privacy policy for details about their data handling.
+                no control over OpenAI&apos;s data retention practices. Users should review 
+                OpenAI&apos;s privacy policy for details about their data handling.
               </p>
             </div>
             

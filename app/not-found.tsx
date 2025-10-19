@@ -37,8 +37,8 @@ export default function NotFound() {
               Oops! Page not found
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto dark:text-white">
-              The page you're looking for seems to have vanished into the digital void. 
-              Don't worry, even the best AI assistants sometimes take a wrong turn!
+              The page you&apos;re looking for seems to have vanished into the digital void. 
+              Don&apos;t worry, even the best AI assistants sometimes take a wrong turn!
             </p>
           </div>
           
@@ -66,7 +66,7 @@ export default function NotFound() {
           <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-border dark:text-white">
             <p className="text-card-foreground text-base md:text-lg">
               <ColourfulText className="font-semibold" text="Pro tip:" /> 
-              {" "}While you're here, why not check out how our AI can help you connect with your fans 24/7?
+              {" "}While you&apos;re here, why not check out how our AI can help you connect with your fans 24/7?
             </p>
           </div>
           
