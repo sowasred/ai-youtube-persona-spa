@@ -6,9 +6,9 @@
 [ ] (arda) - sticky navbar, always visible
 [ ] (arda) - Fix clicking "how it works" or "features" or "FAQ" nav navigation items on privacy page.
 [ ] (chadash) - Update features section (have animation for each feature and improve quality of features and increase quantity of features).
-[ ] (chadash) - Hide "what people are saying" section on the homepage.
-[ ] (chadash) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
-[ ] (chadash) - Fix "children &apos" issue in privacy policy table of contents
-[ ] (chadash) - Remove mentions of Aiven cloud from privacy policy
-[ ] (chadash) - Add footer to both privacy and terms of service pages
+[ ] (ozan) - Hide "what people are saying" section on the homepage.
+[ ] (ozan) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
+[ ] (ozan) - Fix "children &apos" issue in privacy policy table of contents
+[ ] (ozan) - Remove mentions of Aiven cloud from privacy policy
+[ ] (ozan) - Add footer to both privacy and terms of service pages
 [ ] (chadash) - How to increase the first content paint in next.js or in general
