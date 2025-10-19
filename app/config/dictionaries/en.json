@@ -9,9 +9,9 @@
     "monthly_info": "when charged monthly",
     "mo": "/mo",
     "contact": "for to contact our support team.",
-    "contact_2": "You can test the subscriptions and won&apos;t be charged.",
+    "contact_2": "You can test the subscriptions and won't be charged.",
     "faq": "Frequently Asked Questions",
-    "faq_detail": "Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don&apos;t hesitate to contact us for personalized help.",
+    "faq_detail": "Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don't hesitate to contact us for personalized help.",
     "signup": "Sign up",
     "upgrade": "Upgrade",
     "manage_subscription": "Manage Subscription",
@@ -102,7 +102,7 @@
     "k8s": {
       "new_cluster": "New Cluster",
       "no_cluster_title": "No clusters created",
-      "no_cluster_content": "You don&apos;t have any clusters yet. Start creating cluster. ",
+      "no_cluster_content": "You don't have any clusters yet. Start creating cluster. ",
       "": ""
     },
     "billing": {
