@@ -12,4 +12,4 @@
 [x] (ozan) - Remove mentions of Aiven cloud from privacy policy
 [x] (ozan) - Add footer to both privacy and terms of service pages
 [ ] (chadash) - How to increase the first content paint in next.js or in general
-[ ] (ozan) - Whole content scanning and finessing.
+[x] (ozan) - Whole content scanning and finessing.
