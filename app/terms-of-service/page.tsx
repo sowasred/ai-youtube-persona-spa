@@ -107,8 +107,8 @@ export default function TermsOfService() {
             <li>Access analytics and insights about audience interactions</li>
           </ul>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-            The service uses advanced AI technology, including OpenAI&apos;s language models, 
-            to generate responses that reflect the creator&apos;s style, knowledge, and personality.
+            The service uses advanced AI technology, including OpenAI's language models, 
+            to generate responses that reflect the creator's style, knowledge, and personality.
           </p>
         </section>
 
@@ -188,7 +188,7 @@ export default function TermsOfService() {
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               All payments are processed securely through Stripe. By subscribing, you 
-              agree to Stripe&apos;s terms of service and privacy policy. We do not store 
+              agree to Stripe's terms of service and privacy policy. We do not store 
               your payment information directly.
             </p>
           </div>
@@ -236,7 +236,7 @@ export default function TermsOfService() {
             <li>Respecting the intellectual property rights of others</li>
             <li>Using the service in a manner that does not harm or abuse our systems</li>
             <li>Understanding that conversation data is shared with OpenAI for AI processing</li>
-            <li>Consenting to OpenAI&apos;s data usage policies when using our service</li>
+            <li>Consenting to OpenAI's data usage policies when using our service</li>
           </ul>
         </section>
 

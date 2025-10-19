@@ -56,7 +56,7 @@ const tableOfContents = [
   },
   {
     id: "children-privacy",
-    title: "Children&apos;s Privacy",
+    title: "Children's Privacy",
   },
   {
     id: "changes",
@@ -226,8 +226,8 @@ export default function PrivacyPolicy() {
                 When users interact with AI personas, the following occurs:
               </p>
               <ol className="list-decimal list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-2 ml-4">
-                <li>User messages (text and voice) are sent to OpenAI&apos;s servers for processing</li>
-                <li>OpenAI generates responses (text and voice) based on the creator&apos;s trained persona</li>
+                <li>User messages (text and voice) are sent to OpenAI's servers for processing</li>
+                <li>OpenAI generates responses (text and voice) based on the creator's trained persona</li>
                 <li>Responses are returned to ReplyFan and delivered to users</li>
                 <li>Conversation history is stored locally for context maintenance and content advice generation</li>
               </ol>
@@ -239,8 +239,8 @@ export default function PrivacyPolicy() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 OpenAI may retain conversation data according to their policies. We have 
-                no control over OpenAI&apos;s data retention practices. Users should review 
-                OpenAI&apos;s privacy policy for details about their data handling.
+                no control over OpenAI's data retention practices. Users should review 
+                OpenAI's privacy policy for details about their data handling.
               </p>
             </div>
             
@@ -250,7 +250,7 @@ export default function PrivacyPolicy() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 To create AI personas, we process podcasts, videos, newsletters, coaching calls, 
-                and other creator content. This content is used solely to train the creator&apos;s 
+                and other creator content. This content is used solely to train the creator's 
                 personalized AI persona and is not shared with other users or used for other purposes.
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function PrivacyPolicy() {
                 OpenAI
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We use OpenAI&apos;s API to power our AI chatbot functionality. When you 
+                We use OpenAI's API to power our AI chatbot functionality. When you 
                 interact with our AI personas, your conversation data is shared with 
                 OpenAI for processing and response generation. OpenAI may process, store, 
                 and use this conversation data according to their privacy policy and terms 
@@ -279,7 +279,7 @@ export default function PrivacyPolicy() {
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
                 <strong>Important:</strong> OpenAI may use conversation data to improve 
-                their models. If you have concerns about this, please review OpenAI&apos;s 
+                their models. If you have concerns about this, please review OpenAI's 
                 privacy policy before using our service.
               </p>
             </div>
@@ -400,7 +400,7 @@ export default function PrivacyPolicy() {
 
         <section id="children-privacy">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Children&apos;s Privacy
+            Children's Privacy
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             ReplyFan is not intended for children under 18 years of age. We do not 
@@ -419,13 +419,13 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
               <li>Email: <a href="mailto:replyfanapp@gmail.com" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">replyfanapp@gmail.com</a></li>
               <li>Subject: &quot;Guardian Request - Child Account&quot;</li>
-              <li>Include: Child&apos;s account information and your relationship</li>
+              <li>Include: Child's account information and your relationship</li>
             </ul>
           </div>
           
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             We will promptly investigate and, if confirmed, immediately delete all 
-            personal information associated with the child&apos;s account and terminate 
+            personal information associated with the child's account and terminate 
             the account. We will also remove any conversation data that may have been 
             shared with OpenAI.
           </p>
