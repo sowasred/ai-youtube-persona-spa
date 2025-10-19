@@ -248,7 +248,7 @@ export default function PrivacyPolicy() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 To create AI personas, we process podcasts, videos, newsletters, coaching calls, 
-                and other creator content. This content is used solely to train the creator's 
+                and other creator content. This content is used solely to train the creator&apos;s 
                 personalized AI persona and is not shared with other users or used for other purposes.
               </p>
             </div>
@@ -269,7 +269,7 @@ export default function PrivacyPolicy() {
                 OpenAI
               </h3>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We use OpenAI's API to power our AI chatbot functionality. When you 
+                We use OpenAI&apos;s API to power our AI chatbot functionality. When you 
                 interact with our AI personas, your conversation data is shared with 
                 OpenAI for processing and response generation. OpenAI may process, store, 
                 and use this conversation data according to their privacy policy and terms 
@@ -277,7 +277,7 @@ export default function PrivacyPolicy() {
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
                 <strong>Important:</strong> OpenAI may use conversation data to improve 
-                their models. If you have concerns about this, please review OpenAI's 
+                their models. If you have concerns about this, please review OpenAI&apos;s 
                 privacy policy before using our service.
               </p>
             </div>
@@ -383,7 +383,7 @@ export default function PrivacyPolicy() {
 
         <section id="children-privacy">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            Children's Privacy
+            Children&apos;s Privacy
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             ReplyFan is not intended for individuals under 18 years of age. We do not 
@@ -402,13 +402,13 @@ export default function PrivacyPolicy() {
             <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
               <li>Email: <a href="mailto:replyfanapp@gmail.com" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">replyfanapp@gmail.com</a></li>
               <li>Subject: &quot;Guardian Request - Child Account&quot;</li>
-              <li>Include: Child's account information and your relationship</li>
+              <li>Include: Child&apos;s account information and your relationship</li>
             </ul>
           </div>
           
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             We will promptly investigate and, if confirmed, immediately delete all 
-            personal information associated with the child's account and terminate 
+            personal information associated with the child&apos;s account and terminate 
             the account.
           </p>
         </section>

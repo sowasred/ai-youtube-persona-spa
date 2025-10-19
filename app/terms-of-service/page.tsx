@@ -108,8 +108,8 @@ export default function TermsOfService() {
             <li>Access analytics and insights about audience interactions</li>
           </ul>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
-            The service uses advanced AI technology, including OpenAI's language models, 
-            to generate responses that reflect the creator's style, knowledge, and personality.
+            The service uses advanced AI technology, including OpenAI&apos;s language models, 
+            to generate responses that reflect the creator&apos;s style, knowledge, and personality.
           </p>
         </section>
 
@@ -170,7 +170,7 @@ export default function TermsOfService() {
             Payment Processing
           </h3>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            All payments and subscription renewals are processed securely through Stripe. ReplyFan does not store any sensitive payment information. By subscribing or receiving revenue shares, you agree to comply with Stripe's terms of service and privacy policy.
+            All payments and subscription renewals are processed securely through Stripe. ReplyFan does not store any sensitive payment information. By subscribing or receiving revenue shares, you agree to comply with Stripe&apos;s terms of service and privacy policy.
           </p>
         </div>
 
