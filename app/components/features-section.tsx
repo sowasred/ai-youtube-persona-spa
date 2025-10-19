@@ -9,19 +9,19 @@ const data = [
     alt: "brain image"
   },
   {
+    isLeft: true,
+    title: "Speaking for you",
+    subtitle: "Fans can send voice messages, and your persona replies in your tone — by text or voice, naturally.",
+    imgSrc: "/speaking_for_you.jpg",
+    alt: "microphone image"
+  },
+  {
     isLeft: false,
     title: "Get content advice",
     subtitle: "Get AI-powered suggestions based on conversation data.",
     imgSrc: "/get_content_advice.jpg",
     alt: "notification image"
-  },
-  {
-    isLeft: true,
-    title: "Speaking for you",
-    subtitle: "Fans can speak with you for real.",
-    imgSrc: "/speaking_for_you.jpg",
-    alt: "microphone image"
-  },
+  }
 ]
 
 export default function FeaturesSection() {
