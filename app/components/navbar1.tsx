@@ -26,9 +26,9 @@ const defaultLogo = {
 }
 
 const defaultMenu: MenuItem[] = [
-  { title: "How it works", url: "#how-it-works" },
-  { title: "Features", url: "#features" },
-  { title: "FAQ", url: "#faq" },
+  { title: "How it works", url: "/#how-it-works" },
+  { title: "Features", url: "/#features" },
+  { title: "FAQ", url: "/#faq" },
 ]
 
 export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props) {
