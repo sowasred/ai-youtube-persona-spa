@@ -4,7 +4,7 @@
   - Once user clicks on another influencer image, the border will be moved to the new influencer image and the animation will show the new influencer's conversations with the fan.
 [ ] (arda) - on mobile screen fix the telegram interface overflowing the iphone mockup boundry.
 [ ] (arda) - sticky navbar, always visible
-[ ] (arda) - Fix clicking "how it works" or "features" or "FAQ" nav navigation items on privacy page.
+[x] (ozan) - Fix clicking "how it works" or "features" or "FAQ" nav navigation items on privacy page.
 [ ] (chadash) - Update features section (have animation for each feature and improve quality of features and increase quantity of features).
 [x] (ozan) - Hide "what people are saying" section on the homepage.
 [x] (ozan) - Delete "Conversation history is stored locally for context maintenance and content advice generation" from privacy policy
