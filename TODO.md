@@ -14,4 +14,5 @@
 [ ] (chadash) - How to increase the first content paint in next.js or in general
 [x] (ozan) - Whole content scanning and finessing.
 [x] (ozan) - Fix the personas whatsapp, telegram details on the landing page.
+[x] (ozan) - Add a pricing component to the landing page.
 
