@@ -13,6 +13,7 @@ import FeaturesSection from "./components/features-section"
 import { FAQ } from "./components/faq";
 import { TelegramChatMockup } from "./components/telegram-chat/TelegramChatMockup";
 import { Footer } from "./components/footer";
+import Pricing from "./components/pricing";
 
 
 const people = [
@@ -218,6 +219,10 @@ export default async function IndexPage() {
           </div>
         </div>
       </section> */}
+
+      <section id="pricing" className="max-w-[98rem] w-10/12 lg:w-11/12 my-36 mx-auto">
+        <Pricing />
+      </section>
 
       <section id="faq" className="max-w-[98rem] w-10/12 lg:w-11/12 my-36 mx-auto">
         <FAQ />

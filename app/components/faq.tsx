@@ -15,7 +15,7 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "How quickly can I launch my AI persona?",
     answer:
-      "Getting started is quick and effortless — we handle the setup, training, and launch for you.",
+      "Getting started is quick and effortless — we handle the setup, training, and launch it for you.",
   },
   {
     question: "What content do you need from me?",
@@ -47,6 +47,16 @@ const defaultFaqs: FaqItem[] = [
     answer:
       "Yes! You’re in full control of how you monetize. Each chatbot includes built-in subscribe and cancel-subscription flows, so fans can easily manage payments directly through WhatsApp or Telegram. You can set your own pricing, offer premium access through ReplyFan’s platform.",
   },
+  {
+    question: "How much does ReplyFan cost?",
+    answer:
+      "ReplyFan is free to use until your fans subscribe to your channel. Once fans start subscribing, ReplyFan simply takes a 50% share of the subscription revenue—no upfront or hidden fees.",
+  },
+  {
+    question: "Can fans chat for free or is everything paid?",
+    answer:
+      "Fans can start chatting for free with a few text messages to get a taste of your persona’s style. When they subscribe, they unlock richer experiences like longer conversations, voice replies in your own tone, and priority access. It’s designed to feel natural and engaging—never restricted, just more personal for subscribers.",
+  }
 ]
 
 export function FAQ({
