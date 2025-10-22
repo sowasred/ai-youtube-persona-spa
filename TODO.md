@@ -15,4 +15,5 @@
 [x] (ozan) - Whole content scanning and finessing.
 [x] (ozan) - Fix the personas whatsapp, telegram details on the landing page.
 [x] (ozan) - Add a pricing component to the landing page.
+[ ] (chadash) - Creating a dashboard shows creators user numbers free/paid and other analytics(Content recommendations, general analytics on chats).
 
