@@ -1,6 +1,8 @@
 import Feature from './feature'
 import { FeelsLikeRealChatAnimation } from './feels-like-real-chat-animation'
 import { TrainedOnYouAnimation } from './trained-on-you-animation'
+import { PrivateByDesignAnimation } from './private-by-design-animation'
+import { TalkOrTypeAnimation } from './talk-or-type-animation'
 
 interface FeatureConfig {
 	title: string
@@ -29,17 +31,16 @@ const features: FeatureConfig[] = [
 	{
 		title: 'Talk or Type',
 		subtitle:
-			'Fans can hear you or read you. It’s the same connection, in any'
-			+ ' format.',
+			'Fans can hear you or read you. It\'s the same connection, in any format.',
 		isLeft: true,
-		visual: null
+		visual: <TalkOrTypeAnimation />
 	},
 	{
 		title: 'Private by Design',
 		subtitle:
 			'Your data stays yours. Always encrypted, always secure.',
 		isLeft: false,
-		visual: null
+		visual: <PrivateByDesignAnimation />
 	},
 ]
 
