@@ -229,14 +229,11 @@ function ChipSVG({ className = "" }: { className?: string }) {
 }
 
 const defaultThumbs = [
-  { src: "https://img.youtube.com/vi/-0aFavG12fE/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/ysz5S6PUM-U/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/3fumBcKC6RE/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/Sagg08DrO5U/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/aqz-KE-bpKQ/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/VYOjWnS4cMY/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/oHg5SJYRHA0/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/lTTajzrSkCw/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/6_b7RDuLwcI/hqdefault.jpg" },
-  { src: "https://img.youtube.com/vi/e-ORhEE9VVg/hqdefault.jpg" },
+  { src: "/thumbnail_1.jpeg" },
+  { src: "/thumbnail_2.jpeg" },
+  { src: "/thumbnail_3.jpeg" },
+  { src: "/thumbnail_4.jpeg" },
+  { src: "/thumbnail_5.jpeg" },
+  { src: "/thumbnail_6.jpeg" },
+  { src: "/thumbnail_7.jpeg" },
 ];
