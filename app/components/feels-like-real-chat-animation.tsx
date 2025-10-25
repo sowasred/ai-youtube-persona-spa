@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface FeelsLikeRealChatAnimationProps {
 	thumbnailSrc?: string
@@ -121,7 +122,7 @@ function parseTranscriptWithHighlights(text: string, highlightedSentences: strin
 	if (!text || !highlightedSentences.length) return text
 
 	let result = text
-	highlightedSentences.forEach((sentence, index) => {
+	highlightedSentences.forEach((sentence) => {
 		const regex = new RegExp(`(${sentence.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
 		result = result.replace(regex, `<span class="${highlightClasses.join(' ')}">$1</span>`)
 	})
@@ -173,9 +174,11 @@ export function FeelsLikeRealChatAnimation({
 			>
 				<div className={videoCardClasses.join(' ')}>
 					<div className="relative">
-						<img
+						<Image
 							src={thumbnailSrc}
 							alt="Video thumbnail"
+							width={448}
+							height={224}
 							className={videoThumbClasses.join(' ')}
 						/>
 						{/* YouTube play icon overlay */}
@@ -231,11 +234,11 @@ export function FeelsLikeRealChatAnimation({
 					</div>
 					{/* Transcript Content */}
 					<div className="relative">
-						<span className="absolute -left-3 text-gray-400 text-3xl font-serif leading-none">"</span>
+						<span className="absolute -left-3 text-gray-400 text-3xl font-serif leading-none">&ldquo;</span>
 						<p className={`${transcriptClasses.join(' ')} pl-4`}>
 							{parseTranscriptWithHighlights(transcript, highlightedSentences)}
 						</p>
-						<span className="absolute -right-3 text-gray-400 text-3xl font-serif leading-none">"</span>
+						<span className="absolute -right-3 text-gray-400 text-3xl font-serif leading-none">&rdquo;</span>
 					</div>
 				</div>
 			</motion.div>

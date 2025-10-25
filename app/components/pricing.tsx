@@ -7,7 +7,7 @@ interface PricingFeatureProps {
   available: boolean;
 }
 
-const PricingFeature: React.FC<PricingFeatureProps> = ({ text, available }) => (
+const PricingFeature: React.FC<PricingFeatureProps> = ({ text }) => (
   <li className="flex items-center text-gray-800 text-lg">
     <CheckIcon className="w-5 h-5 mr-3 text-green-500" />
     {text}

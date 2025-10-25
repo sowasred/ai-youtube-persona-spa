@@ -27,21 +27,6 @@ const features: FeatureConfig[] = [
 		visual: <FeelsLikeRealChatAnimation />
 	},
 	{
-		title: 'Always On',
-		subtitle:
-			'Your voice, available 24/7. Engage your audience even when you’re'
-			+ ' off the clock.',
-		isLeft: true,
-		visual: null
-	},
-	{
-		title: 'Backed by Your Knowledge',
-		subtitle:
-			'Every answer comes from what you’ve actually said. Not a guess.',
-		isLeft: false,
-		visual: null
-	},
-	{
 		title: 'Talk or Type',
 		subtitle:
 			'Fans can hear you or read you. It’s the same connection, in any'
@@ -50,27 +35,12 @@ const features: FeatureConfig[] = [
 		visual: null
 	},
 	{
-		title: 'We Handle the Tech',
-		subtitle:
-			'We setup and host your service. You focus on creating.',
-		isLeft: false,
-		visual: null
-	},
-	{
 		title: 'Private by Design',
 		subtitle:
 			'Your data stays yours. Always encrypted, always secure.',
-		isLeft: true,
-		visual: null
-	},
-	{
-		title: 'Ready to Grow',
-		subtitle:
-			'Built to scale with your channel. Whether it’s hundreds or'
-			+ ' millions, it just works.',
 		isLeft: false,
 		visual: null
-	}
+	},
 ]
 
 export default function FeaturesSection() {

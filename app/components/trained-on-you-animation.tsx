@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
+import Image from 'next/image'
 
 interface TrainedOnYouAnimationProps {
 	thumbnails?: { src: string; alt?: string }[]
@@ -182,10 +183,12 @@ export function TrainedOnYouAnimation({
 function ThumbCard({ src, alt, ring }: { src?: string; alt?: string; ring: number }) {
 	return (
 		<div className={thumbCardClasses.join(' ')}>
-			<img
+			<Image
 				src={src || "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"}
 				alt={alt || "video thumbnail"}
 				loading="lazy"
+				width={108}
+				height={80}
 				className={thumbImageClasses.join(' ')}
 			/>
 			<div className={glowClasses.join(' ')} style={{ filter: "blur(10px)" }}>
