@@ -1,6 +1,5 @@
-import type { ReactNode } from 'react'
-
 import Feature from './feature'
+import { FeelsLikeRealChatAnimation } from './feels-like-real-chat-animation'
 import { TrainedOnYouAnimation } from './trained-on-you-animation'
 
 interface FeatureConfig {
@@ -25,7 +24,7 @@ const features: FeatureConfig[] = [
 			'Fans can text or send voice messages. Your AI replies naturally,'
 			+ ' with context from real conversations.',
 		isLeft: false,
-		visual: null
+		visual: <FeelsLikeRealChatAnimation />
 	},
 	{
 		title: 'Always On',
