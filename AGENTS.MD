@@ -15,6 +15,10 @@ lastUpdated: "2024-12-19"
 
 This comprehensive guide outlines best practices, conventions, and standards for development with modern web technologies including ReactJS, NextJS, Redux, TypeScript, JavaScript, HTML, CSS, and UI frameworks. The guide emphasizes clean, maintainable, and scalable code following SOLID principles and functional programming patterns.
 
+### Product Context
+
+We are building AI chatbots for content creators who deliver practical, “talking head” advice. Fans can send text or voice messages; the bot responds by combining the last 20 messages with Pinecone-retrieved knowledge chunks inside a custom OpenAI prompt. Each reply mirrors the creator’s tone and domain expertise so fans feel like they’re chatting with the real YouTuber.
+
 ## Tech Stack
 
 - **Frontend Framework**: Next.js 14+ with App Router
