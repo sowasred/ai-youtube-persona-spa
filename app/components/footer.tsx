@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="#how-it-works" 
+                  href="/#how-it-works" 
                   className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   How it works
@@ -47,7 +47,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="#features" 
+                  href="/#features" 
                   className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Features
@@ -55,7 +55,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="#faq" 
+                  href="/#faq" 
                   className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   FAQ
@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/contact" 
+                  href="/#contact" 
                   className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Contact Us
