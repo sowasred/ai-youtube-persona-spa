@@ -44,7 +44,7 @@ export function LegalLayout({ children, title, lastUpdated, tableOfContents }: L
           {/* Table of Contents - Desktop */}
           {tableOfContents && (
             <div className="hidden lg:block lg:col-span-1">
-              <div className="sticky top-8">
+              <div className="sticky top-24">
                 <nav className="space-y-2">
                   <div className="mb-4">
                     <Link 

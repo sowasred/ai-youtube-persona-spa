@@ -10,22 +10,15 @@ import {
   useTransform,
 } from "framer-motion";
 import { YouTube } from "./icons";
-
-type Item = {
-  id: number;
-  name: string;
-  designation: string;
-  image: string;
-  telegramLink: string;
-  whatsappLink: string;
-  youtubeLink: string;
-}
+import { useCreator } from "./creator-interaction";
+import type { Creator } from "../data/creators";
 
 export const AnimatedTooltip = ({
   items,
 }: {
-  items: Item[];
+  items: Creator[];
 }) => {
+  const { selectedCreatorId, setSelectedCreatorId } = useCreator();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState<{[key: number]: 'left' | 'center' | 'right'}>({});
@@ -103,6 +96,10 @@ export const AnimatedTooltip = ({
         setTooltipPosition(prev => ({ ...prev, [id]: position }));
       }
     }
+  };
+
+  const handleAvatarClick = (id: number) => {
+    setSelectedCreatorId(id);
   };
 
   const getTooltipClasses = (itemId: number) => {
@@ -240,7 +237,10 @@ export const AnimatedTooltip = ({
           <button
             type="button"
             className="block focus:outline-none cursor-pointer"
-            onClick={(e) => handleAvatarTap(item.id, e)}
+            onClick={(e) => {
+              handleAvatarTap(item.id, e);
+              handleAvatarClick(item.id);
+            }}
           >
             <Image
               onMouseMove={(event) => {
@@ -251,7 +251,13 @@ export const AnimatedTooltip = ({
               width={100}
               src={item.image}
               alt={item.name}
-              className="relative !m-0 h-40 w-40 md:h-32 md:w-32 lg:h-36 lg:w-36 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+              className={`relative !m-0 h-40 w-40 md:h-32 md:w-32 lg:h-36 lg:w-36 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105 ${
+                selectedCreatorId === item.id 
+              }`}
+              style={selectedCreatorId === item.id ? {
+                boxShadow: '0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2)',
+                animation: 'pulse-glow 2s ease-in-out infinite'
+              } : {}}
             />
           </button>
 

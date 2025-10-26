@@ -77,10 +77,10 @@ export function FAQ({
   return (
     <section className="max-w-[98rem] w-10/12 lg:w-11/12 mx-auto flex flex-col gap-12">
       <header className="space-y-4">
-        <h2 className="text-4xl font-semibold text-slate-900 sm:text-5xl">
+        <h2 className="text-4xl font-semibold text-gray-900 dark:text-white sm:text-5xl">
           {title}
         </h2>
-        <p className="text-lg text-neutral-600 sm:max-w-2xl">{description}</p>
+        <p className="text-lg text-gray-600 dark:text-gray-200 sm:max-w-2xl">{description}</p>
       </header>
       <div className="flex flex-col gap-4 sm:gap-6">
         {items.map((faq, index) => {
@@ -97,14 +97,14 @@ export function FAQ({
                 className={cn(
                   "flex w-full items-center justify-between gap-6 py-6 text-left sm:py-7 cursor-pointer",
                   isOpen
-                    ? "text-slate-900"
-                    : "text-slate-500 hover:text-slate-900",
+                    ? "text-gray-900 dark:text-white"
+                    : "text-gray-500 hover:text-gray-900 dark:hover:text-white",
                 )}
               >
-                <span className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+                <span className="text-2xl font-semibold text-gray-900 dark:text-white sm:text-3xl">
                   {faq.question}
                 </span>
-                <span className="inline-flex h-10 w-10 items-center justify-center text-slate-400 transition-transform duration-200">
+                <span className="inline-flex h-10 w-10 items-center justify-center text-gray-400 dark:text-gray-200 transition-transform duration-200">
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.26, ease: [0.33, 1, 0.68, 1] }}
@@ -112,7 +112,7 @@ export function FAQ({
                     <ChevronDown
                       className={cn(
                         "h-6 w-6 transition-colors duration-200",
-                        isOpen ? "text-slate-900" : "text-slate-400",
+                        isOpen ? "text-gray-900 dark:text-white" : "text-gray-400 dark:text-gray-200",
                       )}
                       aria-hidden
                     />
@@ -129,7 +129,7 @@ export function FAQ({
                     transition={{ duration: 0.28, ease: [0.33, 1, 0.68, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-5 pr-3 text-xl leading-relaxed text-neutral-600 sm:text-2xl">
+                    <div className="pb-5 pr-3 text-xl leading-relaxed text-gray-600 dark:text-gray-200 sm:text-2xl">
                       {faq.answer}
                     </div>
                   </motion.div>

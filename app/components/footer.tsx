@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,18 +11,22 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              {/* <Image 
-                src="/reply_fan_logo.svg" 
+              <Image 
+                src="/reply_fan_logo_light.svg" 
                 alt="ReplyFan Logo" 
-                width={32}
-                height={32}
-                className="h-8 w-auto"
-              /> */}
-              <span className="text-xl font-semibold text-gray-900 dark:text-white">
-                ReplyFan
-              </span>
+                width={128}
+                height={48}
+                className="h-12 w-auto dark:hidden"
+              />
+              <Image 
+                src="/reply_fan_logo_dark.svg" 
+                alt="ReplyFan Logo" 
+                width={128}
+                height={48}
+                className="h-12 w-auto hidden dark:block"
+              />
             </div>
-            <p className="text-gray-600 dark:text-gray-400 max-w-md">
+            <p className="text-gray-800 dark:text-gray-400 max-w-md">
               Connect with your fans 24/7 through AI-powered conversations on WhatsApp and Telegram.
             </p>
           </div>
@@ -36,7 +40,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="#how-it-works" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   How it works
                 </Link>
@@ -44,7 +48,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="#features" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Features
                 </Link>
@@ -52,7 +56,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="#faq" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   FAQ
                 </Link>
@@ -60,7 +64,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="/contact" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -77,7 +81,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="/privacy-policy" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -85,7 +89,7 @@ export function Footer() {
               <li>
                 <Link 
                   href="/terms-of-service" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  className="text-gray-800 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -97,11 +101,11 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
+            <p className="text-gray-800 dark:text-gray-400 text-sm">
               © {currentYear} ReplyFan. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-800 dark:text-gray-400 text-sm">
                 Made with ❤️ for content creators
               </p>
             </div>

@@ -5,7 +5,7 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
   return (
     <div className="w-11/12 sm:w-full mx-auto flex gap-4 flex-col lg:flex-row lg:mt-20">
       {/* WhatsApp & Telegram Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
+      <Card className="p-6 w-full border border-gray-100 dark:border-gray-800 bg-[#FCFCFC] dark:bg-gray-800">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logos Section */}
           <div className="relative flex items-center justify-center space-x-[-1rem]">
@@ -25,19 +25,19 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
           </div>
 
           {/* Title */}
-          <h2 className="text-xl sm:text-2xl font-bold text-black">
+          <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white">
             {dict?.monorepo_title}
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-neutral-500 font-medium max-w-sm">
+          <p className="text-base sm:text-lg text-neutral-500 dark:text-gray-300 font-medium max-w-sm">
             {dict?.monorepo_desc}
           </p>
         </div>
       </Card>
 
       {/* Voice Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
+      <Card className="p-6 w-full border border-gray-100 dark:border-gray-800 bg-[#FCFCFC] dark:bg-gray-800">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Icon Section */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-18 md:h-18 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
@@ -45,19 +45,19 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
           </div>
 
           {/* Title */}
-          <h2 className="text-xl sm:text-2xl font-bold text-black">
+          <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white">
             {dict?.i18n_title}
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-neutral-500 font-medium max-w-sm">
+          <p className="text-base sm:text-lg text-neutral-500 dark:text-gray-300 font-medium max-w-sm">
             {dict?.i18n_desc}
           </p>
         </div>
       </Card>
 
       {/* Setup Card */}
-      <Card className="p-6 w-full border border-gray-100 bg-[#FCFCFC]">
+      <Card className="p-6 w-full border border-gray-100 dark:border-gray-800 bg-[#FCFCFC] dark:bg-gray-800">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Icon Section */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-18 md:h-18 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
@@ -65,12 +65,12 @@ export function FeaturesGrid({ dict } : { dict: Record<string, string> | undefin
           </div>
 
           {/* Title */}
-          <h2 className="text-xl sm:text-2xl font-bold text-black">
+          <h2 className="text-xl sm:text-2xl font-bold text-black dark:text-white">
             {dict?.nextauth_title}
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-neutral-500 font-medium max-w-sm">
+          <p className="text-base sm:text-lg text-neutral-500 dark:text-gray-300 font-medium max-w-sm">
             {dict?.nextauth_desc}
           </p>
         </div>

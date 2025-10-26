@@ -6,10 +6,12 @@ import { AnimatePresence, motion } from "framer-motion"
 import styles from "./styles.module.css"
 import { ChatMessage } from "./ChatMessage"
 import type { ChatMessageData } from "./mockData"
-import { mockMessages } from "./mockData"
+import { creatorMessages } from "./mockData"
 import { DeviceFrame } from "./DeviceFrame"
 import { MicIcon, ChevronLeft } from "../icons"
 import Image from "next/image"
+import { useCreator } from "../creator-interaction"
+import type { Creator } from "../../data/creators"
 
 const messageVariants = {
 	initial: { opacity: 0, y: 32, scale: 0.98 },
@@ -17,8 +19,18 @@ const messageVariants = {
 	exit: { opacity: 0, y: -12, scale: 0.96 },
 }
 
-export function TelegramChatMockup() {
+interface TelegramChatMockupProps {
+  people: Creator[];
+}
+
+export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
+  const { selectedCreatorId } = useCreator();
 	const [visibleMessages, setVisibleMessages] = useState<ChatMessageData[]>([])
+	
+	// Get the selected creator's data
+	const selectedCreator = people.find(person => person.id === selectedCreatorId) || people[0]
+	const selectedCreatorMessages = creatorMessages[selectedCreatorId] || creatorMessages[1]
+	
 	useEffect(() => {
 		let index = 0
 		const timeouts: Array<ReturnType<typeof setTimeout>> = []
@@ -34,7 +46,7 @@ export function TelegramChatMockup() {
 		}
 
 		const queueNext = (delay: number) => {
-			const nextMessage = mockMessages[index]
+			const nextMessage = selectedCreatorMessages[index]
 
 			if (!nextMessage) {
 				resetSequence()
@@ -56,12 +68,15 @@ export function TelegramChatMockup() {
 			)
 		}
 
+		// Reset when creator changes
+		setVisibleMessages([])
+		index = 0
 		queueNext(700)
 
 		return () => {
 			timeouts.forEach((timer) => clearTimeout(timer))
 		}
-	}, [])
+	}, [selectedCreatorId, selectedCreatorMessages])
 
 	return (
 		<div className={styles.frameWrapper}>
@@ -89,11 +104,11 @@ export function TelegramChatMockup() {
 							Back
 						</span>
 						<div className={styles.headerMeta}>
-							<span className={styles.contactName}>Andrew Huberman</span>
+							<span className={styles.contactName}>{selectedCreator.name}</span>
 							<span className={styles.contactStatus}>online</span>
 						</div>
 						<div className={styles.headerAvatar} aria-hidden>
-							<Image src="/andrew_huberman_pic.jpg" alt="Andrew Huberman" width={32} height={32} className={styles.headerAvatarImage} />
+							<Image src={selectedCreator.image} alt={selectedCreator.name} width={32} height={32} className={styles.headerAvatarImage} />
 						</div>
 					</header>
 					</div>

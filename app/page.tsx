@@ -5,80 +5,25 @@ import { getDictionary } from "./lib/get-dictionary";
 import { FeaturesGrid } from "./components/features-grid";
 
 import { AnimatedTooltip } from "./components/animated-tooltip";
+import { TelegramChatMockup } from "./components/telegram-chat/TelegramChatMockup";
+import { CreatorProvider } from "./components/creator-interaction";
 import { Button } from "./components/button";
 import { ColourfulText } from "./components/colorful-text";
 import * as Icons from "./components/icons";
 import { SocialIcon } from "react-social-icons";
 import FeaturesSection from "./components/features-section"
 import { FAQ } from "./components/faq";
-import { TelegramChatMockup } from "./components/telegram-chat/TelegramChatMockup";
 import { Footer } from "./components/footer";
 import Pricing from "./components/pricing";
-
-
-const people = [
-  {
-    id: 1,
-    name: "Andrew Huberman",
-    designation: "Neuroscientist",
-    image: "/andrew_huberman_pic.jpg",
-    telegramLink: "https://t.me/andrew_huberman_chatbot",
-    whatsappLink: "",
-    youtubeLink: "https://www.youtube.com/@hubermanlab",
-  },
-  {
-    id: 2,
-    name: "Casey Zander",
-    designation: "Dating Coach Youtuber",
-    image: "/casey_zander_pic.jpg",
-    telegramLink: "https://t.me/casey_zander_bot",
-    whatsappLink: "https://wa.me/447876624276",
-    youtubeLink: "https://www.youtube.com/@CaseyZander",
-  },
-  // {
-  //   id: 3,
-  //   name: "Daniel Brada",
-  //   designation: "Self help influencer",
-  //   image: "/daniel_brada_pic.webp",
-  //   telegramLink: "",
-  //   whatsappLink: "https://www.youtube.com/@hubermanlab",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Gary Vaynerchuk",
-  //   designation: "Entreprenuer",
-  //   image: "/gary_vaynerchuk_pic.jpg",
-  //   telegramLink: "",
-  //   whatsappLink: "https://www.youtube.com/@hubermanlab",
-  // },
-  {
-    id: 5,
-    name: "Jordan B. Peterson",
-    designation: "Psychoanalyst",
-    image: "/jordan_peterson_pic.jpg",
-    telegramLink: "https://t.me/jordan_peterson_chat_bot",
-    whatsappLink: "",
-    youtubeLink: "https://www.youtube.com/@JordanBPeterson",
-  },
-  {
-    id: 6,
-    name: "Healthy Gamer GG",
-    designation: "Psychologist",
-    image: "/healthygamergg_pic.jpg",
-    telegramLink: "https://t.me/Healthy_GamerGG_bot",
-    whatsappLink: "",
-    youtubeLink: "https://www.youtube.com/c/HealthyGamerGG",
-  },
-];
+import { ContactSection } from "./components/contact-section";
+import { creators } from "./data/creators";
 
 export default async function IndexPage() {
   const dict = await getDictionary();
 
   return (
-    <>
-    <Image alt="bg2" src={"/magicpattern_god_rays.png"} className="w-screen h-screen z-[-2]" fill={true} objectFit="cover"></Image>
-    <Image alt="bg" src={"/bg.svg"} className="w-screen h-screen z-[-10]" fill={true} objectFit="cover"></Image>
-      <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 md:mb-24 max-w-[98rem]">
+    <CreatorProvider>
+      <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 md:mb-24 md:mt-24 max-w-[98rem]">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
           <div className="flex flex-col items-start h-full w-full">
             <div className="flex flex-col pt-4 md:pt-12 w-full">
@@ -97,7 +42,7 @@ export default async function IndexPage() {
                 </span>
               </div>
               {/* CTA Buttons */}
-              <div className="mb-2 md:mt-8 w-full z-10 cursor-pointer">
+              <div className="mb-2 md:mt-8 w-full cursor-pointer">
                 <Link
                   // TODO: Add waitlist link
                   href="https://calendly.com/replyfanapp/30min"
@@ -136,14 +81,19 @@ export default async function IndexPage() {
                   </div>
                 </div>
                 <div className="w-full flex justify-start mt-4">
-                  <AnimatedTooltip items={people} />
+                  <AnimatedTooltip 
+                    items={creators} 
+                  />
                 </div>
               </div>
             </div>
           </div>
-          {/* Iphone mockup */}
-          <div className="mt-8">
-            <TelegramChatMockup />
+          <div className="flex flex-col items-center justify-center h-full w-full">
+            <div className="mt-8">
+              <TelegramChatMockup 
+                people={creators}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -153,31 +103,21 @@ export default async function IndexPage() {
       </section>
 
       <section id="how-it-works" className="max-w-[98rem] w-10/12 lg:w-11/12 my-40 mx-auto overflow-x-hidden">
-        <div className="mb-10 md:mb-18 font-bold text-gray-800 text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left">
+        <div className="mb-10 md:mb-18 font-bold text-gray-800 dark:text-black text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left">
           How it works
         </div>
         <div className="my-10 flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8 flex-wrap">
-          <Image
-            src="/it_works_1.svg"
-            width={320}
-            height={320}
-            alt="Step 1"
-            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
-          />
-          <Image
-            src="/arrow.svg"
-            width={60}
-            height={60}
-            alt="Arrow"
-            className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rotate-90 lg:rotate-0 transition-transform duration-300"
-          />
-          <Image
-            src="/it_works_2.svg"
-            width={320}
-            height={320}
-            alt="Step 2"
-            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
-          />
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/it_works_1.svg"
+              width={320}
+              height={320}
+              alt="Step 1"
+              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
+            />
+            <div className="text-3xl font-bold text-gray-500 dark:text-gray-400">01</div>
+            <div className="text-2xl font-medium text-center text-black dark:text-white">Bots get trained on your content</div>
+          </div>
           <Image
             src="/arrow.svg"
             width={60}
@@ -185,18 +125,40 @@ export default async function IndexPage() {
             alt="Arrow"
             className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rotate-90 lg:rotate-0 transition-transform duration-300"
           />
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/it_works_2.svg"
+              width={320}
+              height={200}
+              alt="Step 2"
+              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-[200px] sm:h-[220px] md:h-[240px] object-contain flex-shrink-0"
+            />
+            <div className="text-3xl font-bold text-gray-500 dark:text-gray-400">02</div>
+            <div className="text-2xl font-medium text-center text-black dark:text-white">Your fans chat with your bot</div>
+          </div>
           <Image
-            src="/it_works_3.svg"
-            width={320}
-            height={320}
-            alt="Step 3"
-            className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-auto flex-shrink-0"
+            src="/arrow.svg"
+            width={60}
+            height={60}
+            alt="Arrow"
+            className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex-shrink-0 rotate-90 lg:rotate-0 transition-transform duration-300"
           />
+          <div className="flex flex-col items-center gap-4">
+            <Image
+              src="/it_works_3.svg"
+              width={320}
+              height={200}
+              alt="Step 3"
+              className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-[200px] sm:h-[220px] md:h-[240px] object-contain flex-shrink-0"
+            />
+            <div className="text-3xl font-bold text-gray-500 dark:text-gray-400">03</div>
+            <div className="text-2xl font-medium text-center text-black dark:text-white">They feel connected to you</div>
+          </div>
         </div>
       </section>
 
       <section id="features" className="max-w-[98rem] w-10/12 lg:w-11/12 mb-24 mx-auto overflow-x-hidden">
-      <div className="mb-10 md:mb-18 font-bold text-gray-800 text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left">
+      <div className="mb-10 md:mb-18 font-bold text-gray-800 dark:text-white text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left">
           Features
         </div>
         <FeaturesSection/>
@@ -228,12 +190,13 @@ export default async function IndexPage() {
         <FAQ />
       </section>
 
+      <ContactSection />
 
       {/* <section id="marketing" className="container flex flex-col my-40 mx-auto">
         <MarketingSection dict={dict.marketing.right_side} />
       </section> */}
 
       <Footer />
-    </>
+    </CreatorProvider>
   );
 }

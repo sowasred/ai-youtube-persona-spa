@@ -1,5 +1,5 @@
 import { NavbarNavigation } from "./navbar-navigation.client"
-// import { DarkModeToggle } from "./dark-mode-toggle"
+import { DarkModeToggle } from "./dark-mode-toggle"
 import Image from "next/image"
 
 export interface MenuItem {
@@ -11,7 +11,8 @@ export interface MenuItem {
 export interface Navbar1Props {
   logo?: {
     url: string
-    src: string
+    srcLight: string
+    srcDark: string
     alt: string
     title: string
   }
@@ -20,7 +21,8 @@ export interface Navbar1Props {
 
 const defaultLogo = {
   url: "/",
-  src: "/reply_fan_logo.svg",
+  srcLight: "/reply_fan_logo_light.svg",
+  srcDark: "/reply_fan_logo_dark.svg",
   alt: "logo",
   title: "replyfan.com",
 }
@@ -34,15 +36,16 @@ const defaultMenu: MenuItem[] = [
 
 export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props) {
   return (
-    <section className="pt-6 z-10 md:mb-12">
-      <div className="container w-full mx-auto">
+    <section className="sticky top-0 z-10 border-b backdrop-blur-md py-4">
+      <div className="w-full mx-auto">
         <nav className="flex items-center w-11/12 mx-auto justify-between gap-8 lg:flex-nowrap">
           <a href={logo.url} className="flex items-center gap-2" aria-label={logo.title}>
-            <Image src={logo.src} width={64} height={64} className="h-16 w-auto sm:h-14 lg:h-12" alt={logo.alt} />
+            <Image src={logo.srcLight} width={64} height={64} className="h-16 w-auto sm:h-14 lg:h-12 dark:hidden" alt={logo.alt} />
+            <Image src={logo.srcDark} width={64} height={64} className="h-16 w-auto sm:h-14 lg:h-12 hidden dark:block" alt={logo.alt} />
           </a>
 
-          <div className="flex items-center gap-6 w-full justify-end sm:justify-between">
-            <ul className="hidden sm:flex items-center gap-4">
+          <div className="flex items-center gap-6 w-full justify-end md:justify-between">
+            <ul className="hidden md:flex items-center gap-4">
               {menu.map((item) => (
                 <li key={item.url}>
                   <a
@@ -56,7 +59,7 @@ export function Navbar1({ logo = defaultLogo, menu = defaultMenu }: Navbar1Props
             </ul>
 
             <div className="flex items-center gap-4">
-              {/* <DarkModeToggle /> */}
+              <DarkModeToggle />
               <NavbarNavigation menu={menu} />
             </div>
           </div>
