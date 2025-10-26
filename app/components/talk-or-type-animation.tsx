@@ -47,9 +47,8 @@ export function TalkOrTypeAnimation({
 
 	return (
 		<div
-			className={`relative flex flex-col items-center justify-center gap-8 w-full min-w-full overflow-hidden rounded-3xl border border-white/60 bg-white/60 from-[#f5f5f5] to-[#e9ecef] bg-gradient-to-b p-12 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-xl ${className}`}
+			className={`relative flex flex-col items-center justify-center gap-8 w-full min-w-full overflow-hidden rounded-3xl border border-white/60 dark:border-gray-700/60 bg-white/60 dark:bg-gray-800/60 from-[#f5f5f5] dark:from-gray-800 to-[#e9ecef] dark:to-gray-700 bg-gradient-to-b p-12 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(0,0,0,0.3)] backdrop-blur-xl ${className}`}
 			style={{
-				background: 'linear-gradient(180deg, #f5f5f5 0%, #e9ecef 100%)',
 				minHeight: '600px'
 			}}
 		>
@@ -57,7 +56,7 @@ export function TalkOrTypeAnimation({
 			<div className="flex items-center gap-12">
 				{/* Voice Option */}
 				<motion.div
-					className="relative bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
+					className="relative bg-white/95 dark:bg-gray-700/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 dark:border-gray-600/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
 					aria-label="Voice message option"
 					initial={{ opacity: 0, x: -30 }}
 					animate={{ opacity: 1, x: 0 }}
@@ -95,7 +94,7 @@ export function TalkOrTypeAnimation({
 
 				{/* Text Option */}
 				<motion.div
-					className="relative bg-white/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
+					className="relative bg-white/95 dark:bg-gray-700/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 dark:border-gray-600/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
 					aria-label="Text message option"
 					initial={{ opacity: 0, x: 30 }}
 					animate={{ opacity: 1, x: 0 }}

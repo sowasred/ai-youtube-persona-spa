@@ -23,12 +23,17 @@ const containerClasses = [
 	'rounded-3xl',
 	'border',
 	'border-white/60',
+	'dark:border-gray-700/60',
 	'bg-white/60',
+	'dark:bg-gray-800/60',
 	'from-[#f5f5f5]',
+	'dark:from-gray-800',
 	'to-[#e9ecef]',
+	'dark:to-gray-700',
 	'bg-gradient-to-b',
 	'p-6',
 	'shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]',
+	'dark:shadow-[inset_0_1px_0_rgba(0,0,0,0.3)]',
 	'backdrop-blur-xl'
 ]
 
@@ -39,11 +44,14 @@ const videoCardClasses = [
 	'items-start',
 	'rounded-2xl',
 	'bg-white/90',
+	'dark:bg-gray-700/90',
 	'p-4',
 	'shadow-[0_8px_32px_rgba(0,0,0,0.1)]',
+	'dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]',
 	'backdrop-blur-sm',
 	'border',
 	'border-white/50',
+	'dark:border-gray-600/50',
 	'w-full',
 	'min-w-full'
 ]
@@ -62,6 +70,7 @@ const videoTitleClasses = [
 	'text-lg',
 	'font-medium',
 	'text-gray-800',
+	'dark:text-gray-200',
 	'mt-4',
 	'text-left',
 	'w-full'
@@ -72,6 +81,7 @@ const transcriptClasses = [
 	'font-bold',
 	'leading-relaxed',
 	'text-gray-800',
+	'dark:text-gray-200',
 	'w-full',
 	'text-left'
 ]
@@ -152,9 +162,8 @@ export function FeelsLikeRealChatAnimation({
 	}, [])
 	return (
 		<div
-			className={containerClasses.join(' ')}
+			className={`${containerClasses.join(' ')} dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-700`}
 			style={{
-				background: 'linear-gradient(180deg, #f5f5f5 0%, #e9ecef 100%)',
 				height: '750px',
 				width: '100%',
 				minWidth: '100%'
@@ -224,21 +233,21 @@ export function FeelsLikeRealChatAnimation({
 				transition={transcriptTransition}
 				className="absolute bottom-50 left-1/2 transform -translate-x-1/2 w-4/5 max-w-2xl"
 			>
-				<div className="relative bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200/80 shadow-lg p-6">
+				<div className="relative bg-white/95 dark:bg-gray-700/95 backdrop-blur-sm rounded-2xl border border-gray-200/80 dark:border-gray-600/80 shadow-lg p-6">
 					{/* Transcript Label */}
 					<div className="flex items-center gap-2 mb-4">
 						<div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-						<span className="text-xs font-semibold text-gray-600 uppercase tracking-wider">
+						<span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
 							Transcript
 						</span>
 					</div>
 					{/* Transcript Content */}
 					<div className="relative">
-						<span className="absolute -left-3 text-gray-400 text-3xl font-serif leading-none">&ldquo;</span>
+						<span className="absolute -left-3 text-gray-400 dark:text-gray-500 text-3xl font-serif leading-none">&ldquo;</span>
 						<p className={`${transcriptClasses.join(' ')} pl-4`}>
 							{parseTranscriptWithHighlights(transcript, highlightedSentences)}
 						</p>
-						<span className="absolute -right-3 text-gray-400 text-3xl font-serif leading-none">&rdquo;</span>
+						<span className="absolute -right-3 text-gray-400 dark:text-gray-500 text-3xl font-serif leading-none">&rdquo;</span>
 					</div>
 				</div>
 			</motion.div>

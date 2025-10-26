@@ -19,12 +19,17 @@ const containerClasses = [
 	'rounded-3xl',
 	'border',
 	'border-white/60',
+	'dark:border-gray-700/60',
 	'bg-white/60',
+	'dark:bg-gray-800/60',
 	'from-[#f5f5f5]',
+	'dark:from-gray-800',
 	'to-[#e9ecef]',
+	'dark:to-gray-700',
 	'bg-gradient-to-b',
 	'p-6',
 	'shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]',
+	'dark:shadow-[inset_0_1px_0_rgba(0,0,0,0.3)]',
 	'backdrop-blur-xl'
 ]
 
@@ -52,7 +57,8 @@ const orbitLineClasses = [
 	'-translate-y-1/2',
 	'rounded-full',
 	'border',
-	'border-white/40'
+	'border-white/40',
+	'dark:border-gray-600/40'
 ]
 
 const thumbCardClasses = [
@@ -64,10 +70,13 @@ const thumbCardClasses = [
 	'rounded-xl',
 	'overflow-hidden',
 	'shadow-[0_10px_30px_rgba(0,0,0,0.25)]',
+	'dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)]',
 	'ring-2',
 	'ring-white/70',
+	'dark:ring-gray-600/70',
 	'backdrop-blur-sm',
-	'bg-white'
+	'bg-white',
+	'dark:bg-gray-700'
 ]
 
 const thumbImageClasses = [
@@ -98,16 +107,15 @@ export function TrainedOnYouAnimation({
 
 	return (
 		<div
-			className={containerClasses.join(' ') + (className ? ` ${className}` : '')}
+			className={`${containerClasses.join(' ')} dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-700${className ? ` ${className}` : ''}`}
 			style={{
-				background: 'linear-gradient(180deg, #f5f5f5 0%, #e9ecef 100%)',
 				height: '750px',
 				width: '100%',
 				minWidth: '100%'
 			}}
 		>
 			<div className={chipContainerClasses.join(' ')}>
-				<div className="absolute inset-0 rounded-full bg-white/40 blur-3xl opacity-60" />
+				<div className="absolute inset-0 rounded-full bg-white/40 dark:bg-gray-600/40 blur-3xl opacity-60" />
 
 				{/* Center brain */}
 				<div className="absolute inset-0 grid place-items-center">
