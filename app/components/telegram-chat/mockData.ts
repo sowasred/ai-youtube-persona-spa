@@ -61,25 +61,25 @@ export const caseyZanderMessages: ChatMessageData[] = [
 	{
 		id: 'cz1',
 		from: 'me',
-		text: 'Casey, how do I approach a girl at the gym?',
+		text: 'What do I text after a good first date?',
 		timestamp: '9:41',
 	},
 	{
 		id: 'cz2',
 		from: 'them',
-		text: 'Keep it simple. "Hey, I noticed you working on your form. Mind if I give you a tip?"',
+		text: 'Keep momentum by saying "Had fun. Free Thu 7? Drinks at Oak & Ivy?" Done. No essay.',
 		timestamp: '9:41',
 	},
 	{
 		id: 'cz3',
 		from: 'me',
-		text: 'What if she says no?',
+		text: 'She takes hours to reply. Do I double text?',
 		timestamp: '9:41',
 	},
 	{
 		id: 'cz4',
 		from: 'them',
-		text: 'Respect it and move on. Confidence is not about getting every girl, it is about handling rejection well.',
+		text: 'Nope. Live your life. If you must, wait a day and send one new, purposeful ping.',
 		timestamp: '9:41',
 	},
 	{
@@ -103,25 +103,25 @@ export const jordanPetersonMessages: ChatMessageData[] = [
 	{
 		id: 'jp1',
 		from: 'me',
-		text: 'Dr. Peterson, I feel lost in life. Where do I start?',
+		text: "I'm stuck. I keep procrastinating on starting my portfolio. I'm scared it won't be good enough. What should I do?",
 		timestamp: '9:41',
 	},
 	{
 		id: 'jp2',
 		from: 'them',
-		text: 'Start by cleaning your room. Order in the small things creates order in the mind.',
+		text: "You're negotiating with fear. Don't wait for courage—build it. Pick one tiny piece you can finish by tonight. Publish it, even if it's rough. Momentum first, polish second.",
 		timestamp: '9:41',
 	},
 	{
 		id: 'jp3',
 		from: 'me',
-		text: 'That seems too simple...',
+		text: 'Okay, but how do I keep going after that first push? I always slide back..',
 		timestamp: '9:41',
 	},
 	{
 		id: 'jp4',
 		from: 'them',
-		text: 'The simple things are the foundation. Master the basics before tackling complexity. What is your room like right now?',
+		text: 'Give the work a time and a place—same hour, same chair. Track one metric: "minutes spent creating" per day. Miss a day? Start the next day, smaller. Discipline beats mood when mood is unreliable.',
 		timestamp: '9:41',
 	},
 	{
