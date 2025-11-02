@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import { useInView } from "../../hooks/use-in-view"
 
 import styles from "./styles.module.css"
 import { ChatMessage } from "./ChatMessage"
@@ -19,6 +20,14 @@ const messageVariants = {
 	exit: { opacity: 0, y: -12, scale: 0.96 },
 }
 
+const INITIAL_MESSAGE_DELAY = 700
+const BETWEEN_MESSAGES_DELAY = 1500
+const LOOP_RESTART_DELAY = 10000
+const LOOP_RESET_CLEAR_DELAY = Math.max(
+	LOOP_RESTART_DELAY - INITIAL_MESSAGE_DELAY,
+	0,
+)
+
 interface TelegramChatMockupProps {
   people: Creator[];
 }
@@ -26,12 +35,18 @@ interface TelegramChatMockupProps {
 export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
   const { selectedCreatorId } = useCreator();
 	const [visibleMessages, setVisibleMessages] = useState<ChatMessageData[]>([])
+	const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.35, once: false })
 	
 	// Get the selected creator's data
 	const selectedCreator = people.find(person => person.id === selectedCreatorId) || people[0]
 	const selectedCreatorMessages = creatorMessages[selectedCreatorId] || creatorMessages[1]
 	
 	useEffect(() => {
+		if (!isInView) {
+			setVisibleMessages([])
+			return
+		}
+
 		let index = 0
 		const timeouts: Array<ReturnType<typeof setTimeout>> = []
 
@@ -40,8 +55,8 @@ export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
 				setTimeout(() => {
 					setVisibleMessages([])
 					index = 0
-					queueNext(800)
-				}, 3200),
+					queueNext(INITIAL_MESSAGE_DELAY)
+				}, LOOP_RESET_CLEAR_DELAY),
 			)
 		}
 
@@ -63,7 +78,7 @@ export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
 						return [...prev, nextMessage]
 					})
 					index += 1
-					queueNext(1500)
+					queueNext(BETWEEN_MESSAGES_DELAY)
 				}, delay),
 			)
 		}
@@ -71,15 +86,15 @@ export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
 		// Reset when creator changes
 		setVisibleMessages([])
 		index = 0
-		queueNext(700)
+		queueNext(INITIAL_MESSAGE_DELAY)
 
 		return () => {
 			timeouts.forEach((timer) => clearTimeout(timer))
 		}
-	}, [selectedCreatorId, selectedCreatorMessages])
+	}, [isInView, selectedCreatorId, selectedCreatorMessages])
 
 	return (
-		<div className={styles.frameWrapper}>
+		<div ref={ref} className={styles.frameWrapper}>
 			<DeviceFrame className={styles.frameSvg}>
 				<div className={styles.telegramScreen}>
 					<div className={styles.screenHeader}>

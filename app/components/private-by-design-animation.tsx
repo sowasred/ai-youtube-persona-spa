@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { useInView } from '../hooks/use-in-view'
 
 interface PrivateByDesignAnimationProps {
 	className?: string
@@ -131,12 +132,23 @@ export function PrivateByDesignAnimation({
 }: PrivateByDesignAnimationProps) {
 	const [animationPhase, setAnimationPhase] = useState<'thumbnails-fade-in' | 'lock-appearing' | 'locked'>('thumbnails-fade-in')
 	const shouldReduceMotion = useReducedMotion()
+  const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.35, once: false })
 
 	useEffect(() => {
+		if (shouldReduceMotion) {
+			setAnimationPhase('locked')
+			return
+		}
+
+		if (!isInView) {
+			setAnimationPhase('thumbnails-fade-in')
+			return
+		}
+
+		setAnimationPhase('thumbnails-fade-in')
 		const timer1 = setTimeout(() => {
 			setAnimationPhase('lock-appearing')
 		}, 1500)
-
 		const timer2 = setTimeout(() => {
 			setAnimationPhase('locked')
 		}, 3500)
@@ -145,7 +157,7 @@ export function PrivateByDesignAnimation({
 			clearTimeout(timer1)
 			clearTimeout(timer2)
 		}
-	}, [])
+	}, [isInView, shouldReduceMotion])
 
 	const getThumbnailVariant = () => {
 		if (shouldReduceMotion) return 'visible'
@@ -182,6 +194,7 @@ export function PrivateByDesignAnimation({
 
 	return (
 		<div
+			ref={ref}
 			className={`${containerClasses.join(' ')} dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-700${className ? ` ${className}` : ''}`}
 			style={{
 				height: '750px',
@@ -231,16 +244,17 @@ export function PrivateByDesignAnimation({
 					{/* Lock Shackle - U-shaped top part */}
 					<motion.path
 						d="M30 50 C30 30 45 15 60 15 C75 15 90 30 90 50"
-						stroke="#1e40af"
+						stroke="currentColor"
 						strokeWidth="8"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 						fill="none"
 						strokeDasharray="1000"
 						strokeDashoffset="1000"
+						className="text-white dark:text-[#1e40af]"
 						animate={{
 							strokeDashoffset: animationPhase === 'lock-appearing' ? 0 : 1000,
-							fill: animationPhase === 'locked' ? 'rgba(30, 64, 175, 0.6)' : 'none'
+							fill: animationPhase === 'locked' ? 'currentColor' : 'none'
 						}}
 						transition={{
 							strokeDashoffset: { duration: 1.2, ease: [0.4, 0, 0.2, 1] as const },
@@ -250,16 +264,17 @@ export function PrivateByDesignAnimation({
 					{/* Lock Body - rectangular bottom part */}
 					<motion.path
 						d="M25 50 L25 100 C25 110 35 120 60 120 C85 120 95 110 95 100 L95 50"
-						stroke="#1e40af"
+						stroke="currentColor"
 						strokeWidth="8"
 						strokeLinecap="round"
 						strokeLinejoin="round"
 						fill="none"
 						strokeDasharray="1000"
 						strokeDashoffset="1000"
+						className="text-white dark:text-[#1e40af]"
 						animate={{
 							strokeDashoffset: animationPhase === 'lock-appearing' ? 0 : 1000,
-							fill: animationPhase === 'locked' ? 'rgba(30, 64, 175, 0.8)' : 'none'
+							fill: animationPhase === 'locked' ? 'currentColor' : 'none'
 
 						}}
 						transition={{
@@ -273,13 +288,14 @@ export function PrivateByDesignAnimation({
 						cy="80"
 						r="8"
 						fill="none"
-						stroke="#1e40af"
+						stroke="currentColor"
 						strokeWidth="4"
 						strokeDasharray="1000"
 						strokeDashoffset="1000"
+						className="text-gray-900 dark:text-blue-100"
 						animate={{
 							strokeDashoffset: animationPhase === 'lock-appearing' ? 0 : 1000,
-							fill: animationPhase === 'locked' ? 'rgb(195, 209, 255)' : 'none'
+							fill: animationPhase === 'locked' ? 'currentColor' : 'none'
 						}}
 						transition={{
 							strokeDashoffset: { duration: 0.8, ease: [0.4, 0, 0.2, 1] as const, delay: 0.4 },
@@ -294,13 +310,14 @@ export function PrivateByDesignAnimation({
 						height="12"
 						rx="2"
 						fill="none"
-						stroke="#1e40af"
+						stroke="currentColor"
 						strokeWidth="4"
 						strokeDasharray="1000"
 						strokeDashoffset="1000"
+						className="text-gray-900 dark:text-blue-100"
 						animate={{
 							strokeDashoffset: animationPhase === 'lock-appearing' ? 0 : 1000,
-							fill: animationPhase === 'locked' ? 'rgb(195, 209, 255)' : 'none'
+							fill: animationPhase === 'locked' ? 'currentColor' : 'none'
 						}}
 						transition={{
 							strokeDashoffset: { duration: 0.6, ease: [0.4, 0, 0.2, 1] as const, delay: 0.6 },

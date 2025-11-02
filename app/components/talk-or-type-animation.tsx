@@ -1,37 +1,40 @@
 'use client'
 
-import { motion, Variants } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useInView } from '../hooks/use-in-view'
 
 interface TalkOrTypeAnimationProps {
 	className?: string
 }
 
 // Voice wave animation variants - simplified
-const voiceWaveVariants: Variants = {
-	idle: {
-		scaleY: [1, 0.3, 1],
-		opacity: [0.6, 1, 0.6],
-		transition: {
-			duration: 0.6,
-			ease: "easeInOut" as const,
-			repeat: Infinity,
-			repeatDelay: 0.1
-		}
-	},
-	active: {
-		scaleY: [0, 0.8, 0.3, 1, 0.5, 0.9, 0.2, 0],
-		transition: {
-			duration: 1.5,
-			ease: "easeInOut" as const,
-			repeat: Infinity,
-			delay: 0
-		}
-	}
-}
+// const voiceWaveVariants: Variants = {
+// 	idle: {
+// 		scaleY: [1, 0.3, 1],
+// 		opacity: [0.6, 1, 0.6],
+// 		transition: {
+// 			duration: 0.6,
+// 			ease: "easeInOut" as const,
+// 			repeat: Infinity,
+// 			repeatDelay: 0.1
+// 		}
+// 	},
+// 	active: {
+// 		scaleY: [0, 0.8, 0.3, 1, 0.5, 0.9, 0.2, 0],
+// 		transition: {
+// 			duration: 1.5,
+// 			ease: "easeInOut" as const,
+// 			repeat: Infinity,
+// 			delay: 0
+// 		}
+// 	}
+// }
 
 export function TalkOrTypeAnimation({
 	className = ""
 }: TalkOrTypeAnimationProps) {
+  const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.35, once: false })
+  const shouldAnimate = isInView
 
 	// Generate multiple wave lines with varying heights and delays
 	const waveConfigs = [
@@ -47,20 +50,21 @@ export function TalkOrTypeAnimation({
 
 	return (
 		<div
+			ref={ref}
 			className={`relative flex flex-col items-center justify-center gap-8 w-full min-w-full overflow-hidden rounded-3xl border border-white/60 dark:border-gray-700/60 bg-white/60 dark:bg-gray-800/60 from-[#f5f5f5] dark:from-gray-800 to-[#e9ecef] dark:to-gray-700 bg-gradient-to-b p-12 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(0,0,0,0.3)] backdrop-blur-xl ${className}`}
 			style={{
 				minHeight: '600px'
 			}}
 		>
 			{/* Voice and Text side by side */}
-			<div className="flex items-center gap-12">
+			<div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
 				{/* Voice Option */}
 				<motion.div
 					className="relative bg-white/95 dark:bg-gray-700/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 dark:border-gray-600/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
 					aria-label="Voice message option"
 					initial={{ opacity: 0, x: -30 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
+					animate={shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+					transition={{ duration: 0.6, delay: shouldAnimate ? 0.2 : 0 }}
 				>
 					<div className="flex items-center">
 						<svg className="w-10 h-10 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -74,15 +78,15 @@ export function TalkOrTypeAnimation({
 							<motion.div
 								key={index}
 								className="w-2 bg-blue-500 rounded-full"
-								animate={{
+								animate={shouldAnimate ? {
 									scaleY: [0, 0.8, 0.3, 1, 0.5, 0.9, 0.2, 0]
-								}}
-								transition={{
+								} : { scaleY: 0 }}
+								transition={shouldAnimate ? {
 									duration: 1.5,
 									ease: "easeInOut",
 									repeat: Infinity,
 									delay: config.delay
-								}}
+								} : { duration: 0 }}
 								style={{
 									height: `${config.height}px`,
 									originY: 1
@@ -97,8 +101,8 @@ export function TalkOrTypeAnimation({
 					className="relative bg-white/95 dark:bg-gray-700/95 backdrop-blur-sm rounded-3xl border border-gray-200/80 dark:border-gray-600/80 shadow-lg px-8 py-6 flex flex-row items-center justify-center gap-6 min-h-[120px] w-fit"
 					aria-label="Text message option"
 					initial={{ opacity: 0, x: 30 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.6, delay: 0.4 }}
+					animate={shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+					transition={{ duration: 0.6, delay: shouldAnimate ? 0.4 : 0 }}
 				>
 					<div className="flex items-center">
 						<svg className="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -113,16 +117,16 @@ export function TalkOrTypeAnimation({
 								key={index}
 								className="w-3 h-3 rounded-full bg-green-400"
 								initial={{ opacity: 0.3, scale: 0.8 }}
-								animate={{
+								animate={shouldAnimate ? {
 									opacity: [0.3, 1, 0.3],
 									scale: [0.8, 1, 0.8]
-								}}
-								transition={{
+								} : { opacity: 0.3, scale: 0.8 }}
+								transition={shouldAnimate ? {
 									delay: 0.6 + index * 0.2,
 									duration: 0.6,
 									repeat: Infinity,
 									ease: "easeInOut"
-								}}
+								} : { duration: 0 }}
 							/>
 						))}
 					</div>

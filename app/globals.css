@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --breakpoint-ty: 360px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+}
+
 /* Enable dark mode variant for Tailwind v4 */
 @variant dark (.dark &);
 
@@ -141,30 +152,6 @@ html {
 
 .animate-highlight {
   animation: highlightMove 2s ease-in-out forwards;
-}
-
-/* Telegram-style message bubble */
-.message-bubble-me {
-  background-color: #dcf8c6;
-  padding: 16px 20px 14px;
-  border-radius: 18px;
-  border-bottom-left-radius: 6px;
-  box-shadow: 0 6px 18px rgba(59, 170, 89, 0.22);
-  font-size: 1.2rem;
-  line-height: 1.4;
-  color: #0f172a;
-  text-align: left;
-  width: 100%;
-  max-width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.message-text {
-  margin: 0;
-  text-align: left;
 }
 
 .message-meta {

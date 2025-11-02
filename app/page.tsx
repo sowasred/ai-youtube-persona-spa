@@ -103,7 +103,7 @@ export default async function IndexPage() {
       </section>
 
       <section id="how-it-works" className="max-w-[98rem] w-10/12 lg:w-11/12 my-40 mx-auto overflow-x-hidden">
-        <div className="mb-10 md:mb-18 font-bold text-gray-800 dark:text-black text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left">
+        <div className="mb-10 md:mb-18 font-bold text-gray-800 dark:text-black text-4xl md:text-5xl md:leading-[4rem] xl:leading-[4rem] text-center md:text-left dark:text-white">
           How it works
         </div>
         <div className="my-10 flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-8 flex-wrap">

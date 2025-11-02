@@ -2,24 +2,26 @@
 
 import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { cn } from './lib/utils/cn'
+import { useInView } from '../hooks/use-in-view'
 
 interface TrainedOnYouAnimationProps {
 	thumbnails?: { src: string; alt?: string }[]
 	className?: string
 }
 
+// Styles of the container div.
 const containerClasses = [
 	'relative',
-	'flex',
-	'w-full',
-	'min-w-full',
-	'items-center',
-	'justify-center',
+	'w-[75vw]',
+	'lg:w-[50vw]',
+	'min-w-[280px]',
+	'max-w-[768px]',
+	'aspect-square',
+	'mx-auto',
 	'overflow-hidden',
 	'rounded-3xl',
-	'border',
-	'border-white/60',
-	'dark:border-gray-700/60',
 	'bg-white/60',
 	'dark:bg-gray-800/60',
 	'from-[#f5f5f5]',
@@ -27,28 +29,26 @@ const containerClasses = [
 	'to-[#e9ecef]',
 	'dark:to-gray-700',
 	'bg-gradient-to-b',
-	'p-6',
-	'shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]',
-	'dark:shadow-[inset_0_1px_0_rgba(0,0,0,0.3)]',
-	'backdrop-blur-xl'
+	'p-4',
+	'sm:p-6',
 ]
 
+// Styles of the chip container.
 const chipContainerClasses = [
 	'relative',
-	'aspect-square',
 	'w-full',
-	'max-w-[580px]',
-	'mx-auto',
+	'h-full',
 	'grid',
 	'place-items-center'
 ]
 
+// Styles of the chip svg.
 const chipClasses = [
-	'h-48',
-	'w-48',
-	'drop-shadow-[0_5px_35px_rgba(59,130,246,0.35)]'
+	'w-[clamp(96px,18vw,192px)]',
+	'h-[clamp(96px,18vw,192px)]',
 ]
 
+// Styles of the orbit line.
 const orbitLineClasses = [
 	'absolute',
 	'left-1/2',
@@ -61,34 +61,27 @@ const orbitLineClasses = [
 	'dark:border-gray-600/40'
 ]
 
+// Styles of the thumbnail cards.
 const thumbCardClasses = [
-	'relative',
-	'h-16',
-	'w-[86px]',
-	'md:h-20',
-	'md:w-[108px]',
+	'w-[clamp(40px,7vw,108px)]',
 	'rounded-xl',
 	'overflow-hidden',
 	'shadow-[0_10px_30px_rgba(0,0,0,0.25)]',
 	'dark:shadow-[0_10px_30px_rgba(0,0,0,0.4)]',
-	'ring-2',
-	'ring-white/70',
-	'dark:ring-gray-600/70',
-	'backdrop-blur-sm',
-	'bg-white',
-	'dark:bg-gray-700'
+	'bg-black',
+	'dark:bg-white'
 ]
 
+// Styles of the thumbnail images.
 const thumbImageClasses = [
+	'object-cover',
 	'h-full',
-	'w-full',
-	'object-cover'
 ]
 
+// Styles of the glow effect.
 const glowClasses = [
-	'pointer-events-none',
 	'absolute',
-	'-inset-1',
+	'-inset-[0.5vw]',
 	'rounded-[14px]'
 ]
 
@@ -97,6 +90,10 @@ export function TrainedOnYouAnimation({
 	className = ""
 }: TrainedOnYouAnimationProps) {
 	const prefersReduced = useReducedMotion()
+	const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.35, once: false })
+	const [animationKey, setAnimationKey] = useState(0)
+	const [wasInView, setWasInView] = useState(false)
+	const shouldAnimate = isInView && !prefersReduced
 	const rings = 3
 	const perRing = Math.max(1, Math.ceil(thumbnails.length / rings))
 	const ringGroups = Array.from({ length: rings }, (_, r) =>
@@ -105,45 +102,47 @@ export function TrainedOnYouAnimation({
 
 	const baseDuration = 28
 
-	return (
-		<div
-			className={`${containerClasses.join(' ')} dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-700${className ? ` ${className}` : ''}`}
-			style={{
-				height: '750px',
-				width: '100%',
-				minWidth: '100%'
-			}}
-		>
-			<div className={chipContainerClasses.join(' ')}>
-				<div className="absolute inset-0 rounded-full bg-white/40 dark:bg-gray-600/40 blur-3xl opacity-60" />
+	// Increment key when entering viewport to force re-animation
+	useEffect(() => {
+		if (isInView && !wasInView && !prefersReduced) {
+			setAnimationKey(prev => prev + 1)
+		}
+		setWasInView(isInView)
+	}, [isInView, wasInView, prefersReduced])
 
-				{/* Center brain */}
-				<div className="absolute inset-0 grid place-items-center">
+	return (
+		<div ref={ref} className={cn(containerClasses, className)}>
+			<div className={cn(chipContainerClasses)}>
+
+				{/* Center chip svg. */}
+				<div>
 					<motion.div
+						key={animationKey}
 						initial={{ scale: 0.96, opacity: 0 }}
-						animate={{ scale: 1, opacity: 1 }}
-						transition={{ type: "spring", stiffness: 120, damping: 18 }}
-						className="relative"
+						animate={shouldAnimate ? { scale: 1, opacity: 1 } : { scale: 0.96, opacity: 0 }}
+						transition={{ type: "spring", stiffness: 40, damping: 18 }}
 					>
-						<ChipSVG className={chipClasses.join(' ')} />
+						<ChipSVG className={cn(chipClasses)} />
 					</motion.div>
 				</div>
 
 				{/* Orbiting rings with moving thumbnails */}
 				{ringGroups.map((group, r) => {
-					const radius = 120 + r * 70
-					const duration = prefersReduced ? 0 : baseDuration - r * 6
+					// Calculate radius as percentage of container - responsive sizing
+					// Ring 0: 20%, Ring 1: 30%, Ring 2: 40% of container
+					const radiusPercent = 20 + (r * 10) // 20%, 30%, 40%
+					const duration = shouldAnimate ? baseDuration - r * 6 : 0
 					const direction = r % 2 === 0 ? 1 : -1
 
 					return (
 						<div key={r} className="absolute inset-0">
 							{/* Orbit line */}
 							<div
-								className={orbitLineClasses.join(' ')}
+								className={cn(orbitLineClasses)}
 								style={{
-									width: radius * 2,
-									height: radius * 2,
-									boxShadow: "inset 0 0 60px rgba(99,102,241,0.15)"
+									width: `${radiusPercent * 2}%`,
+									height: `${radiusPercent * 2}%`,
+									boxShadow: `inset 0 0 ${Math.max(20, radiusPercent * 0.8)}px rgba(99,102,241,0.15)`
 								}}
 							/>
 
@@ -157,22 +156,26 @@ export function TrainedOnYouAnimation({
 										style={{
 											transformOrigin: "center center",
 											left: "50%",
-											top: "50%"
+											top: "50%",
+											translate: '-50% -50%',
+											width: `${radiusPercent * 1.6}%`,
+											height: `${radiusPercent * 1.6}%`
 										}}
-										animate={{ rotate: [startAngle, startAngle + 360 * direction] }}
-										transition={{ ease: "linear", duration, repeat: Infinity }}
+										animate={shouldAnimate ? { rotate: [startAngle, startAngle + 360 * direction] } : { rotate: startAngle }}
+										transition={shouldAnimate ? { ease: "linear", duration, repeat: Infinity } : { duration: 0 }}
 									>
 										<div
 											className="absolute"
 											style={{
-												left: `${radius}px`,
-												top: "0",
-												transform: "translateX(-50%) translateY(-50%)"
+												left: "100%",
+												top: "50%",
+												transform: "translateY(-50%)",
+												transformOrigin: "center center"
 											}}
 										>
 											<motion.div
-												animate={{ rotate: [-(startAngle), -(startAngle + 360 * direction)] }}
-												transition={{ ease: "linear", duration, repeat: Infinity }}
+												animate={shouldAnimate ? { rotate: [-(startAngle), -(startAngle + 360 * direction)] } : { rotate: -startAngle }}
+												transition={shouldAnimate ? { ease: "linear", duration, repeat: Infinity } : { duration: 0 }}
 											>
 												<ThumbCard src={t.src} alt={t.alt} ring={r} />
 											</motion.div>
@@ -188,33 +191,28 @@ export function TrainedOnYouAnimation({
 	)
 }
 
+
 function ThumbCard({ src, alt, ring }: { src?: string; alt?: string; ring: number }) {
+	const ringColors = ["bg-cyan-400/40", "bg-indigo-400/40", "bg-fuchsia-400/40"]
+	
 	return (
-		<div className={thumbCardClasses.join(' ')}>
+		<div className={cn(thumbCardClasses)}>
 			<Image
 				src={src || "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"}
 				alt={alt || "video thumbnail"}
 				loading="lazy"
 				width={108}
 				height={80}
-				className={thumbImageClasses.join(' ')}
+				className={cn(thumbImageClasses)}
 			/>
-			<div className={glowClasses.join(' ')} style={{ filter: "blur(10px)" }}>
-				<div
-					className={
-						"h-full w-full rounded-[14px] " +
-						(ring === 0
-							? "bg-cyan-400/40"
-							: ring === 1
-							? "bg-indigo-400/40"
-							: "bg-fuchsia-400/40")
-					}
-				/>
+			<div className={cn(glowClasses)} style={{ filter: 'blur(clamp(6px, 1vw, 12px))' }}>
+				<div className={cn("h-full w-full rounded-[14px]", ringColors[ring] || ringColors[0])} />
 			</div>
 		</div>
 	)
 }
 
+// The svg in the center of the animation.
 function ChipSVG({ className = "" }: { className?: string }) {
 	return (
 		<svg
@@ -239,6 +237,7 @@ function ChipSVG({ className = "" }: { className?: string }) {
 	)
 }
 
+// The jpeg thumbnails that orbit the center chip svg.
 const defaultThumbs = [
   { src: "/thumbnail_1.jpeg" },
   { src: "/thumbnail_2.jpeg" },
