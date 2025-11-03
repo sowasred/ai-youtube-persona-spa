@@ -26,11 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId="G-70H4ZQ311P" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <GoogleAnalytics gaId="G-70H4ZQ311P" />
         <Navbar1/>
         {children}
       </body>
