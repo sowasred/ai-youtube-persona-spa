@@ -15,7 +15,7 @@ export const creators: Creator[] = [
     designation: "Neuroscientist",
     image: "/andrew_huberman_pic.jpg",
     telegramLink: "https://t.me/andrew_huberman_chatbot",
-    whatsappLink: "",
+    whatsappLink: "https://wa.me/447876624276",
     youtubeLink: "https://www.youtube.com/@hubermanlab",
   },
   {
@@ -24,7 +24,7 @@ export const creators: Creator[] = [
     designation: "Dating Coach Youtuber",
     image: "/casey_zander_pic.jpg",
     telegramLink: "https://t.me/casey_zander_bot",
-    whatsappLink: "https://wa.me/447876624276",
+    whatsappLink: "",
     youtubeLink: "https://www.youtube.com/@CaseyZander",
   },
   // {
