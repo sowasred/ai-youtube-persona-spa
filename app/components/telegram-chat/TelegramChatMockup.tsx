@@ -22,7 +22,7 @@ const messageVariants = {
 
 const INITIAL_MESSAGE_DELAY = 700
 const BETWEEN_MESSAGES_DELAY = 1500
-const LOOP_RESTART_DELAY = 10000
+const LOOP_RESTART_DELAY = 30000
 const LOOP_RESET_CLEAR_DELAY = Math.max(
 	LOOP_RESTART_DELAY - INITIAL_MESSAGE_DELAY,
 	0,
@@ -36,10 +36,24 @@ export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
   const { selectedCreatorId } = useCreator();
 	const [visibleMessages, setVisibleMessages] = useState<ChatMessageData[]>([])
 	const { ref, isInView } = useInView<HTMLDivElement>({ threshold: 0.35, once: false })
+	const [currentTime, setCurrentTime] = useState("9:41")
 	
 	// Get the selected creator's data
 	const selectedCreator = people.find(person => person.id === selectedCreatorId) || people[0]
 	const selectedCreatorMessages = creatorMessages[selectedCreatorId] || creatorMessages[1]
+
+	// Update time periodically
+	useEffect(() => {
+		const updateTime = () => {
+			const now = new Date()
+			const hours = now.getHours()
+			const minutes = now.getMinutes().toString().padStart(2, '0')
+			setCurrentTime(`${hours}:${minutes}`)
+		}
+		updateTime()
+		const interval = setInterval(updateTime, 60000) // Update every minute
+		return () => clearInterval(interval)
+	}, [])
 	
 	useEffect(() => {
 		if (!isInView) {
@@ -94,71 +108,69 @@ export function TelegramChatMockup({ people }: TelegramChatMockupProps) {
 	}, [isInView, selectedCreatorId, selectedCreatorMessages])
 
 	return (
-		<div ref={ref} className={styles.frameWrapper}>
-			<DeviceFrame className={styles.frameSvg}>
-				<div className={styles.telegramScreen}>
-					<div className={styles.screenHeader}>
-						<div className={styles.statusRow}>
-							<span>9:41</span>
-							<div className={styles.statusIcons}>
-								<span className={styles.signalBars} aria-hidden>
-									<span className={styles.signalBar} />
-									<span className={styles.signalBar} />
-									<span className={styles.signalBar} />
-									<span className={styles.signalBar} />
-								</span>
-								<span className={styles.batteryIcon} aria-hidden>
-									<span className={styles.batteryBody} />
-									<span className={styles.batteryCap} />
-								</span>
+		<div className={styles.telegramScreen}>
+			<div ref={ref} className={styles.frameWrapper}>
+				<div className={styles.statusBar}>
+					<div className={styles.statusRow}>
+						<span className={styles.time}>{currentTime}</span>
+						<div className={styles.statusIcons}>
+							<div className={styles.signalBars} aria-label="Signal strength">
+								<span className={styles.signalBar} />
+								<span className={styles.signalBar} />
+								<span className={styles.signalBar} />
+								<span className={styles.signalBar} />
 							</div>
-						</div>
-					<header className={styles.conversationRow}>
-						<span className={styles.backButton}>
-							<ChevronLeft className={styles.backIcon} aria-hidden />
-							Back
-						</span>
-						<div className={styles.headerMeta}>
-							<span className={styles.contactName}>{selectedCreator.name}</span>
-							<span className={styles.contactStatus}>online</span>
-						</div>
-						<div className={styles.headerAvatar} aria-hidden>
-							<Image src={selectedCreator.image} alt={selectedCreator.name} width={32} height={32} className={styles.headerAvatarImage} />
-						</div>
-					</header>
-					</div>
-
-					<div className={styles.chatSurface}>
-						<div className={styles.chatOverlayPattern} />
-
-						<div className={styles.chatContent}>
-							<div className={styles.chatScroll}>
-								<span className={styles.dateChip}>Today</span>
-
-								<AnimatePresence>
-									{visibleMessages.map((msg) => (
-										<motion.div
-											key={msg.id}
-											variants={messageVariants}
-											initial="initial"
-											animate="animate"
-											exit="exit"
-											transition={{ type: "spring", stiffness: 320, damping: 24 }}
-										>
-											<ChatMessage {...msg} />
-										</motion.div>
-									))}
-								</AnimatePresence>
+							<div className={styles.batteryIcon} aria-label="Battery">
+								<div className={styles.batteryBody} />
+								<div className={styles.batteryCap} />
 							</div>
-
-						<div className={styles.inputBar}>
-							<span className={styles.inputPlaceholder}>Message</span>
-							<MicIcon className={styles.micIcon} aria-hidden />
-						</div>
 						</div>
 					</div>
 				</div>
-			</DeviceFrame>
+
+				<header className={styles.conversationRow}>
+					<span className={styles.backButton}>
+						<ChevronLeft className={styles.backIcon} aria-hidden />
+						Back
+					</span>
+					<div className={styles.headerMeta}>
+						<span className={styles.contactName}>{selectedCreator.name}</span>
+						<span className={styles.contactStatus}>online</span>
+					</div>
+					<div className={styles.headerActions}>
+					</div>
+					<div className={styles.headerAvatar} aria-hidden>
+						<Image src={selectedCreator.image} alt={selectedCreator.name} width={32} height={32} className={styles.headerAvatarImage} />
+					</div>
+				</header>
+
+				<div className={styles.chatSurface}>
+					<div className={styles.chatOverlayPattern} aria-hidden />
+					<div className={styles.chatContent}>
+						<div className={styles.chatScroll}>
+							<AnimatePresence>
+								{visibleMessages.map((msg) => (
+									<motion.div
+										key={msg.id}
+										variants={messageVariants}
+										initial="initial"
+										animate="animate"
+										exit="exit"
+										transition={{ type: "spring", stiffness: 320, damping: 24 }}
+									>
+										<ChatMessage {...msg} />
+									</motion.div>
+								))}
+							</AnimatePresence>
+						</div>
+					</div>
+				</div>
+
+				<div className={styles.inputBar}>
+					<span className={styles.inputPlaceholder}>Type a message...</span>
+					<MicIcon className={styles.micIcon} aria-label="Record voice message" />
+				</div>
+			</div>
 		</div>
 	)
 }

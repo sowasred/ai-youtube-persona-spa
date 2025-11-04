@@ -17,7 +17,7 @@ import { Footer } from "./components/footer";
 import Pricing from "./components/pricing";
 import { ContactSection } from "./components/contact-section";
 import { creators } from "./data/creators";
-
+import { MockupFrame } from "./components/telegram-chat/mockup-frame";
 export default async function IndexPage() {
   const dict = await getDictionary();
 
@@ -89,10 +89,12 @@ export default async function IndexPage() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-full w-full">
-            <div className="mt-8">
-              <TelegramChatMockup 
-                people={creators}
-              />
+            <div className="mt-8 mb-8 lg:mb-16">
+              <MockupFrame>
+                <TelegramChatMockup 
+                  people={creators}
+                />
+              </MockupFrame>
             </div>
           </div>
         </div>

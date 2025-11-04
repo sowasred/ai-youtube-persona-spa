@@ -18,22 +18,27 @@ export function ChatMessage({ text, from, timestamp, type }: ChatMessageData) {
 			>
 				{type === "voice" ? (
 					<div className={styles.voiceContent}>
-						<button type="button" className={styles.voicePlayButton} aria-label="Play voice message" />
-						<div className={styles.voiceWaveform} aria-hidden>
-							<span className={styles.voiceWaveDash} />
-							<span className={styles.voiceWaveBars} />
-							<span className={styles.voiceWaveDash} />
+						<div className={styles.voiceTopRow}>
+							<button type="button" className={styles.voicePlayButton} aria-label="Play voice message" />
+							<div className={styles.voiceWaveform} aria-hidden>
+								<span className={styles.voiceWaveDash} />
+								<span className={styles.voiceWaveBars} />
+								<span className={styles.voiceWaveDash} />
+							</div>
 						</div>
-				<div className={styles.voiceMeta}>
-					<span className={styles.voiceDuration}>{from === "them" ? "00:09" : "00:12"}</span>
-				</div>
+						<div className={styles.voiceMeta}>
+							<span className={styles.voiceDuration}>{from === "them" ? "00:09" : "00:12"}</span>
+							<span className={styles.timestamp}>{timestamp}</span>
+						</div>
 					</div>
 				) : (
-					<p>{text}</p>
+					<>
+						<p>{text}</p>
+						<div className={clsx(styles.messageMeta, from === "them" && styles.metaLeft)}>
+							<span className={styles.timestamp}>{timestamp}</span>
+						</div>
+					</>
 				)}
-				<div className={clsx(styles.messageMeta, from === "them" && styles.metaLeft)}>
-					<span className={styles.timestamp}>{timestamp}</span>
-				</div>
 			</div>
 		</div>
 	)

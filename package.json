@@ -22,6 +22,7 @@
     "motion": "^12.23.12",
     "next": "^15.5.2",
     "react": "19.1.0",
+    "react-device-mockup": "^1.0.0",
     "react-dom": "19.1.0",
     "react-social-icons": "^6.24.0",
     "simplex-noise": "^4.0.3",
