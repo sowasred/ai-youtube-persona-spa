@@ -126,8 +126,17 @@ export function FAQ({
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.28, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{
+                      duration: 0.28,
+                      ease: [0.33, 1, 0.68, 1],
+                      layout: { duration: 0.28 }
+                    }}
+                    layout
                     className="overflow-hidden"
+                    style={{
+                      willChange: 'height, opacity',
+                      transform: 'translateZ(0)' // Force GPU acceleration
+                    }}
                   >
                     <div className="pb-5 pr-3 text-xl leading-relaxed text-gray-600 dark:text-gray-200 sm:text-2xl">
                       {faq.answer}
