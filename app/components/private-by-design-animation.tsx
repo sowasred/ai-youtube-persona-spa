@@ -229,7 +229,7 @@ export function PrivateByDesignAnimation({
 
 			{/* Lock Icon */}
 			<motion.div
-				className="absolute inset-0 flex items-center justify-center z-10"
+				className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
 				variants={lockVariants}
 				initial="hidden"
 				animate={getLockVariant()}
@@ -238,8 +238,9 @@ export function PrivateByDesignAnimation({
 					width="240"
 					height="260"
 					viewBox="0 0 120 140"
-					className="drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
+					className="w-[120px] h-[130px] sm:w-[180px] sm:h-[195px] md:w-[240px] md:h-[260px] drop-shadow-[0_8px_24px_rgba(0,0,0,0.2)] dark:drop-shadow-[0_8px_24px_rgba(0,0,0,0.4)]"
 					aria-label="Content encrypted and secured"
+					preserveAspectRatio="xMidYMid meet"
 				>
 					{/* Lock Shackle - U-shaped top part */}
 					<motion.path
