@@ -9,14 +9,14 @@ interface PricingFeatureProps {
 
 const PricingFeature: React.FC<PricingFeatureProps> = ({ text }) => (
   <li className="flex items-center text-gray-800 dark:text-white text-lg">
-    <CheckIcon className="w-5 h-5 mr-3 text-green-500" />
+    <CheckIcon className="w-5 h-5 mr-3 flex-shrink-0 text-green-500" />
     {text}
   </li>
 );
 
 const PremiumFeature: React.FC<{ text: string }> = ({ text }) => (
   <li className="flex items-center text-blue-600 font-medium text-lg">
-    <CheckIcon className="w-5 h-5 mr-3 text-blue-600" />
+    <CheckIcon className="w-5 h-5 mr-3 flex-shrink-0 text-blue-600" />
     {text}
   </li>
 );
