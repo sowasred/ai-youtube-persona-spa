@@ -6,12 +6,6 @@
 	width: 100%;
 }
 
-.frameSvg {
-	display: block;
-	height: auto;
-	width: 100%;
-}
-
 .telegramScreen {
 	display: flex;
 	height: 100%;
@@ -30,17 +24,6 @@
 	box-sizing: border-box;
 }
 
-.screenHeader {
-	background: #ffffff;
-	border-radius: 26px 26px 0 0;
-	padding: 16px 20px 12px;
-	box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	width: 100%;
-}
-
 .chatSurface {
 	position: relative;
 	display: flex;
@@ -52,10 +35,6 @@
 	overflow: hidden;
 	min-height: 0;
 	width: 100%;
-}
-
-.chatBackground {
-	display: none;
 }
 
 .chatOverlayPattern {
@@ -200,25 +179,6 @@
 	}
 }
 
-.headerActionIcon {
-	width: 18px;
-	height: 18px;
-	color: #3baa59;
-	cursor: pointer;
-	flex-shrink: 0;
-}
-
-@media (min-width: 640px) {
-	.headerActionIcon {
-		width: 20px;
-		height: 20px;
-	}
-}
-
-.headerActionIcon:hover {
-	opacity: 0.7;
-}
-
 .backButton {
 	display: inline-flex;
 	align-items: center;
@@ -343,24 +303,6 @@
 	width: 100%;
 }
 
-.messageRow.me {
-	justify-content: flex-end;
-}
-
-.messageRow.them {
-	justify-content: flex-start;
-}
-
-.dateChip {
-	align-self: center;
-	background: rgba(255, 255, 255, 0.8);
-	color: #0f172a;
-	font-size: 0.75rem;
-	font-weight: 600;
-	padding: 4px 12px;
-	border-radius: 999px;
-	box-shadow: 0 4px 10px rgba(15, 23, 42, 0.12);
-}
 
 .inputBar {
 	display: flex;
@@ -423,12 +365,6 @@
 
 .voiceBubble {
 	padding: 8px 12px 8px 8px;
-}
-
-.messageRow {
-	display: flex;
-	width: 100%;
-	margin: 0;
 }
 
 .meRow {
