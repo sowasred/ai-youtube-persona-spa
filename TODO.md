@@ -10,9 +10,10 @@
 [x] (arda) - on mobile screen fix the telegram interface overflowing the iphone mockup boundry using Safari.
 [x] (arda) - In mobile first creator will be selected by default with animated-tooltip active.
 [x] (arda) - In mobile 'Try talking to one of our demo creators' will be moved up under to 'Available in Whatsapp and Telegram'
-[ ] (chadash) - How to increase the first content paint in next.js or in general
+[ ] (chadash) - How to increase the first content paint in next.js or in general (Due Date November 9 - EOD)
 [ ] (chadash) - Creating a dashboard shows creators user numbers free/paid and other analytics(Content recommendations, general analytics on chats).
-[ ] (ozan - chadash) - Marketing plan will be created.
-
+[ ] (ozan) Marketing bot will be created.
+[ ] (ozan) New persona will be created
+[ ] (arda) New persone will be added to the landing page.
 
 [ ] (arda) Animation to be added on how it works section
