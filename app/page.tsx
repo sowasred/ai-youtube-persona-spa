@@ -48,7 +48,7 @@ export default async function IndexPage() {
                   href="https://calendly.com/replyfanapp/30min"
                   target="_blank"
                 >
-                  <Button className="cta-button px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-2xl text-left sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-4 justify-between">
+                  <Button className="cta-button px-8 py-6 sm:py-12 md:py-10 h-auto w-full text-lg ty:text-xl xs:text-2xl text-left sm:h-12 md:rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium gap-4 justify-between mt-6 mb-4 md:mt-0">
                     <span className="flex-1 text-center md:text-left">
                       {dict.marketing.primary_cta}
                     </span>
@@ -64,23 +64,34 @@ export default async function IndexPage() {
                   className="!h-6 !w-6 sm:!h-5 sm:!w-5 md:!h-6 md:!w-6"
                 />
                 <span className="font-semibold">WhatsApp</span>
-                <span className="font-semibold">&</span>
+                <span className="font-semibold">& </span>
+                <div>
                 <SocialIcon
                   network="telegram"
                   className="!h-5 !w-5 sm:!h-5 sm:!w-5 md:!h-6 md:!w-6"
                 />
-                <span className="font-semibold">Telegram</span>
+                <span className="font-semibold"> Telegram</span>
+                </div>
+              </div>
+              {/* Contributors description - shown after "Available in" on mobile, hidden on desktop */}
+              <div className="md:hidden mt-4 w-full">
+                <div className="w-full">
+                  <span className="text-muted-foreground text-2xl">
+                    {dict.marketing.contributors.contributors_desc}
+                  </span>
+                </div>
               </div>
               {/* Influencers section */}
-              <div className="flex flex-col items-center justify-start mt-12 md:mt-32 w-full">
-                <div className="flex flex-col items-start justify-start w-full">
+              <div className="flex flex-col items-center justify-start mt-32 md:mt-32 w-full">
+                {/* Contributors description - hidden on mobile, shown on desktop */}
+                <div className="hidden md:flex flex-col items-start justify-start w-full">
                   <div className="w-full md:max-w-[440px]">
                     <span className="text-muted-foreground text-2xl">
                       {dict.marketing.contributors.contributors_desc}
                     </span>
                   </div>
                 </div>
-                <div className="w-full flex justify-start mt-4">
+                <div className="w-full flex justify-start mt-4 md:mt-4">
                   <AnimatedTooltip 
                     items={creators} 
                   />

@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useInView } from "../../hooks/use-in-view"
-
 import styles from "./styles.module.css"
 import { ChatMessage } from "./ChatMessage"
 import type { ChatMessageData } from "./mockData"
 import { creatorMessages } from "./mockData"
-import { DeviceFrame } from "./DeviceFrame"
 import { MicIcon, ChevronLeft } from "../icons"
 import Image from "next/image"
 import { useCreator } from "../creator-interaction"
@@ -22,7 +20,7 @@ const messageVariants = {
 
 const INITIAL_MESSAGE_DELAY = 700
 const BETWEEN_MESSAGES_DELAY = 1500
-const LOOP_RESTART_DELAY = 30000
+const LOOP_RESTART_DELAY = 10000
 const LOOP_RESET_CLEAR_DELAY = Math.max(
 	LOOP_RESTART_DELAY - INITIAL_MESSAGE_DELAY,
 	0,
