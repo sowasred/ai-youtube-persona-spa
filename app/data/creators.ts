@@ -32,7 +32,7 @@ export const creators: Creator[] = [
     name: "Sadia Khan",
     designation: "Psychologist",
     image: "/sadia2.png",
-    telegramLink: "https://t.me/sadia_khan_catbot",
+    telegramLink: "https://t.me/sadia_khan_chatbot",
     whatsappLink: "",
     youtubeLink: "https://www.youtube.com/@sadiapsychology",
   },
