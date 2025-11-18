@@ -28,7 +28,7 @@ export const creators: Creator[] = [
     youtubeLink: "https://www.youtube.com/@CaseyZander",
   },
   {
-    id: 4,
+    id: 3,
     name: "Sadia Khan",
     designation: "Psychologist",
     image: "/sadia2.png",
@@ -37,7 +37,7 @@ export const creators: Creator[] = [
     youtubeLink: "https://www.youtube.com/@sadiapsychology",
   },
   {
-    id: 5,
+    id: 4,
     name: "Jordan B. Peterson",
     designation: "Psychoanalyst",
     image: "/jordan_peterson_pic.jpg",
@@ -46,7 +46,7 @@ export const creators: Creator[] = [
     youtubeLink: "https://www.youtube.com/@JordanBPeterson",
   },
   {
-    id: 6,
+    id: 5,
     name: "Healthy Gamer GG",
     designation: "Psychologist",
     image: "/healthygamergg_pic.jpg",

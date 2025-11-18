@@ -14,7 +14,7 @@ export type Creator = {
 	image: string
 }
 
-// Andrew Huberman - Neuroscience/Health topics
+// ID 1: Andrew Huberman - Neuroscience/Health topics
 export const andrewHubermanMessages: ChatMessageData[] = [
 	{
 		id: 'ah1',
@@ -25,7 +25,7 @@ export const andrewHubermanMessages: ChatMessageData[] = [
 	{
 		id: 'ah2',
 		from: 'them',
-		text: 'Go with 25 grams of protein and a small piece of fruit. That’ll keep energy steady.',
+		text: "Go with 25 grams of protein and a small piece of fruit. That'll keep energy steady.",
 		timestamp: '9:41',
 	},
 	{
@@ -56,7 +56,7 @@ export const andrewHubermanMessages: ChatMessageData[] = [
 	},
 ]
 
-// Casey Zander - Dating/Relationships topics
+// ID 2: Casey Zander - Dating/Relationships topics
 export const caseyZanderMessages: ChatMessageData[] = [
 	{
 		id: 'cz1',
@@ -98,7 +98,49 @@ export const caseyZanderMessages: ChatMessageData[] = [
 	},
 ]
 
-// Jordan B. Peterson - Psychology/Philosophy topics
+// ID 3: Sadia Khan - Psychology/Relationships topics
+export const sadiaKhanMessages: ChatMessageData[] = [
+	{
+		id: 'sk1',
+		from: 'me',
+		text: 'Sadia, I keep attracting the same type of toxic partners. What am I doing wrong?',
+		timestamp: '9:41',
+	},
+	{
+		id: 'sk2',
+		from: 'them',
+		text: 'You are not doing anything wrong. You are repeating patterns because they feel familiar. The real question is: what are you avoiding by choosing unavailable people?',
+		timestamp: '9:41',
+	},
+	{
+		id: 'sk3',
+		from: 'me',
+		text: 'I think I am scared of real intimacy. How do I change this?',
+		timestamp: '9:41',
+	},
+	{
+		id: 'sk4',
+		from: 'them',
+		text: 'Start by being honest with yourself about your fears. Then practice vulnerability in small ways with safe people. Real intimacy requires showing up as your authentic self, not who you think they want.',
+		timestamp: '9:41',
+	},
+	{
+		id: 'sk5',
+		from: 'me',
+		type: 'voice',
+		text: 'voice-note',
+		timestamp: '9:43',
+	},
+	{
+		id: 'sk6',
+		from: 'them',
+		type: 'voice',
+		text: 'voice-reply',
+		timestamp: '9:44',
+	},
+]
+
+// ID 4: Jordan B. Peterson - Psychology/Philosophy topics
 export const jordanPetersonMessages: ChatMessageData[] = [
 	{
 		id: 'jp1',
@@ -140,7 +182,7 @@ export const jordanPetersonMessages: ChatMessageData[] = [
 	},
 ]
 
-// Healthy Gamer GG - Mental Health/Gaming topics
+// ID 5: Healthy Gamer GG - Mental Health/Gaming topics
 export const healthyGamerMessages: ChatMessageData[] = [
 	{
 		id: 'hg1',
@@ -186,8 +228,9 @@ export const healthyGamerMessages: ChatMessageData[] = [
 export const creatorMessages: Record<number, ChatMessageData[]> = {
 	1: andrewHubermanMessages, // Andrew Huberman
 	2: caseyZanderMessages,    // Casey Zander
-	5: jordanPetersonMessages, // Jordan B. Peterson
-	6: healthyGamerMessages,   // Healthy Gamer GG
+	3: sadiaKhanMessages,      // Sadia Khan
+	4: jordanPetersonMessages, // Jordan B. Peterson
+	5: healthyGamerMessages,   // Healthy Gamer GG
 }
 
 // Default messages (fallback)
