@@ -27,16 +27,16 @@ export const AnimatedTooltip = ({
   const groupRefs = React.useRef<{ [key: number]: HTMLDivElement | null }>({});
   const isAnimatingRef = React.useRef(false);
   const hasInitializedMobileRef = React.useRef(false);
-  const springConfig = { stiffness: 100, damping: 5 };
+  const springConfig = { stiffness: 100, damping: 10 };
   
   // Create motion values for the currently hovered item
   const x = useMotionValue(0);
   const rotate = useSpring(
-    useTransform(x, [-100, 100], [-45, 45]),
+    useTransform(x, [-100, 100], [-15, 15]),
     springConfig
   );
   const translateX = useSpring(
-    useTransform(x, [-100, 100], [-50, 50]),
+    useTransform(x, [-100, 100], [-20, 20]),
     springConfig
   );
   const calculateTooltipPosition = (element: HTMLElement) => {
@@ -168,7 +168,8 @@ export const AnimatedTooltip = ({
     const halfWidth = rect.width / 2;
     
     // Normalize the offset relative to avatar size and clamp to reasonable range
-    const normalizedOffset = Math.max(-150, Math.min(150, (offsetX / halfWidth) * 100));
+    // Reduced range for smoother, less aggressive movement
+    const normalizedOffset = Math.max(-100, Math.min(100, (offsetX / halfWidth) * 80));
     x.set(normalizedOffset);
   };
 
