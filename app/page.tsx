@@ -23,13 +23,13 @@ export default async function IndexPage() {
 
   return (
     <CreatorProvider>
-      <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 md:mb-24 md:mt-24 max-w-[98rem]">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 md:mb-24 md:mt-12 max-w-[98rem]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           <div className="flex flex-col items-start h-full w-full">
-            <div className="flex flex-col pt-4 md:pt-12 w-full">
+            <div className="flex flex-col pt-4 md:pt-0 w-full">
               {/* Title */}
-              <div className="mt-8 md:mt-0 lg:mt-20 mb-4">
-                <div className="text-left text-[70px] md:text-6xl font-semibold leading-tight md:leading-[4rem] xl:leading-[4rem] text-foreground">
+              <div className="mt-8 md:mt-0 mb-4">
+                <div className="text-left text-[70px] md:text-8xl leading-tight md:leading-[6rem] font-semibold">
                   {dict.marketing.title ||
                     "Fans can talk with you "}
                   <ColourfulText className="" text="24/7" />
@@ -100,7 +100,7 @@ export default async function IndexPage() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-full w-full">
-            <div className="mt-8 mb-8 lg:mb-16">
+            <div className="mt-8 md:mt-0 mb-8 lg:mb-16">
               <MockupFrame>
                 <TelegramChatMockup 
                   people={creators}
@@ -203,7 +203,9 @@ export default async function IndexPage() {
         <FAQ />
       </section>
 
-      <ContactSection />
+      <section id="contact" className="max-w-[98rem] w-10/12 lg:w-11/12 my-36 mx-auto">
+        <ContactSection />
+      </section>
 
       {/* <section id="marketing" className="container flex flex-col my-40 mx-auto">
         <MarketingSection dict={dict.marketing.right_side} />
