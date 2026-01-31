@@ -41,7 +41,8 @@ export const AnimatedTooltip = ({
   );
   const calculateTooltipPosition = (element: HTMLElement) => {
     const rect = element.getBoundingClientRect();
-    const tooltipWidth = 250; // Approximate tooltip width
+    // Include name, designation, and social buttons (use max width)
+    const tooltipWidth = 320;
     const viewportWidth = window.innerWidth;
     
     const centerPosition = rect.left + rect.width / 2;
@@ -173,29 +174,28 @@ export const AnimatedTooltip = ({
     x.set(normalizedOffset);
   };
 
-  const handleMouseEnter = React.useCallback((id: number, event?: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = React.useCallback((id: number, _event?: React.MouseEvent<HTMLDivElement>) => {
     if (isTouchDevice) return;
     
     // Clear any pending leave timeout immediately to prevent race conditions
     clearLeaveTimeout();
     
-    // Calculate position from the element that triggered the event, or use group ref as fallback
-    const element = event?.currentTarget || groupRefs.current[id];
-    if (element) {
+    // Always use the group element (avatar container) for position calculation.
+    // If we used event.currentTarget, when the user moves from avatar to tooltip
+    // the currentTarget would be the tooltip div, giving wrong rect and making
+    // the tooltip jump back (e.g. to center) and overflow again.
+    const groupElement = groupRefs.current[id];
+    if (groupElement) {
       try {
-        const position = calculateTooltipPosition(element);
+        const position = calculateTooltipPosition(groupElement);
         setTooltipPosition(prev => ({ ...prev, [id]: position }));
       } catch (error) {
-        // Fallback to center if calculation fails
         console.warn('Failed to calculate tooltip position:', error);
         setTooltipPosition(prev => ({ ...prev, [id]: 'center' }));
       }
     }
     
-    // Set hovered index - this will trigger the tooltip to show
-    // Use functional update to ensure we have the latest state
     setHoveredIndex(prevId => {
-      // If already hovered, don't change (prevents unnecessary re-renders)
       if (prevId === id) return prevId;
       return id;
     });

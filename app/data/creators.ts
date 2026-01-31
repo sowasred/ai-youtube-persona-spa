@@ -15,7 +15,7 @@ export const creators: Creator[] = [
     designation: "Neuroscientist",
     image: "/andrew_huberman_pic.jpg",
     telegramLink: "https://t.me/andrew_huberman_chatbot",
-    whatsappLink: "https://wa.me/447876624276",
+    whatsappLink: "",
     youtubeLink: "https://www.youtube.com/@hubermanlab",
   },
   {
