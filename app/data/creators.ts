@@ -28,15 +28,6 @@ export const creators: Creator[] = [
     youtubeLink: "https://www.youtube.com/@CaseyZander",
   },
   {
-    id: 3,
-    name: "Sadia Khan",
-    designation: "Psychologist",
-    image: "/sadia2.png",
-    telegramLink: "https://t.me/sadia_khan_catbot",
-    whatsappLink: "",
-    youtubeLink: "https://www.youtube.com/@sadiapsychology",
-  },
-  {
     id: 4,
     name: "Jordan B. Peterson",
     designation: "Psychoanalyst",
