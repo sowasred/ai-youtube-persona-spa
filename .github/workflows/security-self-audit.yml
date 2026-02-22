@@ -1,0 +1,22 @@
+name: security-self-audit
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  self-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run self-audit
+        shell: bash
+        run: |
+          chmod +x ./scripts/agent-self-audit.sh
+          ./scripts/agent-self-audit.sh
