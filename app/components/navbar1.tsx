@@ -30,6 +30,7 @@ const defaultLogo = {
 const defaultMenu: MenuItem[] = [
   { title: "How it works", url: "/#how-it-works" },
   { title: "Features", url: "/#features" },
+  { title: "Blog", url: "/blog" },
   { title: "Pricing", url: "/#pricing" },
   { title: "FAQ", url: "/#faq" },
 ]
