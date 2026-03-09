@@ -18,7 +18,7 @@ function NavbarNavigationComponent({ menu }: NavbarNavigationProps) {
   }
 
   return (
-    <div className="flex items-center md:hidden gap-2 ml-auto">
+    <div className="ml-auto flex items-center gap-2 lg:hidden">
       <button
         type="button"
         className="flex items-end p-2"
@@ -33,14 +33,14 @@ function NavbarNavigationComponent({ menu }: NavbarNavigationProps) {
       {isOpen ? (
         <div
           id={menuId}
-          className="flex flex-col items-center w-48 px-2 pt-4 pb-2 bg-white dark:bg-black absolute top-22 right-6 border border-gray-100 rounded-md z-10"
+          className="absolute right-6 top-22 z-30 flex w-52 flex-col items-center rounded-md border border-gray-200 bg-white px-2 pt-4 pb-2 shadow-lg dark:border-gray-800 dark:bg-black"
         >
           {menu.map((item) => (
             <a
               href={item.url}
               key={item.url}
               onClick={handleMenu}
-              className="text-left group inline-flex h-10 w-full pr-4 mb-2 items-center justify-end text-xl font-semibold transition-colors"
+              className="mb-2 inline-flex h-10 w-full items-center justify-end pr-4 text-left text-xl font-semibold text-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-400"
             >
               {item.title}
             </a>
