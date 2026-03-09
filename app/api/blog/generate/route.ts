@@ -5,6 +5,12 @@ import type { GeneratedBlogPost } from '@/app/lib/blog-types'
 
 interface OpenAIResponsePayload {
 	output_text?: string
+	output?: Array<{
+		content?: Array<{
+			text?: string
+			output_text?: string
+		}>
+	}>
 	error?: {
 		message?: string
 	}
@@ -17,6 +23,40 @@ function createSlug (value: string): string {
 		.toLowerCase()
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '')
+}
+
+function extractOutputText (payload: OpenAIResponsePayload): string | null {
+	if (typeof payload.output_text === 'string' && payload.output_text.trim()) {
+		return payload.output_text
+	}
+
+	if (!Array.isArray(payload.output)) {
+		return null
+	}
+
+	for (const outputItem of payload.output) {
+		if (!Array.isArray(outputItem.content)) {
+			continue
+		}
+
+		for (const contentItem of outputItem.content) {
+			if (
+				typeof contentItem.text === 'string' &&
+				contentItem.text.trim()
+			) {
+				return contentItem.text
+			}
+
+			if (
+				typeof contentItem.output_text === 'string' &&
+				contentItem.output_text.trim()
+			) {
+				return contentItem.output_text
+			}
+		}
+	}
+
+	return null
 }
 
 export async function POST () {
@@ -111,7 +151,9 @@ export async function POST () {
 		)
 	}
 
-	if (!payload.output_text) {
+	const outputText = extractOutputText(payload)
+
+	if (!outputText) {
 		return NextResponse.json(
 			{
 				error: 'OpenAI returned an empty response.',
@@ -126,7 +168,7 @@ export async function POST () {
 	>
 
 	try {
-		parsedPost = JSON.parse(payload.output_text) as Omit<
+		parsedPost = JSON.parse(outputText) as Omit<
 			GeneratedBlogPost,
 			'slug' | 'publishedAt' | 'angle'
 		>
