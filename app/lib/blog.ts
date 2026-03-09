@@ -1,7 +1,7 @@
-import { blogPosts } from '@/content/blog/posts'
 import type { BlogPost } from '@/app/lib/blog-types'
+import blogPosts from '@/content/blog/posts.json'
 
-const staticPosts = blogPosts
+const staticPosts = blogPosts as BlogPost[]
 
 export const replyFanBenefitAngles = [
 	'Passive income without extra screen time',
