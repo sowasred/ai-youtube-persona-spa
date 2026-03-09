@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { Footer } from '@/app/components/footer'
-import { BlogPostGenerator } from '@/app/components/blog-post-generator'
 import { getAllBlogPosts } from '@/app/lib/blog'
 
 export const metadata: Metadata = {
@@ -30,10 +29,6 @@ export default function BlogPage () {
 						relationships, and unlock passive income without building or running
 						the system themselves.
 					</p>
-
-					<div className="mt-10">
-						<BlogPostGenerator />
-					</div>
 				</div>
 			</section>
 
