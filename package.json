@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:blog": "node scripts/generate-blog-post.mjs"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.4",
