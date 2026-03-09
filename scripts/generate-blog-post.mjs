@@ -16,6 +16,40 @@ const replyFanBenefitAngles = [
 	'Launching a digital twin with no upfront operational work',
 ]
 
+function extractOutputText (payload) {
+	if (typeof payload?.output_text === 'string' && payload.output_text.trim()) {
+		return payload.output_text
+	}
+
+	if (!Array.isArray(payload?.output)) {
+		return null
+	}
+
+	for (const outputItem of payload.output) {
+		if (!Array.isArray(outputItem?.content)) {
+			continue
+		}
+
+		for (const contentItem of outputItem.content) {
+			if (
+				typeof contentItem?.text === 'string' &&
+				contentItem.text.trim()
+			) {
+				return contentItem.text
+			}
+
+			if (
+				typeof contentItem?.output_text === 'string' &&
+				contentItem.output_text.trim()
+			) {
+				return contentItem.output_text
+			}
+		}
+	}
+
+	return null
+}
+
 function getRandomBenefitAngle () {
 	const randomIndex = Math.floor(
 		Math.random() * replyFanBenefitAngles.length,
@@ -127,11 +161,13 @@ async function generatePost (angle) {
 		)
 	}
 
-	if (!payload.output_text) {
+	const outputText = extractOutputText(payload)
+
+	if (!outputText) {
 		throw new Error('OpenAI returned an empty response.')
 	}
 
-	return JSON.parse(payload.output_text)
+	return JSON.parse(outputText)
 }
 
 async function main () {
