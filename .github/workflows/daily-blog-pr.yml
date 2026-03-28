@@ -14,13 +14,15 @@ permissions:
 jobs:
   generate-blog-post:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
@@ -35,7 +37,7 @@ jobs:
         run: node scripts/generate-blog-post.mjs
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: automation/daily-blog-post
           commit-message: 'chore: add generated ReplyFan blog post'
