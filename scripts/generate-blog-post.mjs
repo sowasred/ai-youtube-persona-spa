@@ -9,7 +9,7 @@ const replyFanBenefitAngles = [
 	'Passive income without extra screen time',
 	'24/7 fan access without creator burnout',
 	'Turning fan questions into a scalable product',
-	'Helping fans get answers in the creator’s voice',
+	'Helping fans get answers in the creator\'s voice',
 	'Monetizing attention without hiring a team',
 	'Keeping creator knowledge available after every upload',
 	'Making fan relationships deeper without adding manual replies',
