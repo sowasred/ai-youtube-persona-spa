@@ -7,7 +7,7 @@ import { getAllBlogPosts } from '@/app/lib/blog'
 export const metadata: Metadata = {
 	title: 'ReplyFan Blog',
 	description:
-		'Short blog posts about ReplyFan, creator digital twins, fan access, and passive income.',
+		'Ideas on how ReplyFan helps creators stay available, grow fan connection, and earn more from their audience.',
 }
 
 export default function BlogPage () {
@@ -21,13 +21,12 @@ export default function BlogPage () {
 						ReplyFan Blog
 					</p>
 					<h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-tight text-foreground md:text-6xl">
-						Concise posts on why digital twins are already useful for creators
-						and fans
+						How creators can turn fan access into stronger relationships and
+						new revenue
 					</h1>
 					<p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-						ReplyFan helps influencers and YouTubers stay available, deepen fan
-						relationships, and unlock passive income without building or running
-						the system themselves.
+						ReplyFan helps creators stay available, give fans better access, and
+						build new income streams without taking on more daily work.
 					</p>
 				</div>
 			</section>
