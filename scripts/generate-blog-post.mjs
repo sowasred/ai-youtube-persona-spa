@@ -105,7 +105,7 @@ async function generatePost (angle) {
 						{
 							type: 'input_text',
 							text:
-								'Return valid JSON only. Write concise blog content for ReplyFan. The audience is influencers, YouTubers, and their fans. Emphasize that a digital twin gives creators 24/7 availability, convenience, deeper fan connection, and passive income potential without operational investment. ReplyFan handles setup, training, and operations. The creator mainly needs to tell followers they can talk to the digital twin. Keep the tone sharp, commercial, and precise. Avoid hypey filler, long intros, and generic AI language.',
+								'Return valid JSON only. Write clear blog content for ReplyFan using simple wording and short sentences. The audience is creators, YouTubers, influencers, and their fans. Emphasize that a digital twin helps creators stay available, build stronger fan relationships, and open new revenue without more daily work. ReplyFan handles setup, training, moderation, and operations. The creator mainly needs to tell followers they can talk to the digital twin. Keep the tone practical, commercial, and human. Avoid hypey filler, generic AI phrasing, stiff structure, and long dashes.',
 						},
 					],
 				},
@@ -114,7 +114,7 @@ async function generatePost (angle) {
 					content: [
 						{
 							type: 'input_text',
-							text: `Generate one concise ReplyFan blog post focused on this random subject: ${angle}. Include benefits for both creators and fans. Keep it practical. Return JSON with title, excerpt, content, readTimeMinutes, tags, and cta.`,
+							text: `Generate one ReplyFan blog post focused on this subject: ${angle}. Use simple wording, short sentences, and natural marketing copy. Include benefits for both creators and fans. Keep it practical. Return JSON with title, excerpt, content, readTimeMinutes, tags, and cta.`,
 						},
 					],
 				},
