@@ -9,6 +9,10 @@ export interface BlogPost {
 	angle: string
 }
 
+export interface StoredBlogPost extends BlogPost {
+	copyRefinedAt?: string
+}
+
 export interface GeneratedBlogPost extends BlogPost {
 	cta: string
 }
