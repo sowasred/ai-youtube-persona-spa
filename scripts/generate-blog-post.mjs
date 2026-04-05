@@ -5,6 +5,20 @@ import process from 'node:process'
 const blogPostsPath = path.join(process.cwd(), 'content/blog/posts.json')
 const defaultModel = process.env.OPENAI_BLOG_MODEL || 'gpt-5-mini'
 
+/**
+ * @typedef {{
+ *   title: string
+ *   slug: string
+ *   excerpt: string
+ *   content: string
+ *   publishedAt: string
+ *   readTimeMinutes: number
+ *   tags: string[]
+ *   angle: string
+ *   copyRefinedAt?: string
+ * }} StoredBlogPost
+ */
+
 const replyFanBenefitAngles = [
 	'Passive income without extra screen time',
 	'24/7 fan access without creator burnout',
@@ -81,6 +95,19 @@ function createUniqueSlug (value, existingPosts) {
 	}
 
 	return `${datedSlug}-${Date.now()}`
+}
+
+/**
+ * @returns {Promise<StoredBlogPost[]>}
+ */
+async function readExistingPosts () {
+	const posts = JSON.parse(await readFile(blogPostsPath, 'utf8'))
+
+	if (!Array.isArray(posts)) {
+		throw new Error('Blog post storage must be a JSON array.')
+	}
+
+	return posts
 }
 
 async function generatePost (angle) {
@@ -171,10 +198,11 @@ async function generatePost (angle) {
 }
 
 async function main () {
-	const existingPosts = JSON.parse(await readFile(blogPostsPath, 'utf8'))
+	const existingPosts = await readExistingPosts()
 	const angle = getRandomBenefitAngle()
 	const generatedPost = await generatePost(angle)
 
+	/** @type {StoredBlogPost} */
 	const newPost = {
 		title: generatedPost.title,
 		slug: createUniqueSlug(generatedPost.title, existingPosts),
