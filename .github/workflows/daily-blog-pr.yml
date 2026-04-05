@@ -21,6 +21,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
+      - name: Build PR metadata
+        id: pr-metadata
+        env:
+          TZ: America/Toronto
+        run: |
+          pr_date="$(date +%F)"
+          echo "branch=automation/daily-blog-post-${pr_date}" >> "$GITHUB_OUTPUT"
+          echo "title=chore: add generated ReplyFan blog post (${pr_date})" >> "$GITHUB_OUTPUT"
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -39,9 +48,9 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v8
         with:
-          branch: automation/daily-blog-post
+          branch: ${{ steps.pr-metadata.outputs.branch }}
           commit-message: 'chore: add generated ReplyFan blog post'
-          title: 'chore: add generated ReplyFan blog post'
+          title: ${{ steps.pr-metadata.outputs.title }}
           body: |
             ## Summary
             - generate one new concise ReplyFan blog post
